@@ -11,7 +11,7 @@ This will serve as a central hub to store all community made themes
 | Light      | [Joe Milazzo](https://github.com/majora2007)    | A light theme for those that don't like dark themes | 0.5.2.x              |
 |            |        |                                                     |                      |
 
-## Native Theme Installation
+### Native Theme Installation
 1. Download the `theme-name.css` file.
 2. Place it in the `/config/themes` folder of your [Kavita](https://github.com/Kareadita/Kavita) installation.
 3. Within Kavita, navigate to your user settings and click the Theme tab.
@@ -24,7 +24,7 @@ This will serve as a central hub to store all community made themes
 | Plex-like      | [MrRobotjs](https://github.com/MrRobotjs)    | A Plex-inspired theme                | ?           |
 |            |        |                                                     |                      |
 
-## Style Injected Theme Installation
+### Style Injected Theme Installation
 1. Install a style injector extension for your browser, like [xStyle](https://chrome.google.com/webstore/detail/xstyle/hncgkmhphmncjohllpoleelnibpmccpj/related?hl=en)
 2. Download the theme scss/css.
 3. If necessary edit the theme with the domain where your Kavita install is running.
