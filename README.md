@@ -3,6 +3,7 @@ This will serve as a central hub to store all community made themes
 
 **Themes are provided as-is. Any issues with the themes need to be directed to the theme's author.**
 
+---
 ## Native Themes
 | Theme Name | Author | Description                                         | Kavita Compatibility |
 |------------|--------|-----------------------------------------------------|----------------------|
@@ -16,7 +17,7 @@ This will serve as a central hub to store all community made themes
 3. Within Kavita, navigate to your user settings and click the Theme tab.
 4. Click the Scan button.
 5. Apply and/or Set Default your newly added theme.
-
+---
 ## Style Injected Themes
 | Theme Name | Author | Description                                         | Kavita Compatibility |
 |------------|--------|-----------------------------------------------------|----------------------|
@@ -30,13 +31,13 @@ This will serve as a central hub to store all community made themes
 4. If scss, compile to css using your preferred method. [You can do it online.](https://www.cssportal.com/scss-to-css/)
 5. Install the theme in the style injector extension.
 6. Load/Refresh your Kavita site.
-
+---
 ## Contributing
 1. Clone the repo.
 2. Create a folder with your theme name
 3. Add your `theme-name.css` file inside the created folder with the appropriate filename.
 4. Add your theme to the `README.md` table with all fields filled out.
 5. Submit a PR.
-
+---
 ## Creating a Theme
 Please follow the documentation on our Wiki: https://wiki.kavitareader.com/en/guides/settings/themes
