@@ -1,0 +1,1872 @@
+@-moz-document domain("kavita.davii.duckdns.org") {
+    :root {
+        --plex-color: #4ac694;
+        /*Kavita: #4ac694 | Plex: #e5a00d*/
+        --plex-color-scrollbar: #4ac694;
+    }
+    /*::-webkit-scrollbar-thumb:not(.grid) {
+        background-color: var(--plex-color-scrollbar);
+    }
+    ::-webkit-scrollbar:not(.grid) {
+        height: 12px;
+        width: 12px;
+    }*/
+    .navbar {
+        border-radius: 4px;
+        top: 7px;
+        left: 0px;
+        width: 99%;
+        margin: 0 auto;
+        .container-fluid {
+            .navbar-nav {
+                .nav-item {
+                    > div {
+                        #nav-search {
+                            > form {
+                                > .typeahead-input {
+                                    background-color: #ffffff1a;
+                                    &.focused {
+                                        width: 97%;
+                                        border-color: transparent;
+                                        background-color: #fff;
+                                        > div {
+                                            input {
+                                                color: #000;
+                                                &::placeholder {
+                                                    color: #000;
+                                                }
+                                            }
+                                        }
+                                    }
+                                    > div {
+                                        input {
+                                            background-color: transparent;
+                                        }
+                                    }
+                                }
+                                .dropdown {
+                                    /*height: 100%;
+                                    margin-top: unset;
+                                    top: 0;*/
+                                    background: transparent;
+                                    &::before {
+                                        content: "";
+                                        position: fixed;
+                                        top: 0;
+                                        left: 0;
+                                        height: 100%;
+                                        width: 100%;
+                                        background: var(--dropdown-overlay-color);
+                                    }
+                                    > ul {
+                                        background-color: #202629;
+                                        > ul {
+                                            > li {
+                                                border: unset;
+                                                transition: background-color 150ms linear;
+                                                background-color: #202629;
+                                                &:hover {
+                                                    cursor: pointer;
+                                                    background-color: #373c3f;
+                                                }
+                                                > div {
+                                                    div {
+                                                        > span {}
+                                                        > div {
+                                                            color: #ffffff99 !important;
+                                                            font-style: normal !important;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        > li {
+                                            padding: 12px 16px;
+                                            border: unset;
+                                            background-color: #161b1d !important;
+                                            &:hover {
+                                                background-color: #161b1d !important;
+                                            }
+                                            h5 {
+                                                margin: unset;
+                                                font-size: 16px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    body[style="background-color: #000000 !important"] {
+        margin-top: unset !important;
+        &::before {
+            content: unset;
+        }
+    }
+    body {
+        margin-top: 4.1rem !important;
+        .content-wrapper {
+            .container-fluid {
+                > div {
+                    padding: unset !important;
+                    > .companion-bar,
+                    > .companion-bar-content {
+                        margin-left: 40px !important;
+                        &.companion-bar-content {
+                            margin-left: 290px !important;
+                        }
+                        h6.subtitle-with-actionables {
+                            margin-left: unset;
+                            font-size: 21px;
+                            font-weight: bold;
+                        }
+                        > app-series-detail {
+                            top: 0.35rem;
+                            position: relative;
+                            display: block;
+                            .main-container {
+                                padding-left: unset;
+                                > app-bulk-operations {
+                                    .bulk-select {
+                                        width: 99%;
+                                        margin: 0 auto;
+                                        margin-top: 64px !important;
+                                    }
+                                }
+                                .info-container {
+                                    /* Series Image */
+                                    > div.image-container {}
+                                    div {
+                                        div:nth-child(1) {
+                                            div:nth-child(1) {
+                                                button {
+                                                    color: #000;
+                                                    span {
+                                                        display: none;
+                                                    }
+                                                }
+                                            }
+                                            div:nth-child(5) {
+                                                .rating-star {
+                                                    span {
+                                                        .star {
+                                                            color: grey;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        div:nth-child(3) {
+                                            app-series-metadata-detail {
+                                                app-series-info-cards {
+                                                    > div {
+                                                        display: grid;
+                                                        gap: 1px;
+                                                        gap: 0 2rem;
+                                                        grid-template-columns: repeat(2, 1fr);
+                                                        max-width: 50%;
+                                                        .vr {
+                                                            display: none !important;
+                                                        }
+                                                        > div {
+                                                            width: unset;
+                                                            margin-bottom: unset !important;
+                                                            app-icon-and-title {
+                                                                width: unset;
+                                                                &[label="Language"],
+                                                                &[label="Format"],
+                                                                &[label="Publication"] {
+                                                                    &:hover {
+                                                                        .icon-and-title {
+                                                                            .label {
+                                                                                color: #fff;
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                                .icon-and-title {
+                                                                    min-width: unset;
+                                                                    justify-content: space-between !important;
+                                                                    align-self: unset !important;
+                                                                    align-items: flex-start !important;
+                                                                    flex-direction: row;
+                                                                    flex-grow: 0;
+                                                                    flex-shrink: 1;
+                                                                    gap: 1.5rem;
+                                                                    i {
+                                                                        display: none;
+                                                                    }
+                                                                    .label {
+                                                                        color: #ffffff99;
+                                                                        transition: 250ms linear color;
+                                                                        font-weight: normal;
+                                                                    }
+                                                                    div {
+                                                                        padding: unset;
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                .nav-tabs {
+                                    border: 0px solid;
+                                    margin-bottom: unset !important;
+                                    .nav-item {
+                                        .nav-link {
+                                            margin-bottom: unset !important;
+                                            border: 0px solid;
+                                            transition: 250ms linear color;
+                                            &::before {
+                                                content: unset;
+                                            }
+                                            &:hover {
+                                                color: var(--plex-color);
+                                            }
+                                            &.active {
+                                                transform: unset;
+                                                background-color: #191919;
+                                                color: var(--plex-color);
+                                                &:hover {
+                                                    color: #fff;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                .tab-content {
+                                    .tab-pane {
+                                        .vertical {
+                                            .scrollable-content {
+                                                .card-container {
+                                                    background: #191919;
+                                                    padding: 0 0.5rem;
+                                                    padding-top: 0.2rem;
+                                                    border-radius: 6px;
+                                                    > div {
+                                                        margin-bottom: 0.5rem!important;
+                                                        margin-top: 0.5rem !important;
+                                                    }
+                                                    app-card-item {
+                                                        .card {
+                                                            background-color: transparent;
+                                                            &:hover {
+                                                                .overlay {
+                                                                    .card-overlay {
+                                                                        background-color: rgba(30, 30, 30, .6);
+                                                                    }
+                                                                }
+                                                            }
+                                                            .card-body {
+                                                                background-color: transparent;
+                                                                a.card-title {
+                                                                    margin-top: 3px;
+                                                                    color: hsla(0, 0%, 100%, .45);
+                                                                    transition: 250ms linear color;
+                                                                    &:hover {
+                                                                        color: #fff;
+                                                                    }
+                                                                }
+                                                                > div {
+                                                                    span.card-title {
+                                                                        margin-top: 4px;
+                                                                        z-index: 11;
+                                                                        position: relative;
+                                                                        &:hover {
+                                                                            text-decoration: underline;
+                                                                        }
+                                                                    }
+                                                                    a.card-title {
+                                                                        &:hover {
+                                                                            color: #fff;
+                                                                        }
+                                                                    }
+                                                                    span:first-child {
+                                                                        &:hover {
+                                                                            text-decoration: underline;
+                                                                        }
+                                                                    }
+                                                                    .card-actions {
+                                                                        opacity: 0%;
+                                                                        position: absolute;
+                                                                        bottom: 0;
+                                                                        right: 0;
+                                                                        top: 195px;
+                                                                        z-index: 11;
+                                                                        width: 30px;
+                                                                        height: 35px;
+                                                                        transition: linear 300ms opacity;
+                                                                        &:hover {
+                                                                            opacity: 100%;
+                                                                        }
+                                                                        button {
+                                                                            box-shadow: unset !important;
+                                                                            border-color: transparent;
+                                                                            &:hover {
+                                                                                border-color: transparent;
+                                                                                box-shadow: unset !important;
+                                                                            }
+                                                                        }
+                                                                        div[container="body"] {
+                                                                            display: contents !important;
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                            .overlay {
+                                                                .bulk-mode {
+                                                                    left: 10px;
+                                                                    input {
+                                                                        background-color: transparent;
+                                                                        border: 2px solid hsla(0, 0%, 100%, .7);
+                                                                        border-radius: 50%;
+                                                                        color: hsla(0, 0%, 100%, .7);
+                                                                        height: 14px;
+                                                                        transition: all .2s;
+                                                                        width: 14px;
+                                                                    }
+                                                                    &.always-show {
+                                                                        input {
+                                                                            background-color: var(--plex-color);
+                                                                        }
+                                                                    }
+                                                                }
+                                                                .progress-banner {
+                                                                    top: -5px;
+                                                                    position: relative;
+                                                                    z-index: 11;
+                                                                    .progress {
+                                                                        background-color: rgba(0, 0, 0, 0.45);
+                                                                    }
+                                                                }
+                                                                app-image {
+                                                                    img {
+                                                                        border-radius: 6px !important;
+                                                                        overflow: hidden;
+                                                                    }
+                                                                }
+                                                                .not-read-badge {
+                                                                    /*border-radius: 0px 6px 0px 0px;
+                                                                                border-width: 0 20px 20px 0;*/
+                                                                    border-color: transparent var(--plex-color) transparent transparent;
+                                                                }
+                                                                .card-overlay {
+                                                                    transition: linear 250ms background-color;
+                                                                    border-radius: 6px;
+                                                                    border-top-right-radius: 0px;
+                                                                    &:hover {
+                                                                        background-color: rgba(30, 30, 30, .6);
+                                                                    }
+                                                                }
+                                                                &:hover {
+                                                                    ~ .card-body {
+                                                                        > div {
+                                                                            .card-actions {
+                                                                                opacity: 100%;
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                            &.selected-highlight {
+                                                                outline: 0px solid transparent;
+                                                                .overlay {
+                                                                    outline: 2px solid var(--plex-color);
+                                                                    border-radius: 5px;
+                                                                    border-top-right-radius: 0px;
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            div:first-child {
+                                > app-side-nav-companion-bar {
+                                    > div:first-child {
+                                        > div:first-child {
+                                            > h2 {
+                                                display: flex;
+                                                flex-direction: row-reverse;
+                                                align-items: center;
+                                                margin: unset;
+                                                * div {
+                                                    button {
+                                                        border: unset;
+                                                        box-shadow: unset !important;
+                                                        i {
+                                                            &::before {
+                                                                color: hsla(0, 0%, 100%, .7);
+                                                                transition: linear 300ms all;
+                                                            }
+                                                        }
+                                                        &:hover {
+                                                            border: unset;
+                                                            i {
+                                                                &::before {
+                                                                    color: #fff;
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                                span {
+                                                    font-size: 15px;
+                                                    color: hsla(0, 0%, 100%, .7);
+                                                }
+                                            }
+                                        }
+                                        > div:nth-child(2) {
+                                            > div {
+                                                ul.nav {
+                                                    li.nav-item {
+                                                        .nav-link {
+                                                            color: hsla(0, 0%, 100%, .45);
+                                                            transition: linear 300ms color, linear 300ms border-bottom-color;
+                                                            border-radius: 0px;
+                                                            span {
+                                                                font-size: 14px;
+                                                                i {
+                                                                    display: none;
+                                                                }
+                                                            }
+                                                            &:hover {
+                                                                color: #fff;
+                                                            }
+                                                            &.active {
+                                                                background-color: transparent;
+                                                                color: var(--plex-color);
+                                                                border-bottom: 2px solid var(--plex-color);
+                                                                &:hover {
+                                                                    color: #fff;
+                                                                    border-bottom-color: #fff;
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        > app-dashboard {
+                            top: 1.1rem;
+                            position: relative;
+                            display: block;
+                            app-carousel-reel {
+                                margin-bottom: 1.5rem;
+                                display: block;
+                                .carousel-container {
+                                    > div:first-child {
+                                        > h3 {
+                                            a {
+                                                font-weight: 700;
+                                                color: #fff;
+                                                margin-left: unset;
+                                            }
+                                        }
+                                        div {
+                                            .btn {
+                                                &:disabled {
+                                                    opacity: 0.2;
+                                                }
+                                                &:focus {
+                                                    box-shadow: unset;
+                                                }
+                                            }
+                                        }
+                                    }
+                                    > div:nth-child(2) {
+                                        swiper {
+                                            .swiper-wrapper {
+                                                .swiper-slide {
+                                                    app-card-item {
+                                                        .card {
+                                                            background-color: transparent;
+                                                            &:hover {
+                                                                .overlay {
+                                                                    .card-overlay {
+                                                                        background-color: rgba(30, 30, 30, .6);
+                                                                    }
+                                                                }
+                                                            }
+                                                            .card-body {
+                                                                background-color: transparent;
+                                                                a.card-title {
+                                                                    margin-top: 3px;
+                                                                    color: hsla(0, 0%, 100%, .45);
+                                                                    transition: 250ms linear color;
+                                                                    &:hover {
+                                                                        color: #fff;
+                                                                    }
+                                                                }
+                                                                > div {
+                                                                    span.card-title {
+                                                                        margin-top: 4px;
+                                                                        z-index: 11;
+                                                                        position: relative;
+                                                                        &:hover {
+                                                                            text-decoration: underline;
+                                                                        }
+                                                                    }
+                                                                    a.card-title {
+                                                                        &:hover {
+                                                                            color: #fff;
+                                                                        }
+                                                                    }
+                                                                    span:first-child {
+                                                                        &:hover {
+                                                                            text-decoration: underline;
+                                                                        }
+                                                                    }
+                                                                    .card-actions {
+                                                                        opacity: 0%;
+                                                                        position: absolute;
+                                                                        bottom: 0;
+                                                                        right: 0;
+                                                                        top: 195px;
+                                                                        z-index: 11;
+                                                                        width: 30px;
+                                                                        height: 35px;
+                                                                        transition: linear 300ms opacity;
+                                                                        &:hover {
+                                                                            opacity: 100%;
+                                                                        }
+                                                                        button {
+                                                                            box-shadow: unset !important;
+                                                                            border-color: transparent;
+                                                                            &:hover {
+                                                                                border-color: transparent;
+                                                                                box-shadow: unset !important;
+                                                                            }
+                                                                        }
+                                                                        div[container="body"] {
+                                                                            display: contents !important;
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                            .overlay {
+                                                                .count {
+                                                                    .badge {
+                                                                        background-color: var(--plex-color) !important;
+                                                                        color: #000;
+                                                                    }
+                                                                }
+                                                                .progress-banner {
+                                                                    top: -5px;
+                                                                    position: relative;
+                                                                    z-index: 11;
+                                                                    .progress {
+                                                                        background-color: rgba(0, 0, 0, 0.45);
+                                                                    }
+                                                                }
+                                                                app-image {
+                                                                    img {
+                                                                        border-radius: 6px !important;
+                                                                        overflow: hidden;
+                                                                    }
+                                                                }
+                                                                .not-read-badge {
+                                                                    /*border-radius: 0px 6px 0px 0px;
+                                                                                border-width: 0 20px 20px 0;*/
+                                                                    border-color: transparent var(--plex-color) transparent transparent;
+                                                                }
+                                                                .card-overlay {
+                                                                    transition: linear 250ms background-color;
+                                                                    border-radius: 5px;
+                                                                    border-top-right-radius: 0px;
+                                                                    &:hover {
+                                                                        background-color: rgba(30, 30, 30, .6);
+                                                                    }
+                                                                }
+                                                                &:hover {
+                                                                    ~ .card-body {
+                                                                        > div {
+                                                                            .card-actions {
+                                                                                opacity: 50%;
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        > app-want-to-read {
+                            top: 1.1rem;
+                            position: relative;
+                            display: block;
+                            div {
+                                > app-side-nav-companion-bar {
+                                    > div:first-child {
+                                        > div:first-child {
+                                            > h2 {
+                                                font-size: 15px;
+                                                color: hsla(0, 0%, 100%, .7);
+                                            }
+                                            > h6 {
+                                                font-size: 21px;
+                                                font-weight: 700;
+                                            }
+                                        }
+                                    }
+                                }
+                                app-card-detail-layout {
+                                    .viewport-container {
+                                        .content-container {
+                                            .card-container {
+                                                .vertical {
+                                                    .scrollable-content {
+                                                        .grid {
+                                                            overflow-y: hidden;
+                                                            .card {
+                                                                background-color: transparent;
+                                                                &:hover {
+                                                                    .card {
+                                                                        .overlay {
+                                                                            .card-overlay {
+                                                                                background-color: rgba(30, 30, 30, .6);
+                                                                            }
+                                                                        }
+                                                                        .card-body {
+                                                                            > div {
+                                                                                .card-actions {
+                                                                                    opacity: 100%;
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                                .card {
+                                                                    background-color: transparent;
+                                                                    .card-body {
+                                                                        background-color: transparent;
+                                                                        a.card-title {
+                                                                            margin-top: 3px;
+                                                                            color: hsla(0, 0%, 100%, .45);
+                                                                            transition: 250ms linear color;
+                                                                            &:hover {
+                                                                                color: #fff;
+                                                                            }
+                                                                        }
+                                                                        span.card-title {
+                                                                            margin-top: 4px;
+                                                                            z-index: 11;
+                                                                            position: relative;
+                                                                            &:hover {
+                                                                                text-decoration: underline;
+                                                                            }
+                                                                        }
+                                                                        > div {
+                                                                            .card-title {
+                                                                                &:hover {
+                                                                                    text-decoration: underline;
+                                                                                }
+                                                                            }
+                                                                            .card-actions {
+                                                                                opacity: 0%;
+                                                                                position: absolute;
+                                                                                bottom: 0;
+                                                                                right: 0;
+                                                                                top: 195px;
+                                                                                z-index: 11;
+                                                                                width: 30px;
+                                                                                height: 35px;
+                                                                                transition: linear 300ms opacity;
+                                                                                div[container="body"] {
+                                                                                    display: contents !important;
+                                                                                    button {
+                                                                                        height: 100%;
+                                                                                        box-shadow: unset !important;
+                                                                                        border-color: transparent !important;
+                                                                                        i {
+                                                                                            &::before {
+                                                                                                color: hsla(0, 0%, 100%, .45);
+                                                                                                transition: linear 300ms color;
+                                                                                            }
+                                                                                        }
+                                                                                        &:hover {
+                                                                                            i {
+                                                                                                &::before {
+                                                                                                    color: #fff;
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                    .overlay {
+                                                                        .bulk-mode {
+                                                                            left: 10px;
+                                                                            input {
+                                                                                background-color: transparent;
+                                                                                border: 2px solid hsla(0, 0%, 100%, .7);
+                                                                                border-radius: 50%;
+                                                                                color: hsla(0, 0%, 100%, .7);
+                                                                                height: 14px;
+                                                                                transition: all .2s;
+                                                                                width: 14px;
+                                                                            }
+                                                                            &.always-show {
+                                                                                input {
+                                                                                    background-color: var(--plex-color);
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                        .progress-banner {
+                                                                            top: -5px;
+                                                                            position: relative;
+                                                                            z-index: 11;
+                                                                            .progress {
+                                                                                background-color: rgba(0, 0, 0, 0.45);
+                                                                            }
+                                                                        }
+                                                                        app-image {
+                                                                            img {
+                                                                                border-radius: 6px !important;
+                                                                                overflow: hidden;
+                                                                            }
+                                                                        }
+                                                                        .not-read-badge {
+                                                                            /*border-radius: 0px 6px 0px 0px;
+                                                                                border-width: 0 20px 20px 0;*/
+                                                                            border-color: transparent var(--plex-color) transparent transparent;
+                                                                        }
+                                                                        .card-overlay {
+                                                                            transition: linear 250ms background-color;
+                                                                            border-radius: 6px;
+                                                                            border-top-right-radius: 0px;
+                                                                            &:hover {
+                                                                                background-color: rgba(30, 30, 30, .6);
+                                                                            }
+                                                                        }
+                                                                        &:hover {
+                                                                            ~ .card-body {
+                                                                                > div {
+                                                                                    .card-actions {
+                                                                                        opacity: 100%;
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                                &.selected-highlight {
+                                                                    outline: 0px solid transparent;
+                                                                    .overlay {
+                                                                        outline: 2px solid var(--plex-color);
+                                                                        border-radius: 5px;
+                                                                        border-top-right-radius: 0px;
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        > app-all-series,
+                        > app-bookmarks,
+                        > app-reading-lists,
+                        > app-all-collections {
+                            /*margin-top: 1.75rem;*/
+                            top: 1.1rem;
+                            position: relative;
+                            display: block;
+                            > app-side-nav-companion-bar {
+                                > div:first-child {
+                                    > div:first-child {
+                                        > h2 {
+                                            font-size: 15px;
+                                            color: hsla(0, 0%, 100%, .7);
+                                            margin-bottom: 0.75rem;
+                                        }
+                                        > h6 {
+                                            font-size: 21px;
+                                            font-weight: 700;
+                                        }
+                                    }
+                                }
+                            }
+                            app-card-detail-layout {
+                                .viewport-container {
+                                    &.empty {
+                                        display: flex;
+                                        flex-direction: column;
+                                        margin-bottom: unset;
+                                        margin-top: 10%;
+                                        &::before {
+                                            content: "";
+                                            background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgNTggNTgiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDU4IDU4OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8Zz4NCgk8Zz4NCgkJPHBhdGggZD0iTTUzLDQzLjVWMjdjMC0xMC4yMDEtOC4zMDItMTguNS0xOC41MDYtMTguNUgyMy41MDZDMTMuMzAyLDguNSw1LDE2Ljc5OSw1LDI3djE2LjVIMHYyaDZoMmg0LjA1DQoJCQljMC4yNTIsMi4yNDMsMi4xMzksNCw0LjQ1LDRzNC4xOTgtMS43NTcsNC40NS00SDM3LjA1YzAuMjUxLDIuMjQzLDIuMTM5LDQsNC40NSw0czQuMTk4LTEuNzU3LDQuNDUtNEg1MGgyaDZ2LTJINTN6IE01MCw0My41aC00DQoJCQl2LTZoLTJ2NnYxLjUwMmMwLDEuMzc3LTEuMTIxLDIuNDk4LTIuNSwyLjQ5OFMzOSw0Ni4zNzksMzksNDUuMDAyVjQzLjV2LTZoLTJ2NkgyMXYtNmgtMnY2djEuNTAyYzAsMS4zNzctMS4xMjEsMi40OTgtMi41LDIuNDk4DQoJCQlTMTQsNDYuMzc5LDE0LDQ1LjAwMlY0My41di02aC0ydjZIOEg3VjI3YzAtOS4wOTgsNy40MDQtMTYuNSwxNi41MDYtMTYuNWgxMC45ODhDNDMuNTk2LDEwLjUsNTEsMTcuOTAyLDUxLDI3djE2LjVINTB6Ii8+DQoJCTxwYXRoIGQ9Ik0yNC4xOTIsMjIuNzQzYy0yLjM0MSwyLjMzOS02LjE0NiwyLjMzNy04LjQ4NSwwYy0wLjM5MS0wLjM5MS0xLjAyMy0wLjM5MS0xLjQxNCwwYy0wLjIwOCwwLjIwOC0wLjI5NywwLjQ4NC0wLjI4MywwLjc1Nw0KCQkJSDE0djVoMnYtMy4wNTJjMS4yMjEsMC42OTMsMi41ODQsMS4wNDgsMy45NDksMS4wNDhjMi4wNDksMCw0LjA5OC0wLjc4LDUuNjU3LTIuMzM5YzAuMzkxLTAuMzkxLDAuMzkxLTEuMDIzLDAtMS40MTQNCgkJCVMyNC41ODMsMjIuMzUzLDI0LjE5MiwyMi43NDN6Ii8+DQoJCTxwYXRoIGQ9Ik00Mi4xOTIsMjIuNzQzYy0yLjM0MSwyLjMzOS02LjE0NiwyLjMzNy04LjQ4NSwwYy0wLjM5MS0wLjM5MS0xLjAyMy0wLjM5MS0xLjQxNCwwcy0wLjM5MSwxLjAyMywwLDEuNDE0DQoJCQljMS41NiwxLjU2LDMuNjA4LDIuMzM5LDUuNjU2LDIuMzM5YzEuMDM4LDAsMi4wNzYtMC4yMDIsMy4wNTEtMC42MDNWMjcuNWgydi0yLjc5NWMwLjIwOS0wLjE3LDAuNDEyLTAuMzUzLDAuNjA2LTAuNTQ4DQoJCQljMC4zOTEtMC4zOTEsMC4zOTEtMS4wMjMsMC0xLjQxNEM0My4yMTYsMjIuMzUyLDQyLjU4MywyMi4zNTMsNDIuMTkyLDIyLjc0M3oiLz4NCgkJPHJlY3QgeD0iMTQiIHk9IjMwLjUiIHdpZHRoPSIyIiBoZWlnaHQ9IjMiLz4NCgkJPHJlY3QgeD0iNDEiIHk9IjI5LjUiIHdpZHRoPSIyIiBoZWlnaHQ9IjUiLz4NCgk8L2c+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8L3N2Zz4NCg==);
+                                            display: block;
+                                            width: 50px;
+                                            height: 50px;
+                                            filter: invert(100%) brightness(100%);
+                                            margin: 0 auto;
+                                            opacity: 0.3;
+                                        }
+                                        > .content-container {
+                                            .card-container {
+                                                margin: 0 auto;
+                                                width: unset;
+                                            }
+                                        }
+                                    }
+                                    .content-container {
+                                        .card-container {
+                                            .vertical {
+                                                .scrollable-content {
+                                                    .grid {
+                                                        overflow-y: hidden;
+                                                        .card {
+                                                            background-color: transparent;
+                                                            &:hover {
+                                                                .card {
+                                                                    .overlay {
+                                                                        .card-overlay {
+                                                                            background-color: rgba(30, 30, 30, .6);
+                                                                        }
+                                                                    }
+                                                                    .card-body {
+                                                                        > div {
+                                                                            .card-actions {
+                                                                                opacity: 100%;
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                            .card {
+                                                                background-color: transparent;
+                                                                .card-body {
+                                                                    background-color: transparent;
+                                                                    a.card-title {
+                                                                        margin-top: 3px;
+                                                                        color: hsla(0, 0%, 100%, .45);
+                                                                        transition: 250ms linear color;
+                                                                        &:hover {
+                                                                            color: #fff;
+                                                                        }
+                                                                    }
+                                                                    > div {
+                                                                        > span {
+                                                                            &:hover {
+                                                                                text-decoration: underline;
+                                                                            }
+                                                                        }
+                                                                        .card-actions {
+                                                                            opacity: 0%;
+                                                                            position: absolute;
+                                                                            bottom: 0;
+                                                                            right: 0;
+                                                                            top: 195px;
+                                                                            z-index: 11;
+                                                                            width: 30px;
+                                                                            height: 35px;
+                                                                            transition: linear 300ms opacity;
+                                                                            div[container="body"] {
+                                                                                display: contents !important;
+                                                                                button {
+                                                                                    height: 100%;
+                                                                                    box-shadow: unset !important;
+                                                                                    border-color: transparent !important;
+                                                                                    i {
+                                                                                        &::before {
+                                                                                            color: hsla(0, 0%, 100%, .45);
+                                                                                            transition: linear 300ms color;
+                                                                                        }
+                                                                                    }
+                                                                                    &:hover {
+                                                                                        i {
+                                                                                            &::before {
+                                                                                                color: #fff;
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                                .overlay {
+                                                                    .bulk-mode {
+                                                                        left: 10px;
+                                                                        input {
+                                                                            background-color: transparent;
+                                                                            border: 2px solid hsla(0, 0%, 100%, .7);
+                                                                            border-radius: 50%;
+                                                                            color: hsla(0, 0%, 100%, .7);
+                                                                            height: 14px;
+                                                                            transition: all .2s;
+                                                                            width: 14px;
+                                                                        }
+                                                                        &.always-show {
+                                                                            input {
+                                                                                background-color: var(--plex-color);
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                    .progress-banner {
+                                                                        top: -5px;
+                                                                        position: relative;
+                                                                        z-index: 11;
+                                                                        .progress {
+                                                                            background-color: rgba(0, 0, 0, 0.45);
+                                                                        }
+                                                                    }
+                                                                    app-image {
+                                                                        img {
+                                                                            border-radius: 6px !important;
+                                                                            overflow: hidden;
+                                                                        }
+                                                                    }
+                                                                    .not-read-badge {
+                                                                        border-color: transparent var(--plex-color) transparent transparent;
+                                                                    }
+                                                                    .card-overlay {
+                                                                        transition: linear 250ms background-color;
+                                                                        border-radius: 6px;
+                                                                        border-top-right-radius: 0px;
+                                                                        &:hover {
+                                                                            background-color: rgba(30, 30, 30, .6);
+                                                                        }
+                                                                    }
+                                                                    &:hover {
+                                                                        ~ .card-body {
+                                                                            > div {
+                                                                                .card-actions {
+                                                                                    opacity: 100%;
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                            &.selected-highlight {
+                                                                outline: 0px solid transparent;
+                                                                .overlay {
+                                                                    outline: 2px solid var(--plex-color);
+                                                                    border-radius: 5px;
+                                                                    border-top-right-radius: 0px;
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        > app-library-detail {
+                            top: 0.35rem;
+                            position: relative;
+                            display: block;
+                            > app-bulk-operations {
+                                .bulk-select {
+                                    width: 99%;
+                                    margin: 0 auto;
+                                    margin-top: 64px !important;
+                                }
+                            }
+                            > app-side-nav-companion-bar {
+                                > div:first-child {
+                                    > div:first-child {
+                                        > h2 {
+                                            display: flex;
+                                            flex-direction: row-reverse;
+                                            align-items: center;
+                                            margin: unset;
+                                            * div {
+                                                button {
+                                                    border: unset;
+                                                    box-shadow: unset !important;
+                                                    i {
+                                                        &::before {
+                                                            color: hsla(0, 0%, 100%, .7);
+                                                            transition: linear 300ms all;
+                                                        }
+                                                    }
+                                                    &:hover {
+                                                        border: unset;
+                                                        i {
+                                                            &::before {
+                                                                color: #fff;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            span {
+                                                font-size: 15px;
+                                                color: hsla(0, 0%, 100%, .7);
+                                            }
+                                        }
+                                    }
+                                    > div:nth-child(2) {
+                                        > div {
+                                            ul.nav {
+                                                li.nav-item {
+                                                    .nav-link {
+                                                        color: hsla(0, 0%, 100%, .45);
+                                                        transition: linear 300ms color, linear 300ms border-bottom-color;
+                                                        border-radius: 0px;
+                                                        span {
+                                                            font-size: 14px;
+                                                            i {
+                                                                display: none;
+                                                            }
+                                                        }
+                                                        &:hover {
+                                                            color: #fff;
+                                                        }
+                                                        &.active {
+                                                            background-color: transparent;
+                                                            color: var(--plex-color);
+                                                            border-bottom: 2px solid var(--plex-color);
+                                                            &:hover {
+                                                                color: #fff;
+                                                                border-bottom-color: #fff;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            div.tab-content {
+                                .tab-pane {
+                                    app-library-recommended {
+                                        app-carousel-reel {
+                                            .carousel-container {
+                                                > div:first-child {
+                                                    h3 {
+                                                        a {
+                                                            margin-left: unset;
+                                                        }
+                                                    }
+                                                }
+                                                div {
+                                                    .swiper {
+                                                        .swiper-wrapper {
+                                                            .swiper-slide {
+                                                                app-series-card {
+                                                                    app-card-item {
+                                                                        &:hover {
+                                                                            .card {
+                                                                                .overlay {
+                                                                                    .card-overlay {
+                                                                                        background-color: rgba(30, 30, 30, .6);
+                                                                                    }
+                                                                                }
+                                                                                .card-body {
+                                                                                    > div {
+                                                                                        .card-actions {
+                                                                                            opacity: 100%;
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                        .card {
+                                                                            background-color: transparent;
+                                                                            .card-body {
+                                                                                background-color: transparent;
+                                                                                a.card-title {
+                                                                                    margin-top: 3px;
+                                                                                    color: hsla(0, 0%, 100%, .45);
+                                                                                    transition: 250ms linear color;
+                                                                                    &:hover {
+                                                                                        color: #fff;
+                                                                                    }
+                                                                                }
+                                                                                span.card-title {
+                                                                                    margin-top: 4px;
+                                                                                    z-index: 11;
+                                                                                    position: relative;
+                                                                                    &:hover {
+                                                                                        text-decoration: underline;
+                                                                                    }
+                                                                                }
+                                                                                > div {
+                                                                                    > span {
+                                                                                        &:hover {
+                                                                                            text-decoration: underline;
+                                                                                        }
+                                                                                    }
+                                                                                    .card-actions {
+                                                                                        opacity: 0%;
+                                                                                        position: absolute;
+                                                                                        bottom: 0;
+                                                                                        right: 0;
+                                                                                        top: 195px;
+                                                                                        z-index: 11;
+                                                                                        width: 30px;
+                                                                                        height: 35px;
+                                                                                        transition: linear 300ms opacity;
+                                                                                        div[container="body"] {
+                                                                                            display: contents !important;
+                                                                                            button {
+                                                                                                height: 100%;
+                                                                                                box-shadow: unset !important;
+                                                                                                border-color: transparent !important;
+                                                                                                i {
+                                                                                                    &::before {
+                                                                                                        color: hsla(0, 0%, 100%, .45);
+                                                                                                        transition: linear 300ms color;
+                                                                                                    }
+                                                                                                }
+                                                                                                &:hover {
+                                                                                                    i {
+                                                                                                        &::before {
+                                                                                                            color: #fff;
+                                                                                                        }
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                            .overlay {
+                                                                                .progress-banner {
+                                                                                    top: -5px;
+                                                                                    position: relative;
+                                                                                    z-index: 11;
+                                                                                    .progress {
+                                                                                        background-color: rgba(0, 0, 0, 0.45);
+                                                                                    }
+                                                                                }
+                                                                                app-image {
+                                                                                    img {
+                                                                                        border-radius: 6px !important;
+                                                                                        overflow: hidden;
+                                                                                    }
+                                                                                }
+                                                                                .not-read-badge {
+                                                                                    /*border-radius: 0px 6px 0px 0px;
+                                                                                border-width: 0 20px 20px 0;*/
+                                                                                    border-color: transparent var(--plex-color) transparent transparent;
+                                                                                }
+                                                                                .card-overlay {
+                                                                                    transition: linear 250ms background-color;
+                                                                                    border-radius: 6px;
+                                                                                    border-top-right-radius: 0px;
+                                                                                    &:hover {
+                                                                                        background-color: rgba(30, 30, 30, .6);
+                                                                                    }
+                                                                                }
+                                                                                &:hover {
+                                                                                    ~ .card-body {
+                                                                                        > div {
+                                                                                            .card-actions {
+                                                                                                opacity: 100%;
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    app-card-detail-layout {
+                                        .viewport-container {
+                                            .content-container {
+                                                .card-container {
+                                                    .vertical {
+                                                        .scrollable-content {
+                                                            .grid {
+                                                                overflow-y: hidden;
+                                                                .card {
+                                                                    background-color: transparent;
+                                                                    &:hover {
+                                                                        .card {
+                                                                            .overlay {
+                                                                                .card-overlay {
+                                                                                    background-color: rgba(30, 30, 30, .6);
+                                                                                }
+                                                                            }
+                                                                            .card-body {
+                                                                                > div {
+                                                                                    .card-actions {
+                                                                                        opacity: 100%;
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                    .card {
+                                                                        background-color: transparent;
+                                                                        .card-body {
+                                                                            background-color: transparent;
+                                                                            span.card-title {
+                                                                                margin-top: 4px;
+                                                                                z-index: 11;
+                                                                                position: relative;
+                                                                                &:hover {
+                                                                                    text-decoration: underline;
+                                                                                }
+                                                                            }
+                                                                            > div {
+                                                                                .card-actions {
+                                                                                    opacity: 0%;
+                                                                                    position: absolute;
+                                                                                    bottom: 0;
+                                                                                    right: 0;
+                                                                                    top: 195px;
+                                                                                    z-index: 11;
+                                                                                    width: 30px;
+                                                                                    height: 35px;
+                                                                                    transition: linear 300ms opacity;
+                                                                                    div[container="body"] {
+                                                                                        display: contents !important;
+                                                                                        button {
+                                                                                            height: 100%;
+                                                                                            box-shadow: unset !important;
+                                                                                            border-color: transparent !important;
+                                                                                            i {
+                                                                                                &::before {
+                                                                                                    color: hsla(0, 0%, 100%, .45);
+                                                                                                    transition: linear 300ms color;
+                                                                                                }
+                                                                                            }
+                                                                                            &:hover {
+                                                                                                i {
+                                                                                                    &::before {
+                                                                                                        color: #fff;
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                        .overlay {
+                                                                            .bulk-mode {
+                                                                                left: 10px;
+                                                                                input {
+                                                                                    background-color: transparent;
+                                                                                    border: 2px solid hsla(0, 0%, 100%, .7);
+                                                                                    border-radius: 50%;
+                                                                                    color: hsla(0, 0%, 100%, .7);
+                                                                                    height: 14px;
+                                                                                    transition: all .2s;
+                                                                                    width: 14px;
+                                                                                }
+                                                                                &.always-show {
+                                                                                    input {
+                                                                                        background-color: var(--plex-color);
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                            .progress-banner {
+                                                                                top: -5px;
+                                                                                position: relative;
+                                                                                z-index: 11;
+                                                                                .progress {
+                                                                                    background-color: rgba(0, 0, 0, 0.45);
+                                                                                }
+                                                                            }
+                                                                            app-image {
+                                                                                img {
+                                                                                    border-radius: 6px !important;
+                                                                                    overflow: hidden;
+                                                                                }
+                                                                            }
+                                                                            .not-read-badge {
+                                                                                /*border-radius: 0px 6px 0px 0px;
+                                                                                border-width: 0 20px 20px 0;*/
+                                                                                border-color: transparent var(--plex-color) transparent transparent;
+                                                                            }
+                                                                            .card-overlay {
+                                                                                transition: linear 250ms background-color;
+                                                                                border-radius: 5px;
+                                                                                border-top-right-radius: 0px;
+                                                                                &:hover {
+                                                                                    background-color: rgba(30, 30, 30, .6);
+                                                                                }
+                                                                            }
+                                                                            &:hover {
+                                                                                ~ .card-body {
+                                                                                    > div {
+                                                                                        .card-actions {
+                                                                                            opacity: 100%;
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                        &.selected-highlight {
+                                                                            outline: 0px solid transparent;
+                                                                            .overlay {
+                                                                                outline: 2px solid var(--plex-color);
+                                                                                border-radius: 5px;
+                                                                                border-top-right-radius: 0px;
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .side-nav {
+                width: 260px;
+                .side-nav-item {
+                    color: hsla(0, 0%, 100%, .75);
+                    transition: linear 300ms all;
+                    .active-highlight {
+                        transition: linear 300ms all;
+                    }
+                    .side-nav-text {
+                        font-size: 15px !important;
+                    }
+                    .card-actions {
+                        opacity: 0%;
+                        pointer-events: none;
+                        transition: linear 300ms all;
+                        display: flex;
+                        button {
+                            box-shadow: unset !important;
+                            border-color: transparent;
+                            i {
+                                color: hsla(0, 0%, 100%, .75);
+                            }
+                        }
+                    }
+                    .phone-hidden {
+                        div {
+                            i.fa {
+                                &::before {
+                                    transition: linear 300ms all;
+                                }
+                            }
+                        }
+                    }
+                    &:hover {
+                        background-color: transparent;
+                        color: #fff;
+                        .card-actions {
+                            opacity: 100%;
+                            pointer-events: all;
+                            button {
+                                &:hover {
+                                    border-color: transparent;
+                                    i {
+                                        color: #fff;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    &.active {
+                        color: var(--plex-color);
+                        background-color: transparent;
+                        .side-nav-text {
+                            color: unset !important;
+                        }
+                        .active-highlight {
+                            width: 2px;
+                            background-color: var(--plex-color);
+                        }
+                        .phone-hidden {
+                            div {
+                                i.fa {
+                                    &::before {
+                                        color: var(--plex-color);
+                                    }
+                                }
+                            }
+                        }
+                        &:hover {
+                            color: #fff;
+                            .active-highlight {
+                                background-color: #fff;
+                            }
+                            .phone-hidden {
+                                div {
+                                    i.fa {
+                                        &::before {
+                                            color: #fff;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width: 576px) {
+        .navbar {
+            border-radius: 0px;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            margin: unset;
+        }
+        body {
+            .content-wrapper {
+                .container-fluid {
+                    > div {
+                        .companion-bar-content {
+                            h6.subtitle-with-actionables {}
+                            > app-dashboard {
+                                app-carousel-reel {
+                                    .carousel-container {
+                                        > div:first-child {
+                                            > h3 {
+                                                a {}
+                                            }
+                                            div {
+                                                .btn {
+                                                    &:disabled {}
+                                                }
+                                            }
+                                        }
+                                        > div:nth-child(2) {
+                                            swiper {
+                                                .swiper-wrapper {
+                                                    .swiper-slide {
+                                                        app-card-item {
+                                                            .card {
+                                                                &:hover {
+                                                                    .overlay {
+                                                                        .card-overlay {}
+                                                                    }
+                                                                }
+                                                                .card-body {
+                                                                    a {}
+                                                                    > div {
+                                                                        span:first-child {
+                                                                            &:hover {}
+                                                                        }
+                                                                        .card-actions {
+                                                                            div[container="body"] {}
+                                                                        }
+                                                                    }
+                                                                }
+                                                                .overlay {
+                                                                    .count {
+                                                                        .badge {}
+                                                                    }
+                                                                    app-image {
+                                                                        img {}
+                                                                    }
+                                                                    .not-read-badge {}
+                                                                    .card-overlay {
+                                                                        &:hover {}
+                                                                    }
+                                                                    &:hover {
+                                                                        ~ .card-body {
+                                                                            > div {
+                                                                                .card-actions {}
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            > app-want-to-read {
+                                div {
+                                    > app-side-nav-companion-bar {
+                                        > div:first-child {
+                                            > div:first-child {
+                                                > h2 {}
+                                                > h6 {}
+                                            }
+                                        }
+                                    }
+                                    app-card-detail-layout {
+                                        .viewport-container {
+                                            .content-container {
+                                                .card-container {
+                                                    .vertical {
+                                                        .scrollable-content {
+                                                            .grid {
+                                                                .card {
+                                                                    &:hover {
+                                                                        .card {
+                                                                            .overlay {
+                                                                                .card-overlay {}
+                                                                            }
+                                                                            .card-body {
+                                                                                > div {
+                                                                                    .card-actions {}
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                    .card {
+                                                                        .card-body {
+                                                                            a {}
+                                                                            > div {
+                                                                                .card-actions {
+                                                                                    div[container="body"] {
+                                                                                        button {
+                                                                                            i {
+                                                                                                &::before {}
+                                                                                            }
+                                                                                            &:hover {
+                                                                                                i {
+                                                                                                    &::before {}
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                        .overlay {
+                                                                            app-image {
+                                                                                img {}
+                                                                            }
+                                                                            .not-read-badge {}
+                                                                            .card-overlay {
+                                                                                &:hover {}
+                                                                            }
+                                                                            &:hover {
+                                                                                ~ .card-body {
+                                                                                    > div {
+                                                                                        .card-actions {}
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            > app-all-series,
+                            > app-bookmarks,
+                            > app-reading-lists,
+                            > app-all-collections {
+                                > app-side-nav-companion-bar {
+                                    > div:first-child {
+                                        > div:first-child {
+                                            > h2 {}
+                                            > h6 {}
+                                        }
+                                    }
+                                }
+                                app-card-detail-layout {
+                                    .viewport-container {
+                                        .content-container {
+                                            .card-container {
+                                                .vertical {
+                                                    .scrollable-content {
+                                                        .grid {
+                                                            .card {
+                                                                &:hover {
+                                                                    .card {
+                                                                        .overlay {
+                                                                            .card-overlay {}
+                                                                        }
+                                                                        .card-body {
+                                                                            > div {
+                                                                                .card-actions {}
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                                .card {
+                                                                    .card-body {
+                                                                        a {}
+                                                                        > div {
+                                                                            .card-actions {
+                                                                                div[container="body"] {
+                                                                                    button {
+                                                                                        i {
+                                                                                            &::before {}
+                                                                                        }
+                                                                                        &:hover {
+                                                                                            i {
+                                                                                                &::before {}
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                    .overlay {
+                                                                        app-image {
+                                                                            img {}
+                                                                        }
+                                                                        .not-read-badge {}
+                                                                        .card-overlay {
+                                                                            &:hover {}
+                                                                        }
+                                                                        &:hover {
+                                                                            ~ .card-body {
+                                                                                > div {
+                                                                                    .card-actions {}
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            > app-library-detail {
+                                > app-bulk-operations {
+                                    .bulk-select {
+                                        width: 100%;
+                                        margin-top: 56px !important;
+                                    }
+                                }
+                                > app-side-nav-companion-bar {
+                                    > div:first-child {
+                                        > div:first-child {
+                                            > h2 {
+                                                * div {
+                                                    button {
+                                                        i {
+                                                            &::before {}
+                                                        }
+                                                        &:hover {
+                                                            i {
+                                                                &::before {}
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                                span {}
+                                            }
+                                        }
+                                        > div:nth-child(2) {
+                                            > div {
+                                                ul.nav {
+                                                    li.nav-item {
+                                                        .nav-link {
+                                                            &:hover {}
+                                                            &.active {
+                                                                &:hover {}
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                div.tab-content {
+                                    .tab-pane {
+                                        app-card-detail-layout {
+                                            .viewport-container {
+                                                .content-container {
+                                                    .card-container {
+                                                        .vertical {
+                                                            .scrollable-content {
+                                                                .grid {
+                                                                    .card {
+                                                                        &:hover {
+                                                                            .card {
+                                                                                .overlay {
+                                                                                    .card-overlay {}
+                                                                                }
+                                                                                .card-body {
+                                                                                    > div {
+                                                                                        .card-actions {}
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                        .card {
+                                                                            .card-body {
+                                                                                a {}
+                                                                                > div {
+                                                                                    .card-actions {
+                                                                                        div[container="body"] {
+                                                                                            button {
+                                                                                                i {
+                                                                                                    &::before {}
+                                                                                                }
+                                                                                                &:hover {
+                                                                                                    i {
+                                                                                                        &::before {}
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                            .overlay {
+                                                                                .bulk-mode {
+                                                                                    input {}
+                                                                                    &.always-show {
+                                                                                        input {}
+                                                                                    }
+                                                                                }
+                                                                                app-image {
+                                                                                    img {}
+                                                                                }
+                                                                                .not-read-badge {}
+                                                                                .card-overlay {
+                                                                                    &:hover {}
+                                                                                }
+                                                                                &:hover {
+                                                                                    ~ .card-body {
+                                                                                        > div {
+                                                                                            .card-actions {}
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                            &.selected-highlight {
+                                                                                .overlay {}
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .side-nav {
+                    .side-nav-item {
+                        .active-highlight {}
+                        .side-nav-text {}
+                        .card-actions {
+                            button {
+                                i {}
+                            }
+                        }
+                        .phone-hidden {
+                            div {
+                                i.fa {
+                                    &::before {}
+                                }
+                            }
+                        }
+                        &:hover {
+                            .card-actions {
+                                button {
+                                    &:hover {
+                                        i {}
+                                    }
+                                }
+                            }
+                        }
+                        &.active {
+                            .side-nav-text {}
+                            .active-highlight {}
+                            .phone-hidden {
+                                div {
+                                    i.fa {
+                                        &::before {}
+                                    }
+                                }
+                            }
+                            &:hover {
+                                .active-highlight {}
+                                .phone-hidden {
+                                    div {
+                                        i.fa {
+                                            &::before {}
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    /* Plex Style */
+    .navbar {
+        background-color: #00000099 !important;
+    }
+    body {
+        background: transparent;
+        &::before {
+            content: "";
+            z-index: -1;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: radial-gradient(circle farthest-side at 0% 100%, rgb(28, 28, 28) 0%, rgba(28, 28, 28, 0) 100%), radial-gradient(circle farthest-side at 100% 100%, rgb(38, 38, 38) 0%, rgba(38, 38, 38, 0) 100%), radial-gradient(circle farthest-side at 100% 0%, rgb(32, 32, 32) 0%, rgba(32, 32, 32, 0) 100%), radial-gradient(circle farthest-side at 0% 0%, rgb(51, 51, 51) 0%, rgba(51, 51, 51, 0) 100%), black;
+        }
+    }
+}
