@@ -13,7 +13,8 @@
 --input-text-color: black;
 
 /** Dropdown/Action Menu **/
---dropdown-item-bg-color: 
+--dropdown-item-bg-color: white;
+--dropdown-item-text-color: black;
 
 /** Tabs **/
 --nav-tab-text-color: black;
