@@ -8,7 +8,7 @@ This will serve as a central hub to store all community made themes
 | Theme Name | Author | Description                                         | Kavita Compatibility |
 |------------|--------|-----------------------------------------------------|----------------------|
 | E-Ink      | [Joe Milazzo](https://github.com/majora2007)    | A simplified theme for e-ink devices                | 0.5.2.x              |
-| Light      | [Joe Milazzo](https://github.com/majora2007)    | A light theme for those that don't like dark themes | 0.5.2.x              |
+| Light      | [Joe Milazzo](https://github.com/majora2007)    | A light theme for those that don't like dark themes | 0.7.14               |
 | Dracula    | @Mat#6627 | A Dracula inspired theme                            | ?                    |
 |            |           |                                                     |                      |
 
