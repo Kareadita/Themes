@@ -1,0 +1,183 @@
+/* Brilliance is a modern greyscale theme primarly for e-readers. Made by ElryWeeb */
+:root .bg-brilliance {
+--color-scheme: light;
+--theme-color: white;
+--tile-color: white;
+--bs-body-bg: white;
+--body-text-color: black;
+--btn-icon-filter: none;
+--primary-color: #303030;
+--primary-color-dark-shade: #222222;
+--secondary-color: #585858;
+
+/** Inputs **/
+--input-bg-color: #fff;
+--input-bg-readonly-color: lightgrey;
+--input-text-color: black;
+
+/** Dropdown/Action Menu **/
+--dropdown-item-bg-color: white;
+--dropdown-item-text-color: black;
+
+/** Tabs **/
+--nav-tab-text-color: black;
+--nav-link-text-color: black;
+--nav-tab-hover-border-bottom: white;
+
+/** Tag Badge **/
+--tagbadge-border-color: lightgrey;
+
+/** Badge **/
+--badge-text-color: black;
+
+/** Side Nav **/
+--side-nav-bg-color: white;
+--side-nav-mobile-bg-color: white;
+--side-nav-hover-text-color: var(--primary-color);
+--side-nav-hover-bg-color: lightgrey;
+--side-nav-color: black;
+--side-nav-text-color: black;
+--side-nav-active-bg-color: white;
+--side-nav-item-active-text-color: var(--primary-color);
+
+/** List items **/
+--list-group-item-bg-color: lightgrey;
+--list-group-item-text-color: white;
+--list-group-hover-bg-color: white;
+--list-group-hover-text-color: var(--primary-color);
+--list-group-active-border-color: var(--primary-color);
+--list-group-item-text-color: black;
+
+/** Popover **/
+--popover-body-bg-color: lightgrey;
+--popover-body-text-color: black;
+
+/** Accordion **/
+--accordion-header-bg-color: white;
+--accordion-body-bg-color: white;
+--accordion-body-text-color: black;
+--accordion-header-collapsed-text-color: black;
+--accordion-header-collapsed-bg-color: lightgrey;
+--accordion-button-focus-border-color: black;
+--accordion-active-body-bg-color: white;
+
+/** Breadcrumb **/
+--breadcrumb-bg-color: lightgrey;
+--breadcrumb-item-text-color: black;
+
+/** Global **/
+--hr-color: black;
+--accent-bg-color: lightgrey;
+--accent-text-color: black;
+--text-muted-color: grey;
+
+/** Card **/
+--card-bg-color: white;
+--card-text-color: black;
+
+/** Carousel **/
+--carousel-btn-color: black;
+
+/** Drawer **/
+--drawer-bg-color: white;
+--drawer-text-color: black;
+
+/** Event Widget **/
+--event-widget-bg-color: white;
+--event-widget-item-bg-color: white;
+--event-widget-text-color: black;
+--event-widget-item-border-color: black;
+--event-widget-border-color: black;
+
+/** Review Card **/
+--review-spoiler-bg-color: white;
+--review-spoiler-text-color: black;
+
+/** Scrollbar **/
+--primary-color-scrollbar: var(--primary-color);
+
+/** Border **/
+--nav-tab-color: rgba(112, 112, 112, 0.7);
+
+--nav-tab-border-color: var(--nav-tab-color);
+--nav-tab-border-top: var(--nav-tab-color);
+--nav-tab-border-left: var(--nav-tab-color);
+--nav-tab-border-bottom: var(--nav-tab-color);
+--nav-tab-border-right: var(--nav-tab-color);
+--nav-tab-hover-border-right: var(--nav-tab-color);
+--nav-tab-hover-border-top: var(--nav-tab-color);
+--nav-tab-hover-border-right: var(--nav-tab-color);
+
+/** Toast **/
+--toast-success-bg-color: var(--primary-color);
+--toast-error-bg-color: var(--secondary-color);
+--toast-info-bg-color: var(--primary-color);
+--toast-warning-bg-color: var(--primary-color-dark-shade);
+
+/** Progress **/
+--progress-striped-animated-color: linear-gradient(45deg, rgba(199, 199, 199, 0.75) 25%, 
+rgba(129, 129, 129, 0.75) 25%, 
+rgba(139, 139, 139, 0.75) 50%, 
+rgba(196, 196, 196, 0.75) 50%, 
+rgba(191, 192, 192, 0.75) 75%, 
+rgba(134, 134, 134, 0.75) 75%, 
+rgba(136, 136, 136, 0.75));
+
+/** Header **/ 
+--accordion-header-text-color: var(--secondary-color);
+--accordion-header-collapsed-text-color: var(--secondary-color);
+
+/** Manga Reader **/
+--manga-reader-next-highlight-bg-color: var(--primary-color);
+--manga-reader-prev-highlight-bg-color: var(--primary-color);
+
+/** Other **/
+--event-widget-info-bg-color: var(--secondary-color);
+--review-card-star-color: var(--primary-color);
+
+}
+
+/** Greyscale Stuff **/
+.reading-area {
+	filter: grayscale(1);
+}
+
+.logo {
+	filter: grayscale(1);
+}
+
+.image-container {
+	filter: grayscale(1);
+}
+
+.card-item-container {
+	filter: grayscale(1);
+}
+
+.badge {
+	filter: grayscale(1);
+}
+
+/** UI Improvement **/
+.mb-2 {
+	min-width: 75px;
+}
+
+/** Buttons **/
+.btn-outline-primary {
+	--bs-btn-color: var(--secondary-color) !important;
+	--bs-btn-border-color: var(--secondary-color) !important;
+	--bs-btn-hover-bg: var(--secondary-color) !important;
+	--bs-btn-hover-border-color: var(--secondary-color) !important;
+	--bs-btn-active-bg: var(--secondary-color) !important;
+	--bs-btn-active-border-color: var(--secondary-color) !important;
+	--bs-btn-disabled-color: var(--secondary-color) !important;
+	--bs-btn-disabled-border-color: var(--secondary-color) !important;
+}
+
+.btn-danger {
+	--bs-btn-bg: var(--primary-color) !important;
+	--bs-btn-border-color: var(--primary-color) !important;
+	--bs-btn-hover-bg: var(--secondary-color) !important;
+	--bs-btn-hover-border-color: var(--secondary-color) !important;
+}
