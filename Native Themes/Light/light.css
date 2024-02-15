@@ -1,6 +1,6 @@
 /* A bare minimum starting place for a light theme of Kavita, updated as of v0.7.14 by majora2007 */
 :root .bg-light {
---color-scheme: light
+--color-scheme: light;
 --theme-color: white;
 --tile-color: white;
 --bs-body-bg: white;
