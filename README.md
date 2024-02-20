@@ -9,6 +9,7 @@ This will serve as a central hub to store all community made themes
 |------------|--------|-----------------------------------------------------|----------------------|
 | Light      | [majora2007](https://github.com/majora2007)    | A light theme for those that don't like dark themes | 0.7.14               |
 | Brilliance | [Elry](https://github.com/ElryWeeb)            | A modern theme for e-ink devices (update for E-Ink) | 0.7.14               |
+| Nord       | [ice45core0](https://github.com/ice45core0)    | A dark pastel theme using the Nord color palette    | 0.7.14               |
 | E-Ink      | [majora2007](https://github.com/majora2007)    | A simplified theme for e-ink devices                | 0.5.2.x              |
 | Dracula    | @Mat#6627                                      | A Dracula inspired theme                            | ?                    |
 
