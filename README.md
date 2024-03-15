@@ -21,9 +21,9 @@ This will serve as a central hub to store all community made themes
 5. Apply and/or Set Default your newly added theme.
 ---
 ## Style Injected Themes
-| Theme Name | Author | Description                                         | Kavita Compatibility |
+| Theme Name | Author | Description                                         | Kavita Compatibility | Preview |
 |------------|--------|-----------------------------------------------------|----------------------|
-| Plex-like      | [MrRobotjs](https://github.com/MrRobotjs)    | A Plex-inspired theme                | ?           |
+| Plex-like      | [MrRobotjs](https://github.com/MrRobotjs)    | A Plex-inspired theme                | ?           | (Preview)[https://github.com/Kareadita/Themes/blob/main/Style%20Injected%20Themes/Plex-like/preview.png]
 |            |        |                                                     |                      |
 
 ### Style Injected Theme Installation
