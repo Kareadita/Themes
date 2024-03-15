@@ -5,7 +5,7 @@ This will serve as a central hub to store all community made themes
 
 ---
 ## Native Themes
-| Theme Name | Author | Description                                         | Kavita Compatibility | Preview |
+| Theme Name | Author | Description                                         | Kavita Compatibility | Preview | 
 |------------|--------|-----------------------------------------------------|----------------------|
 | Light      | [majora2007](https://github.com/majora2007)    | A light theme for those that don't like dark themes | 0.7.14               | (Preview)[https://github.com/Kareadita/Themes/blob/main/Native%20Themes/Light/example.png]
 | Brilliance | [Elry](https://github.com/ElryWeeb)            | A modern theme for e-ink devices (update for E-Ink) | 0.7.14               | (Preview)[https://github.com/Kareadita/Themes/blob/main/Native%20Themes/Brilliance/preview.png]
@@ -21,7 +21,7 @@ This will serve as a central hub to store all community made themes
 5. Apply and/or Set Default your newly added theme.
 ---
 ## Style Injected Themes
-| Theme Name | Author | Description                                         | Kavita Compatibility | Preview |
+| Theme Name | Author | Description                                         | Kavita Compatibility | Preview | 
 |------------|--------|-----------------------------------------------------|----------------------|
 | Plex-like      | [MrRobotjs](https://github.com/MrRobotjs)    | A Plex-inspired theme                | ?           | (Preview)[https://github.com/Kareadita/Themes/blob/main/Style%20Injected%20Themes/Plex-like/preview.png]
 |            |        |                                                     |                      |
