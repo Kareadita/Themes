@@ -11,8 +11,11 @@ This will serve as a central hub to store all community made themes
 | Brilliance | [Elry](https://github.com/ElryWeeb)            | A modern theme for e-ink devices (update for E-Ink) | 0.7.14               | [Preview](https://github.com/Kareadita/Themes/blob/main/Native%20Themes/Brilliance/preview.png) |
 | Nord       | [ice45core0](https://github.com/ice45core0)    | A dark pastel theme using the Nord color palette    | 0.7.14               | [Preview](https://github.com/Kareadita/Themes/blob/main/Native%20Themes/Nord/preview.png) |
 | E-Ink      | [majora2007](https://github.com/majora2007)    | A simplified theme for e-ink devices                | 0.5.2.x              | N/A |
-| Dracula    | [Matguitarist](https://github.com/matguitarist)| A Dracula inspired theme                            | ?                    | [Preview](https://github.com/Kareadita/Themes/blob/main/Native%20Themes/Dracula/preview.jpg) |
-| Overseerr  | [Matguitarist](https://github.com/matguitarist)| A Overseer inspired theme                           | 0.7.14               | [Preview](https://github.com/Kareadita/Themes/blob/main/Native%20Themes/Overseerr/preview.png) |
+| Dracula    | [Matguitarist](https://github.com/matguitarist)| A Dracula inspired theme                            | 0.7.14               | [Preview](https://github.com/Kareadita/Themes/blob/main/Native%20Themes/Dracula/preview.jpg) |
+| Overseerr  | [Matguitarist](https://github.com/matguitarist)| A Overseer inspired theme                           | 0.7.14               | [Preview](https://github.com/Kareadita/Themes/blob/main/Native%20Themes/Overseerr/preview.jpg) |
+=======
+
+
 
 ### Native Theme Installation
 1. Download the `theme-name.css` file.
