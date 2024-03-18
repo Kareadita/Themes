@@ -73,7 +73,7 @@
     /* Nav */
     --nav-tab-border-color: var(--primary-color);
     --nav-tab-text-color: var(--body-text-color);
-    --nav-tab-bg-color: var(--primary-color);
+    --nav-tab-bg-color: rgba(90, 68, 81, 0.75);
     --nav-tab-hover-border-color: var(--primary-color);
     --nav-tab-active-text-color: #F8F8F2;
     --nav-tab-border-hover-color: transparent;
@@ -156,12 +156,12 @@
 
     /* Accordion */
     --accordion-header-text-color: #F8F8F2;
-    --accordion-header-bg-color: rgba(240, 147, 249, 0.8);
-    --accordion-body-bg-color: rgba(249, 147, 244, 0.5);
-    --accordion-body-border-color: rgba(90, 68, 90, 0.75);
+    --accordion-header-bg-color: rgba(249, 147, 232, 0.8);
+    --accordion-body-bg-color: rgba(249, 147, 181, 0.5);
+    --accordion-body-border-color: rgba(90, 68, 81, 0.75);
     --accordion-body-text-color: var(--body-text-color);
     --accordion-header-collapsed-text-color: #F8F8F2;
-    --accordion-header-collapsed-bg-color: #5a4457;
+    --accordion-header-collapsed-bg-color: #5a4453;
     --accordion-button-focus-border-color: unset;
     --accordion-button-focus-box-shadow: unset;
     --accordion-active-body-bg-color: #5a4458;
