@@ -9,8 +9,7 @@
     --error-color: #dd8181;
     --bs-body-bg: #ffc4cf;
     --body-text-color: #f996ae;
-    --body-link-color: #f9d696;
-    --body-link-active: #ffe7bb;
+
 
     /* Scrollbar */
     --primary-color-scrollbar: #f996ae;
@@ -91,10 +90,10 @@
     --nav-tab-active-hover-bg-color: var(--primary-color);
 
     --nav-link-bg-color: var(--primary-color);
-    --nav-link-active-text-color:var(--body-link-active);
-    --nav-link-text-color: var(--body-link-color);
+    --nav-link-active-text-color:var(--body-text-color);
+    --nav-link-text-color: var(--body-text-color);
 
-    --nav-header-text-color: var(--body-tet-color);
+    --nav-header-text-color: var(--body-text-color);
     --nav-header-bg-color: RGB(68, 71, 90);
 
     /* Toasts */
