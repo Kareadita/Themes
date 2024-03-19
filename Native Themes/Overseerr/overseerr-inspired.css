@@ -2,10 +2,10 @@
 
 	/* Main Colors Variables*/
 	--color-scheme: dark;
-	--primary-color: #4540c2;
-	--primary-color-dark-shade: #895df5;
-	--primary-color-darker-shade: #895df4;
-	--primary-color-darkest-shade: #114, 90, 246;
+	--primary-color: #935af5;
+	--primary-color-dark-shade: #7E3AF3;
+	--primary-color-darker-shade: #6A1BF1;
+	--primary-color-darkest-shade: #5A0DDD;
 	--error-color: #b32326;
 	--bs-body-bg: #111827;
 	--body-text-color: #ffffff;
@@ -55,10 +55,10 @@
 	/* Buttons */
 	--btn-focus-boxshadow-color: rgb(255 255 255 / 50%);
 	--btn-primary-text-color: #ffffff;
-	--btn-primary-bg-color: #4540c2;
-	--btn-primary-border-color: #4540c2;
+	--btn-primary-bg-color: var(--primary-color);
+	--btn-primary-border-color: var(--primary-color-dark-shade);
 	--btn-primary-hover-text-color: #ffffff;
-	--btn-primary-hover-bg-color: #5a54ff;
+	--btn-primary-hover-bg-color: var(--primary-color-dark-shade);
 	--btn-primary-hover-border-color: #5a54ff;
 	--btn-alt-bg-color: #424c72;
 	--btn-alt-border-color: #444f75;
@@ -144,8 +144,8 @@
 
 	/* Progress */
 	--progress-striped-animated-color: linear-gradient(45deg, rgba(205, 91, 255, .75) 25%, rgba(147, 90, 245, .75) 25%, rgba(147, 90, 245, .75) 50%, rgba(205, 91, 255, .75) 50%, rgba(205, 91, 255, .75) 75%, rgba(147, 90, 245, .75) 75%, rgba(147, 90, 245, .75));
-	--progress-bg-color: var(--nav-header-bg-color);
-	--progress-bar-color: var(--primary-color-dark-shade);
+    --progress-bg-color: var(--nav-header-bg-color);
+    --progress-bar-color: var(--primary-color-dark-shade);
 
 
 	/* Dropdown */
@@ -193,14 +193,13 @@
 	--card-text-color: var(--body-text-color);
 	--card-border-width: 2px 2px 2px 2px;
 	--card-border-style: solid;
-    --card-border-color: rgba(142, 145, 149, 0.1);/
+    --card-border-color: rgba(142, 145, 149, 0.1);
     --card-progress-bar-color: #8153d8;
 	--card-overlay-bg-color: rgba(0, 0, 0, 0);
 	--card-overlay-hover-bg-color: rgba(0, 0, 0, .20);
 
 	/* Slider */
 	--slider-text-color: #ffffff;
-
 
 	/* Manga Reader */
 	--manga-reader-overlay-filter: blur(10px);
@@ -241,4 +240,15 @@
 
 	/* Card list */
     --card-list-item-bg-color: linear-gradient(180deg, rgba(26, 26, 26, 0.15) 0%, rgba(26, 26, 26, .15) 1%, rgba(26, 26, 26, 0) 100%);
+
+}
+
+/* Make the Kavita fit the Theme */
+/*.navbar-brand {
+    color: #8153d8 !important;
+}*/
+
+/* Otherwise Progressbar stays green, bug is reported. */
+.progress-bar {
+    background-color: #8153d8 !important;
 }

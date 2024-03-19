@@ -242,3 +242,7 @@
     --card-list-item-bg-color: linear-gradient(180deg, rgba(0,0,0,.15) 0%, rgba(0,0,0,.15) 1%, rgba(0,0,0,0) 100%);
 }
 
+/* Otherwise Progressbar stays green, bug is reported. */
+.progress-bar {
+    background-color: #50FA7B !important;
+}
