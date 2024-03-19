@@ -13,6 +13,8 @@ This will serve as a central hub to store all community made themes
 | E-Ink      | [majora2007](https://github.com/majora2007)    | A simplified theme for e-ink devices                | 0.5.2.x              | N/A |
 | Dracula    | [Matguitarist](https://github.com/matguitarist)| A Dracula inspired theme                            | 0.7.14               | [Preview](https://github.com/Kareadita/Themes/blob/main/Native%20Themes/Dracula/preview.jpg) |
 | Overseerr  | [Matguitarist](https://github.com/matguitarist)| A Overseer inspired theme                           | 0.7.14               | [Preview](https://github.com/Kareadita/Themes/blob/main/Native%20Themes/Overseerr/preview.jpg) |
+| Aquamarine  | [Matguitarist](https://github.com/matguitarist)| An Aquamarine theme                                | 0.7.14               | [Preview](https://github.com/Kareadita/Themes/blob/main/Native%20Themes/Aquamarine/preview.jpg) |
+| Solarized  | [Matguitarist](https://github.com/matguitarist)| A Solarized theme                                   | 0.7.14               | [Preview](https://github.com/Kareadita/Themes/blob/main/Native%20Themes/Solarized/preview.jpg) |
 =======
 
 
