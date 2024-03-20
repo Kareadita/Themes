@@ -245,6 +245,9 @@
 /* Make the Kavita fit the Theme */
 .navbar-brand {
     color: var(--primary-color) !important;
+    .img {
+        filter: hue-rotate(148deg);
+    }
 }
 
 /* Otherwise Progressbar stays green, bug is reported. */

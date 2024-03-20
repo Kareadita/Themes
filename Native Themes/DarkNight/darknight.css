@@ -245,3 +245,11 @@
 .progress-bar {
     background-color: var(--primary-color) !important;
 }
+
+/* Make the Kavita fit the Theme */
+.navbar-brand {
+    color: var(--primary-color) !important;
+    .img {
+        filter: hue-rotate(108deg);
+    }
+}
