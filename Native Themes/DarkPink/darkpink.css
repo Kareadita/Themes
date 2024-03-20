@@ -246,9 +246,12 @@
 }
 
 /* Make the Kavita fit the Theme */
-/*.navbar-brand {
-    color: #8153d8 !important;
-}*/
+.navbar-brand {
+    color: var(--primary-color) !important;
+    .logo.img-placeholder {
+        filter: hue-rotate(190deg) brightness(100%) saturate(200%);
+    }
+}
 
 /* Otherwise Progressbar stays green, bug is reported. */
 .progress-bar {
