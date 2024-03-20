@@ -245,7 +245,7 @@
 /* Make the Kavita fit the Theme */
 .navbar-brand {
     color: var(--primary-color) !important;
-    .img {
+    .logo.img-placeholder {
         filter: hue-rotate(148deg);
     }
 }
