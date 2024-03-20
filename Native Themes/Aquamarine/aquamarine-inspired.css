@@ -1,33 +1,35 @@
-:root .bg-dracula-inspired {
+:root .bg-aquamarine-inspired {
 
-    /* Main Colors */
+    /* Main Colors variables*/
     --color-scheme: dark;
-    --primary-color: #50FA7B;
-    --primary-color-dark-shade: #48E16E;
-    --primary-color-darker-shade: #50FA7B;
-    --primary-color-darkest-shade: #40C862;
-    --error-color: #FF5555;
-    --bs-body-bg: #282A36;
+    --primary-color: #e47d0d;
+    --primary-color-dark-shade: #CD700B;
+    --primary-color-darker-shade: #CD700B;
+    --primary-color-darkest-shade: #9F5709;
+    --nav-tab-border: rgba(228, 125, 13, .7);
+    --error-color: #f05050;
+    --bs-body-bg: #275d74;
     --body-text-color: #F8F8F2;
     --btn-icon-filter: invert(1) grayscale(100%) brightness(200%);
 
+
     /* Scrollbar */
-    --primary-color-scrollbar: rgba(80, 250, 123,.75);
+    --primary-color-scrollbar: rgba(182, 182, 187, 0.5);;
 
     /* Navbar */
-    --navbar-bg-color: #44475a;
-    --navbar-text-color: #F8F8F2;
-    --navbar-fa-icon-color: #F8F8F2;
+    --navbar-bg-color: rgba(7, 30, 56,.4);
+    --navbar-text-color: #bac5cc;
+    --navbar-fa-icon-color: #bac5cc;
     --navbar-btn-hover-outline-color: rgba(255, 255, 255, 1);
 
     /* Side Nav */
-    --side-nav-bg-color: rgba(68,71,90,.4);
-    --side-nav-mobile-bg-color: rgba(68,71,90,.3);
+    --side-nav-bg-color: rgba(19, 47, 62,.4);
+    --side-nav-mobile-bg-color: rgba(19, 47, 62, .4);
     --side-nav-openclose-transition: .15s ease-in-out;
     --side-nav-box-shadow: rgba(0,0,0,.5);
     --side-nav-mobile-box-shadow: 3px 0em 5px 10em rgb(0 0 0 / 50%);
     --side-nav-hover-text-color: #F8F8F2;
-    --side-nav-hover-bg-color: #50FA7B;
+    --side-nav-hover-bg-color: rgba(182, 182, 187, 0.5);
     --side-nav-color: #F8F8F2;
     --side-nav-border-radius: 5px;
     --side-nav-border: none;
@@ -36,14 +38,14 @@
     --side-nav-companion-bar-transistion: .15s linear;
     --side-nav-bg-color-transition: .5s ease-in-out;
     --side-nav-closed-bg-color: transparent;
-    --side-nav-item-active-color: #40C862;
+    --side-nav-item-active-color: #e47d0d;
     --side-nav-item-active-text-color: #F8F8F2;
-    --side-nav-active-bg-color: #50FA7B;
+    --side-nav-active-bg-color: rgba(182, 182, 187, 0.5);
     --side-nav-overlay-color: #6272a4;
 
     /* Inputs */
-    --input-bg-color: #282A36;
-    --input-bg-readonly-color: rgba(189, 147, 249, .5);
+    --input-bg-color: rgba(40, 42, 54, .5);
+    --input-bg-readonly-color: rgba(182, 182, 187, 0.8);
     --input-focused-border-color: #ccc;
     --input-text-color: #fff;
     --input-placeholder-color: #aeaeae;
@@ -58,7 +60,7 @@
     --btn-primary-bg-color: var(--primary-color);
     --btn-primary-border-color: var(--primary-color);
     --btn-primary-hover-text-color: #F8F8F2;
-    --btn-primary-hover-bg-color: #40C862;
+    --btn-primary-hover-bg-color: #CD700B;
     --btn-primary-hover-border-color: rgb(255 255 255 / 50%);
     --btn-alt-bg-color: #424c72;
     --btn-alt-border-color: #444f75;
@@ -71,22 +73,22 @@
     --btn-disabled-border-color: #6c757d;
 
     /* Nav */
-    --nav-tab-border-color: rgba(80,250,123, .7);
+    --nav-tab-border-color: var(--nav-tab-border);
     --nav-tab-text-color: var(--body-text-color);
     --nav-tab-bg-color: var(--primary-color);
     --nav-tab-hover-border-color: var(--primary-color);
     --nav-tab-active-text-color: #F8F8F2;
     --nav-tab-border-hover-color: transparent;
     --nav-tab-hover-text-color: var(--body-text-color);
-    --nav-tab-hover-bg-color: #40C862;
-    --nav-tab-border-top: rgba(80,250,123, .7);
-    --nav-tab-border-left: rgba(80,250,123, .7);
-    --nav-tab-border-bottom: rgba(80,250,123, .7);
-    --nav-tab-border-right: rgba(80,250,123, .7);
-    --nav-tab-hover-border-top: rgba(80,250,123, .7);
-    --nav-tab-hover-border-left: rgba(80,250,123, .7);
+    --nav-tab-hover-bg-color: transparent;
+    --nav-tab-border-top: var(--nav-tab-border);
+    --nav-tab-border-left: var(--nav-tab-border);
+    --nav-tab-border-bottom: var(--nav-tab-border);
+    --nav-tab-border-right: var(--nav-tab-border);
+    --nav-tab-hover-border-top: var(--nav-tab-border);
+    --nav-tab-hover-border-left: var(--nav-tab-border);
     --nav-tab-hover-border-bottom: var(--bs-body-bg);
-    --nav-tab-hover-border-right: rgba(80,250,123, .7);
+    --nav-tab-hover-border-right: var(--nav-tab-border);
     --nav-tab-active-hover-bg-color: var(--primary-color);
 
     --nav-link-bg-color: var(--primary-color);
@@ -97,8 +99,8 @@
     --nav-header-bg-color: RGB(68, 71, 90);
 
     /* Toasts */
-    --toast-success-bg-color: rgba(80,250,123, .9);
-    --toast-error-bg-color: #ff5555;
+    --toast-success-bg-color: rgba(39, 194, 76, .9);
+    --toast-error-bg-color: #f05050;
     --toast-info-bg-color: #8BE9FD;
     --toast-warning-bg-color: #FFB86C;
 
@@ -156,12 +158,12 @@
 
     /* Accordion */
     --accordion-header-text-color: #F8F8F2;
-    --accordion-header-bg-color: rgba(189, 147, 249, .8);
-    --accordion-body-bg-color: rgba(189, 147, 249, .50);
-    --accordion-body-border-color: rgba(68, 71, 90, .75);
+    --accordion-header-bg-color: rgba(182, 182, 187, 0.8);
+    --accordion-body-bg-color: rgba(182, 182, 187, 0.5);
+    --accordion-body-border-color: rgba(182, 182, 187, 0.5);
     --accordion-body-text-color: var(--body-text-color);
     --accordion-header-collapsed-text-color: #F8F8F2;
-    --accordion-header-collapsed-bg-color: #44475a;
+    --accordion-header-collapsed-bg-color: rgba(17, 46, 62, .6);
     --accordion-button-focus-border-color: unset;
     --accordion-button-focus-box-shadow: unset;
     --accordion-active-body-bg-color: #44475a;
@@ -244,5 +246,5 @@
 
 /* Otherwise Progressbar stays green, bug is reported. */
 .progress-bar {
-    background-color: #50FA7B !important;
+    background-color: #e47d0d !important;
 }
