@@ -49,4 +49,4 @@ This will serve as a central hub to store all community made themes
 5. Submit a PR.
 ---
 ## Creating a Theme
-Please follow the documentation on our Wiki: https://wiki.kavitareader.com/en/guides/settings/themes
+Please follow the documentation on our Wiki: https://wiki.kavitareader.com/guides/themes
