@@ -44,8 +44,8 @@ This will serve as a central hub to store all community made themes
 1. Clone the repo.
 2. Create a folder with your theme name in the appropriate top level folder (native or style injected).
 3. Add your `theme-name.css` file inside the created folder with the appropriate filename. 
-    - You can optionally add a preview image with the following format: `preview.ext`
-4. Add your theme to the `README.md` table with all fields filled out.
+    - You can optionally add a preview image with the following format: `preview.ext` (feel free to add multiple showcasing your theme)
+4. Add your theme to the `README.md` table with all fields filled out. Ensure the Theme Name matches the Folder name exactly.
 5. Submit a PR.
 ---
 ## Creating a Theme
