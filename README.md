@@ -19,12 +19,16 @@ This will serve as a central hub to store all community made themes
 | Solarized  | [Matguitarist](https://github.com/matguitarist) | A Solarized theme                                   | 0.7.14               | [Preview](https://github.com/Kareadita/Themes/blob/main/Native%20Themes/Solarized/preview.jpg) |
 | DarkPink   | [Matguitarist](https://github.com/matguitarist) | A Darkpink theme                                    | 0.7.14               | [Preview](https://github.com/Kareadita/Themes/blob/main/Native%20Themes/DarkPink/preview.jpg) |
 
-### Native Theme Installation
+### Native Theme Installation (pre-v0.8.2.0)
 1. Download the `theme-name.css` file.
 2. Place it in the `/config/themes` folder of your [Kavita](https://github.com/Kareadita/Kavita) installation.
 3. Within Kavita, navigate to your user settings and click the Theme tab.
 4. Click the Scan button.
 5. Apply and/or Set Default your newly added theme.
+
+### Native Theme Installation (v0.8.2.0+)
+1. Open the Theme tab under user preferences and download and apply the appropriate them in this repo.
+
 ---
 ## Style Injected Themes
 | Theme Name | Author | Description                                         | Kavita Compatibility | Preview | 
@@ -47,6 +51,9 @@ This will serve as a central hub to store all community made themes
     - You can optionally add a preview image with the following format: `preview.ext` (feel free to add multiple showcasing your theme)
 4. Add your theme to the `README.md` table with all fields filled out. Ensure the Theme Name matches the Folder name exactly.
 5. Submit a PR.
+
+! Note: Your folder name and theme filename should match for the theme to work correctly in Kavita.
+
 ---
 ## Creating a Theme
 Please follow the documentation on our Wiki: https://wiki.kavitareader.com/guides/themes
