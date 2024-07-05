@@ -112,6 +112,7 @@
 
     /* Card */
     --card-text-color: #000;
+    --card-bg-color: white;
     --card-border-width: 0 1px 1px 1px;
     --card-border-style: solid;
     --card-border-color: #ccc;
