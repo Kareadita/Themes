@@ -127,6 +127,7 @@
     --list-group-active-border-color: none;
 
     /* Dropdown */
+    --dropdown-item-text-color: black;
     --dropdown-item-hover-text-color: white;
     --dropdown-item-hover-bg-color: var(--primary-color);
     --dropdown-overlay-color: rgba(0,0,0,0.5);
