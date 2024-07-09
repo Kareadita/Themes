@@ -188,4 +188,11 @@
     /* Bulk Selection */
     --bulk-selection-text-color: white;
     --bulk-selection-highlight-text-color: white;
+
+    /* Accordion */
+    --accordion-header-text-color: black;
+    --accordion-body-bg-color: white;
+    --accordion-header-collapsed-text-color: black;
+    --accordion-header-collapsed-bg-color: white;
+    --accordion-body-border-color: black;
   }
