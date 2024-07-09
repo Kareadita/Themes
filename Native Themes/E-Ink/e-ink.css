@@ -16,6 +16,7 @@
     --navbar-btn-hover-outline-color: rgba(255, 255, 255, 1);
 
     /* Inputs */
+    --input-text-color: black;
     --input-bg-color: #fff;
     --input-focused-border-color: #ccc;
     --input-bg-readonly-color: rgba(0,0,0,0.2);
