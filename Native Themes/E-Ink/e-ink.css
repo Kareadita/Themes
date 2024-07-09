@@ -50,6 +50,7 @@
     --nav-link-hover-text-color: var(--primary-color);
     --nav-tab-border-hover-color: transparent;
     --nav-tab-active-text-color: white;
+    --nav-tab-hover-text-color: black;
     --nav-tab-text-color: var(--body-text-color);
     --nav-tab-bg-color: black;
     --nav-tab-hover-border-color: black;
