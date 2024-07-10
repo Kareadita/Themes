@@ -8,6 +8,7 @@
     --bs-body-bg: #fff;
     --body-text-color: black;
     --btn-icon-filter: invert(1) grayscale(100%) brightness(200%);
+    --primary-color-scrollbar: black;
 
     /* Navbar */
     --navbar-bg-color: black;
@@ -82,9 +83,9 @@
     --side-nav-companion-bar-transistion: 0s;
     --side-nav-closed-bg-color: transparent;
     --side-nav-item-active-color: var(--primary-color);
-    --side-nav-active-bg-color: rgba(0,0,0,0.5);
+    --side-nav-active-bg-color: rgba(0,0,0,0);
     --side-nav-overlay-color: rgba(0,0,0,1);
-    --side-nav-item-active-text-color: white;
+    --side-nav-item-active-text-color: black;
 
     /* Toasts */
     --toast-success-bg-color: rgba(74, 198, 148, 0.9);
