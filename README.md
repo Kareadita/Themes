@@ -31,6 +31,7 @@ This will serve as a central hub to store all community made themes
 1. Open the Theme tab under user preferences and download and apply the appropriate them in this repo.
 
 ---
+
 ## Style Injected Themes
 | Theme Name | Author | Description                                         | Kavita Compatibility | Preview | 
 |------------|--------|-----------------------------------------------------|----------------------|---------|
@@ -44,6 +45,7 @@ This will serve as a central hub to store all community made themes
 4. If scss, compile to css using your preferred method. [You can do it online.](https://www.cssportal.com/scss-to-css/)
 5. Install the theme in the style injector extension.
 6. Load/Refresh your Kavita site.
+
 ---
 ## Contributing
 1. Clone the repo.
@@ -54,6 +56,13 @@ This will serve as a central hub to store all community made themes
 5. Submit a PR.
 
 ! Note: Your folder name and theme filename should match for the theme to work correctly in Kavita.
+
+---
+## Issues
+If you have an issue, raise an Issue with the theme name in the title i.e. `[Light] Side Nav not readable on mobile` and tag the person from the Readme table. 
+Kavita team does not provide support on any themes, even those created by majora2007. 
+
+If you identify bugs in the themeing, please raise an Issue on the Kavita Github for support or development work. Theme feature requests belong on the Kavita Discussions. 
 
 ---
 ## Creating a Theme
