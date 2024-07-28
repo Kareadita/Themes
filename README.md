@@ -19,6 +19,7 @@ This will serve as a central hub to store all community made themes
 | Aquamarine | [Matguitarist](https://github.com/matguitarist) | An Aquamarine theme                                 | 0.7.14               | [Preview](https://github.com/Kareadita/Themes/blob/main/Native%20Themes/Aquamarine/preview.jpg) |
 | Solarized  | [Matguitarist](https://github.com/matguitarist) | A Solarized theme                                   | 0.7.14               | [Preview](https://github.com/Kareadita/Themes/blob/main/Native%20Themes/Solarized/preview.jpg) |
 | DarkPink   | [Matguitarist](https://github.com/matguitarist) | A Darkpink theme                                    | 0.7.14               | [Preview](https://github.com/Kareadita/Themes/blob/main/Native%20Themes/DarkPink/preview.jpg) |
+| Battery-Saver-Dark-Mode | [RPLgrime](https://github.com/RPLgrime)| A dark mode with gray text and reduced brightness on images.  | 0.8.2  | [Preview](https://github.com/Kareadita/Themes/blob/main/Native%20Themes/Battery-Saver-Dark-Mode/preview.jpg) |
 
 ### Native Theme Installation (pre-v0.8.2.0)
 1. Download the `theme-name.css` file.
@@ -28,7 +29,7 @@ This will serve as a central hub to store all community made themes
 5. Apply and/or Set Default your newly added theme.
 
 ### Native Theme Installation (v0.8.2.0+)
-1. Open the Theme tab under user preferences and download and apply the appropriate them in this repo.
+1. In the upper right corner of Kavita, drop down your Username > Settings > Theme tab, then download and apply the desired theme from this repo.
 
 ---
 
@@ -62,7 +63,7 @@ This will serve as a central hub to store all community made themes
 If you have an issue, raise an Issue with the theme name in the title i.e. `[Light] Side Nav not readable on mobile` and tag the person from the Readme table. 
 Kavita team does not provide support on any themes, even those created by majora2007. 
 
-If you identify bugs in the themeing, please raise an Issue on the Kavita Github for support or development work. Theme feature requests belong on the Kavita Discussions. 
+If you identify bugs in custom themes, please raise an Issue on the Kavita Github for support or development work. Theme feature requests belong on the Kavita Discussions. 
 
 ---
 ## Creating a Theme
