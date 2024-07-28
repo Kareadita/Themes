@@ -63,7 +63,7 @@ This will serve as a central hub to store all community made themes
 If you have an issue, raise an Issue with the theme name in the title i.e. `[Light] Side Nav not readable on mobile` and tag the person from the Readme table. 
 Kavita team does not provide support on any themes, even those created by majora2007. 
 
-If you identify bugs in custom themes, please raise an Issue on the Kavita Github for support or development work. Theme feature requests belong on the Kavita Discussions. 
+If you identify bugs in the themeing, please raise an Issue on the Kavita Github for support or development work. Theme feature requests belong on the Kavita Discussions. 
 
 ---
 ## Creating a Theme
