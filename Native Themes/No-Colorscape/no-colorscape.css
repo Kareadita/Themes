@@ -1,0 +1,3 @@
+:root .bg-no-colorscape {
+    --colorscape-enabled: false;
+}
