@@ -20,6 +20,7 @@ This will serve as a central hub to store all community made themes
 | Solarized  | [Matguitarist](https://github.com/matguitarist) | A Solarized theme                                   | 0.7.14               | [Preview](https://github.com/Kareadita/Themes/blob/main/Native%20Themes/Solarized/preview.jpg) |
 | DarkPink   | [Matguitarist](https://github.com/matguitarist) | A Darkpink theme                                    | 0.7.14               | [Preview](https://github.com/Kareadita/Themes/blob/main/Native%20Themes/DarkPink/preview.jpg) |
 | Battery-Saver-Dark-Mode | [RPLgrime](https://github.com/RPLgrime)| A dark mode with gray text and reduced brightness on images.  | 0.8.2  | [Preview](https://github.com/Kareadita/Themes/blob/main/Native%20Themes/Battery-Saver-Dark-Mode/preview.jpg) |
+| No-Colorscape | [RPLgrime](https://github.com/majora2007)| Everything Kavita but with the Colorscape system turned off  | 0.8.3  | [Preview 1](https://github.com/Kareadita/Themes/blob/main/Native%20Themes/No-Colorscape/preview-1.png) [Preview 2](https://github.com/Kareadita/Themes/blob/main/Native%20Themes/No-Colorscape/preview-2.png) |
 
 ### Native Theme Installation (pre-v0.8.2.0)
 1. Download the `theme-name.css` file.
