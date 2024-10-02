@@ -1,0 +1,73 @@
+app-chapter-card > .card-item-container > .card-title-container{
+    margin-top: -2px !important;
+}
+
+app-chapter-card > .card-item-container > .card-title-container > .card-title{
+    font-size: large !important;
+    max-width: 200px !important;
+}
+
+app-chapter-card > .card-item-container{
+    margin: 20px !important;
+    height: 50px !important;
+}
+
+app-chapter-card > .card-item-container > .overlay > .card-overlay{
+    height: 50px !important;
+}
+
+app-chapter-card > .card-item-container > .overlay > .progress-banner{
+    width: 100% !important;
+}
+
+app-chapter-card > .card-item-container > .overlay > .badge-container{
+    width: 100% !important;
+}
+
+app-chapter-card > .card-item-container > .overlay > app-image{
+    display:none !important;
+}
+
+app-chapter-card > .card-item-container > .overlay > .overlay-information{
+    display:none !important;
+}
+
+app-next-expected-card > .card-item-container > .overlay > app-image{
+    display:none !important;
+}
+
+app-next-expected-card > .card-item-container > .overlay{
+    height: 50px !important;
+}
+
+app-next-expected-card > .card-item-container > .overlay > .card-overlay{
+    height: 50px !important;
+}
+
+app-next-expected-card > .card-item-container > .card-title-container{
+    margin: auto !important;
+}
+
+:root {
+--card-overlay-hover-bg-color: rgba(0,0,0,0) !important;
+}
+
+.card-title .library{
+    display:none !important;
+}
+
+@media (min-width: 800px) {
+    div:has(> app-chapter-card){
+        max-width: 40% !important;
+        margin: auto !important;
+        display:block !important;
+    }
+}
+
+@media (max-width: 799px) {
+    div:has(> app-chapter-card){
+        max-width: 80% !important;
+        margin: auto !important;
+        display:block !important;
+    }
+}
