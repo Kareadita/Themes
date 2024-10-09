@@ -9,12 +9,19 @@
     --body-text-color: black;
     --btn-icon-filter: invert(1) grayscale(100%) brightness(200%);
     --primary-color-scrollbar: black;
+    --text-muted-color: black;
 
+    /* Colorscape */
+    --colorscape-enabled: false;
     /* Navbar */
     --navbar-bg-color: black;
     --navbar-text-color: white;
     --navbar-fa-icon-color: white;
     --navbar-btn-hover-outline-color: rgba(255, 255, 255, 1);
+
+    /* Header */
+    --nav-header-text-color: white;
+    --nav-header-bg-color: black;
 
     /* Inputs */
     --input-text-color: black;
@@ -33,6 +40,7 @@
     --btn-primary-hover-text-color: white;
     --btn-primary-hover-bg-color: black;
     --btn-primary-hover-border-color: black;
+    --btn-primary-outline-text-color: black;
     --btn-alt-bg-color: #424c72;
     --btn-alt-border-color: #444f75;
     --btn-alt-hover-bg-color: #3b4466;
@@ -46,15 +54,18 @@
 
     /* Nav */
     --nav-link-active-text-color: white;
-    --nav-link-bg-color: black;
+    --nav-link-bg-color: white;
     --nav-link-text-color: black;
     --nav-link-hover-text-color: var(--primary-color);
     --nav-tab-border-hover-color: transparent;
-    --nav-tab-active-text-color: white;
+    --nav-tab-active-text-color: black;
     --nav-tab-hover-text-color: black;
     --nav-tab-text-color: var(--body-text-color);
-    --nav-tab-bg-color: black;
+    --nav-tab-bg-color: white;
     --nav-tab-hover-border-color: black;
+
+    /* Modal */
+    --modal-bg-color: white;
 
     /* Checkboxes */
     --checkbox-checked-bg-color: var(--primary-color);
@@ -110,11 +121,11 @@
     --brand-font-family: "Spartan", sans-serif;
 
     /* Breadcrumb */
-    --breadcrumb-bg-color: #eaeaea;
+    --breadcrumb-bg-color: black;
     --breadcrumb-item-text-color: var(--body-text-color);
 
     /* Card */
-    --card-text-color: #000;
+    --card-text-color: white;
     --card-bg-color: white;
     --card-border-width: 0 1px 1px 1px;
     --card-border-style: solid;
@@ -197,4 +208,7 @@
     --accordion-header-collapsed-text-color: black;
     --accordion-header-collapsed-bg-color: white;
     --accordion-body-border-color: black;
+
+    /* Setting Item */
+    --setting-header-text-color: black;
   }
