@@ -7,7 +7,7 @@ This will serve as a central hub to store all community made themes
 ## Native Themes
 | Theme Name | Author | Description                                         | Kavita Compatibility | Preview | 
 |------------|--------|-----------------------------------------------------|----------------------|---------|
-| Light      | [majora2007](https://github.com/majora2007)     | A light theme for those that don't like dark themes | 0.7.14               | [Preview](https://github.com/Kareadita/Themes/blob/main/Native%20Themes/Light/example.png) |
+| Light      | [majora2007](https://github.com/majora2007)     | A light theme for those that don't like dark themes | 0.7.14               | [Preview](https://github.com/Kareadita/Themes/blob/main/Native%20Themes/Light/preview.png) |
 | Dark-Pre-Overhaul     | [majora2007](https://github.com/majora2007)     | The dark theme from v0.8.2 for those that don't like the newer dark theme | 0.8.2               | [Pre1](https://github.com/Kareadita/Themes/blob/main/Native%20Themes/Dark-Pre-Overhaul/preview1.png) [Pre2](https://github.com/Kareadita/Themes/blob/main/Native%20Themes/Dark-Pre-Overhaul/preview2.png) |
 | DarkNight  | [Elry](https://github.com/ElryWeeb)             | A very Dark Theme, for the Darkmode lovers.         | 0.7.14               | [Pre1](https://github.com/Kareadita/Themes/blob/main/Native%20Themes/DarkNight/preview1.png) [Pre2](https://github.com/Kareadita/Themes/blob/main/Native%20Themes/DarkNight/preview2.png) |
 | CutePink	 | [Elry](https://github.com/ElryWeeb)             | A cute and soft Pink Theme.						 | 0.7.14               | [Preview](https://github.com/Kareadita/Themes/blob/main/Native%20Themes/CutePink/preview.png) |
