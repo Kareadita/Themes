@@ -20,6 +20,7 @@
     --theme-color: #000000;
     --color-scheme: dark;
     --tile-color: var(--primary-color);
+    --colorscape-enabled: false;
 
 
     /* Navbar */
@@ -264,3 +265,4 @@
 
     /** Badge **/
     --badge-text-color: var(--bs-badge-color);
+}
