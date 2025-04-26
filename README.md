@@ -8,31 +8,18 @@ This will serve as a central hub to store all community made themes
 | Theme Name | Author | Description                                         | Kavita Compatibility | Preview | Total Installs |
 |------------|--------|-----------------------------------------------------|----------------------|---------|----------------|
 | Light      | [majora2007](https://github.com/majora2007)     | A light theme for those that don't like dark themes | 0.7.14 | [Preview](https://github.com/Kareadita/Themes/blob/main/Native%20Themes/Light/example.png) | <img src="https://img.shields.io/endpoint?url=https://stats.kavitareader.com/api/ui/theme-users?theme=light"/> |
-
 | Dark-Pre-Overhaul     | [majora2007](https://github.com/majora2007)     | The dark theme from v0.8.2 for those that don't like the newer dark theme | 0.8.2               | [Pre1](https://github.com/Kareadita/Themes/blob/main/Native%20Themes/Dark-Pre-Overhaul/preview1.png) [Pre2](https://github.com/Kareadita/Themes/blob/main/Native%20Themes/Dark-Pre-Overhaul/preview2.png) | <img src="https://img.shields.io/endpoint?url=https://stats.kavitareader.com/api/ui/theme-users?theme=Dark-Pre-Overhaul"/> |
-
 | DarkNight  | [Elry](https://github.com/ElryWeeb)             | A very Dark Theme, for the Darkmode lovers.         | 0.7.14               | [Pre1](https://github.com/Kareadita/Themes/blob/main/Native%20Themes/DarkNight/preview1.png) [Pre2](https://github.com/Kareadita/Themes/blob/main/Native%20Themes/DarkNight/preview2.png) | <img src="https://img.shields.io/endpoint?url=https://stats.kavitareader.com/api/ui/theme-users?theme=DarkNight"/> |
-
 | CutePink	 | [Elry](https://github.com/ElryWeeb)             | A cute and soft Pink Theme.						 | 0.7.14               | [Preview](https://github.com/Kareadita/Themes/blob/main/Native%20Themes/CutePink/preview.png) | <img src="https://img.shields.io/endpoint?url=https://stats.kavitareader.com/api/ui/theme-users?theme=CutePink"/> |
-
 | Brilliance | [Elry](https://github.com/ElryWeeb)             | A modern theme for e-ink devices.				     | 0.7.14               | [Preview](https://github.com/Kareadita/Themes/blob/main/Native%20Themes/Brilliance/preview.png) | <img src="https://img.shields.io/endpoint?url=https://stats.kavitareader.com/api/ui/theme-users?theme=Brilliance"/> |
-
 | E-Ink      | [majora2007](https://github.com/majora2007)     | A simplified theme for e-ink devices                | 0.8.2                | [Preview](https://github.com/Kareadita/Themes/blob/main/Native%20Themes/E-Ink/preview.jpg) | <img src="https://img.shields.io/endpoint?url=https://stats.kavitareader.com/api/ui/theme-users?theme=E-Ink"/> |
-
 | Nord       | [ice45core0](https://github.com/ice45core0)     | A dark pastel theme using the Nord color palette    | 0.7.14               | [Preview](https://github.com/Kareadita/Themes/blob/main/Native%20Themes/Nord/preview.png) | <img src="https://img.shields.io/endpoint?url=https://stats.kavitareader.com/api/ui/theme-users?theme=Nord"/> |
-
 | Dracula    | [Matguitarist](https://github.com/matguitarist) | A Dracula inspired theme                            | 0.7.14               | [Preview](https://github.com/Kareadita/Themes/blob/main/Native%20Themes/Dracula/preview.jpg) | <img src="https://img.shields.io/endpoint?url=https://stats.kavitareader.com/api/ui/theme-users?theme=Dracula"/> |
-
 | Overseerr  | [Matguitarist](https://github.com/matguitarist) | A Overseer inspired theme                           | 0.7.14               | [Preview](https://github.com/Kareadita/Themes/blob/main/Native%20Themes/Overseerr/preview.jpg) | <img src="https://img.shields.io/endpoint?url=https://stats.kavitareader.com/api/ui/theme-users?theme=Overseerr"/> |
-
 | Aquamarine | [Matguitarist](https://github.com/matguitarist) | An Aquamarine theme                                 | 0.7.14               | [Preview](https://github.com/Kareadita/Themes/blob/main/Native%20Themes/Aquamarine/preview.jpg) | <img src="https://img.shields.io/endpoint?url=https://stats.kavitareader.com/api/ui/theme-users?theme=Aquamarine"/> |
-
 | Solarized  | [Matguitarist](https://github.com/matguitarist) | A Solarized theme                                   | 0.7.14               | [Preview](https://github.com/Kareadita/Themes/blob/main/Native%20Themes/Solarized/preview.jpg) | <img src="https://img.shields.io/endpoint?url=https://stats.kavitareader.com/api/ui/theme-users?theme=Solarized"/> |
-
 | DarkPink   | [Matguitarist](https://github.com/matguitarist) | A Darkpink theme                                    | 0.7.14               | [Preview](https://github.com/Kareadita/Themes/blob/main/Native%20Themes/DarkPink/preview.jpg) | <img src="https://img.shields.io/endpoint?url=https://stats.kavitareader.com/api/ui/theme-users?theme=DarkPink"/> |
-
 | Battery-Saver-Dark-Mode | [RPLgrime](https://github.com/RPLgrime)| A dark mode with gray text and reduced brightness on images.  | 0.8.2  | [Preview](https://github.com/Kareadita/Themes/blob/main/Native%20Themes/Battery-Saver-Dark-Mode/preview.jpg) | <img src="https://img.shields.io/endpoint?url=https://stats.kavitareader.com/api/ui/theme-users?theme=Battery-Saver-Dark-Mode"/> |
-
 | No-Colorscape | [RPLgrime](https://github.com/majora2007)| Everything Kavita but with the Colorscape system turned off  | 0.8.6  | [Preview 1](https://github.com/Kareadita/Themes/blob/main/Native%20Themes/No-Colorscape/preview-1.png) [Preview 2](https://github.com/Kareadita/Themes/blob/main/Native%20Themes/No-Colorscape/preview-2.png) | <img src="https://img.shields.io/endpoint?url=https://stats.kavitareader.com/api/ui/theme-users?theme=No-Colorscape"/> |
 
 ### Native Theme Installation (pre-v0.8.2.0)
