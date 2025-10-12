@@ -149,6 +149,14 @@
 
 /** Search List **/
 --search-list-group-item-bg-color: var(--bs-body-bg);
+
+/** Select2 **/
+--select2-option-text-color: var(--input-text-color);
+--select2-option-selected-text-color: var(--body-text-color);
+--select2-option-selected-background: #e0e0e0;
+--select2-dropdown-background: var(--input-bg-color);
+--select2-selection-text-color: var(--input-text-color);
+--select2-selection-background: var(--input-bg-color);
 }
 
 /** Search **/
@@ -193,7 +201,8 @@
   color: white;
 }
 .btn-actions:hover i,
-.btn.dropdown-toggle:hover i {
+.btn.dropdown-toggle:hover i,
+.btn-icon:hover i {
   color: var(--primary-color);
 }
 
