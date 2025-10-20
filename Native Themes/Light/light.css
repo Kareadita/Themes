@@ -11,6 +11,7 @@
 --input-bg-color: #fff;
 --input-bg-readonly-color: lightgrey;
 --input-text-color: black;
+--input-placeholder-color: darkgray;
 
 /** Dropdown/Action Menu **/
 --dropdown-item-bg-color: white;
@@ -31,19 +32,25 @@
 --side-nav-bg-color: white;
 --side-nav-mobile-bg-color: white;
 --side-nav-hover-text-color: var(--primary-color);
---side-nav-hover-bg-color: lightgrey;
+--side-nav-hover-bg-color: #efefef;
 --side-nav-color: black;
---side-nav-text-color: black;
+--side-nav-text-color: darkslategray;
 --side-nav-active-bg-color: white;
+--side-nav-item-color: #efefef; 
 --side-nav-item-active-text-color: var(--primary-color);
+--side-nav-item-closed-color: var(--side-nav-text-color);
+--side-nav-header-text-color: black;
+
+/** Setting Item **/
+--setting-header-text-color: darkslategray;
 
 /** List items **/
---list-group-item-bg-color: lightgrey;
---list-group-item-text-color: white;
+--list-group-item-bg-color: #efefef;
+--list-group-item-text-color: darkslategray;
 --list-group-hover-bg-color: white;
 --list-group-hover-text-color: var(--primary-color);
 --list-group-active-border-color: var(--primary-color);
---list-group-item-text-color: black;
+--list-group-item-border-color: #c0c0c0;
 
 /** Popover **/
 --popover-body-bg-color: lightgrey;
@@ -72,7 +79,12 @@
 
 /** Card **/
 --card-bg-color: white;
---card-text-color: black;
+--card-text-color: darkslategray;
+--card-title-text-color: darkslategray;
+--card-overlay-text-color: white;
+--card-overlay-hover-text-color: white;
+--card-hover-text-color: white;
+--card-hover-bg-color: var(--primary-color);
 
 /** Carousel **/
 --carousel-btn-color: black;
@@ -92,5 +104,113 @@
 --review-spoiler-bg-color: white;
 --review-spoiler-text-color: black;
 
+/** Series Detail **/
+--detail-title-color: black;
+--detail-subtitle-color: gray;
 
+/** Buttons **/
+--btn-fa-icon-color: black;
+--btn-disabled-text-color: #9db8ad; 
+--btn-disabled-bg-color: #f0f0f0;
+--btn-disabled-border-color: #9db8ad;
+--btn-danger-text-color: white;
+--btn-outline-primary-text-color: var(--primary-color);
+--btn-outline-primary-hover-text-color: white;
+--btn-outline-primary-hover-bg-color: var(--primary-color-dark-shade);
+--btn-primary-text-text-color: darkslategray;
+--btn-secondary-outline-text-color: #6c757d;
+
+/** Modal **/
+--modal-bg-color: white;
+--bs-heading-color: black;
+
+/** Alerts **/
+--alert-text-color: #000c32;
+--alert-bg-color: var(--warning-color);
+
+/** Nav (Tabs) **/
+--nav-tab-active-text-color: var(--primary-color);
+--nav-tab-hover-text-color: var(--primary-color);
+--nav-tab-hover-bg-color: #efefef;
+--nav-tab-hover-border-bottom: var(--primary-color);
+
+/** Bulk Selection **/
+--bulk-selection-bg-color: var(--bs-body-bg);
+--bulk-selection-text-color: var(--body-text-color);
+
+/** Tables **/
+--table-header-text-color: darkslategray;
+--table-body-text-color: darkslategray;
+
+/** Search **/
+--searchbar-bg-color: rgb(255 255 255 / 95%);
+--input-hint-text-color: darkslategray;
+--input-hint-border-color: darkslategray;
+
+/** Search List **/
+--search-list-group-item-bg-color: var(--bs-body-bg);
+
+/** Select2 **/
+--select2-option-text-color: var(--input-text-color);
+--select2-option-selected-text-color: var(--body-text-color);
+--select2-option-selected-background: #e0e0e0;
+--select2-dropdown-background: var(--input-bg-color);
+--select2-selection-text-color: var(--input-text-color);
+--select2-selection-background: var(--input-bg-color);
+}
+
+/** Search **/
+.typeahead-input:not(.focused) {
+  --input-placeholder-color: slategray;
+  --input-hint-text-color: var(--input-placeholder-color);
+  --input-hint-border-color: var(--input-placeholder-color);
+}
+.typeahead-input.focused {
+  --searchbar-bg-color: var(--input-bg-color);
+}
+.typeahead-input.focused .input-hint {
+  margin-left: 2px;
+}
+.typeahead-input.focused #nav-search:focus {
+  color: var(--input-text-color);
+  background-color: var(--input-bg-color);
+}
+
+/** List Items **/
+.list-group-item .pill.active {
+  color: white;
+}
+.list-group-item.active .pill.active {
+  background-color: var(--primary-color-darker-shade);
+}
+.list-group-item.active {
+  color: white;
+  background-color: var(--primary-color);
+}
+.list-group-item.clickable:hover {
+  background-color: var(--list-group-hover-bg-color);
+}
+.list-group-item:hover .pill:not(.active),
+.list-group-item.active .pill:not(.active) {
+  color: var(--list-group-item-text-color);
+  background-color: #f9f9f9;
+}
+
+/** Buttons **/
+.btn-danger i {
+  color: white;
+}
+.btn-actions:hover i,
+.btn.dropdown-toggle:hover i,
+.btn-icon:hover i {
+  color: var(--primary-color);
+}
+
+/** Series Detail **/
+.publisher-img-container {
+  background-color: transparent;
+}
+/* Hack for series rating image */
+.subtitle + * img {
+  filter: invert(70%);
 }
