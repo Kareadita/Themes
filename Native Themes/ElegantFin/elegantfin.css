@@ -1,0 +1,1029 @@
+/* ElegantFin Theme for Kavita
+ * Inspired by the ElegantFin theme for Jellyfin by lscambo13
+ * Ported to Kavita CSS variable system
+ */
+
+/* Inter Font Family */
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&display=swap");
+
+:root .bg-elegantfin {
+
+  /* System styles - ElegantFin uses darker blues instead of grays */
+  --elevation-layer0: rgba(17, 24, 39, 0);
+  --elevation-layer1: rgba(29, 38, 53, 0.3);
+  --elevation-layer2: rgba(29, 38, 53, 0.5);
+  --elevation-layer3: rgba(29, 38, 53, 0.6);
+  --elevation-layer4: rgba(29, 38, 53, 0.7);
+  --elevation-layer5: rgba(29, 38, 53, 0.75);
+  --elevation-layer6: rgba(29, 38, 53, 0.8);
+  --elevation-layer7: rgba(29, 38, 53, 0.85);
+  --elevation-layer8: rgba(29, 38, 53, 0.9);
+  --elevation-layer9: rgba(29, 38, 53, 0.95);
+  --elevation-layer10: rgba(255, 255, 255, 0.4);
+
+  --elevation-layer0-dark: rgba(17, 24, 39, 0);
+  --elevation-layer1-dark: rgba(17, 24, 39, 0.05);
+  --elevation-layer2-dark: rgba(17, 24, 39, 0.1);
+  --elevation-layer3-dark: rgba(17, 24, 39, 0.15);
+  --elevation-layer4-dark: rgba(17, 24, 39, 0.2);
+  --elevation-layer5-dark: rgba(17, 24, 39, 0.3);
+  --elevation-layer6-dark: rgba(17, 24, 39, 0.4);
+  --elevation-layer7-dark: rgba(17, 24, 39, 0.5);
+  --elevation-layer8-dark: rgba(17, 24, 39, 0.6);
+  --elevation-layer9-dark: rgba(17, 24, 39, 0.7);
+  --elevation-layer10-dark: rgba(17, 24, 39, 0.8);
+  --elevation-layer11-dark: rgba(17, 24, 39, 0.9);
+
+  --elevation-layer0-dark-solid: #111827;
+  --elevation-layer1-dark-solid: #151c2b;
+  --elevation-layer2-dark-solid: #192030;
+  --elevation-layer3-dark-solid: #1d2635;
+  --elevation-layer4-dark-solid: #212a3a;
+  --elevation-layer5-dark-solid: #252e3f;
+  --elevation-layer6-dark-solid: #293244;
+  --elevation-layer7-dark-solid: #2d3649;
+  --elevation-layer8-dark-solid: #313a4e;
+  --elevation-layer9-dark-solid: #353e53;
+
+  /* Base colors - ElegantFin purple accent */
+  --primary-color: #775BF4;
+  --primary-color-dark-shade: #6248d4;
+  --primary-color-darker-shade: #5139b5;
+  --primary-color-darkest-shade: #412d91;
+  --error-color: #a91d1d;
+  --error-accent-color: #d95454;
+  --warning-color: #FFECB5;
+  --body-text-color: rgb(209, 213, 219);
+  --btn-icon-filter: invert(1) grayscale(100%) brightness(200%);
+  --primary-color-scrollbar: rgba(119, 91, 244, 0.4);
+  --default-state-scrollbar: transparent;
+  --text-muted-color: rgb(156, 163, 175);
+
+  /* Override bootstrap css variables */
+  --bs-body-bg: #111827;
+  --bs-primary-rgb: 119, 91, 244;
+  --select2-selection-text-color: var(--dropdown-item-hover-text-color);
+  --select2-option-highlighted-background: var(--dropdown-item-hover-bg-color);
+
+  /* Colorscape theming - ElegantFin dark blue gradient */
+  --colorscape-enabled: true;
+  --colorscape-primary-color: rgb(17, 24, 39);
+  --colorscape-lighter-color: rgb(29, 38, 53);
+  --colorscape-darker-color: rgb(13, 18, 30);
+  --colorscape-complementary-color: rgb(30, 40, 54);
+
+  --colorscape-primary-alpha-color: rgba(17, 24, 39, 0);
+  --colorscape-lighter-alpha-color: rgba(29, 38, 53, 0);
+  --colorscape-darker-alpha-color: rgba(13, 18, 30, 0);
+  --colorscape-complementary-alpha-color: rgba(30, 40, 54, 0);
+
+  --colorscape-primary-default-color: rgb(17, 24, 39);
+  --colorscape-lighter-default-color: rgb(29, 38, 53);
+  --colorscape-darker-default-color: rgb(13, 18, 30);
+  --colorscape-complementary-default-color: rgb(30, 40, 54);
+
+  /* Meta and Globals */
+  --theme-color: #111827;
+  --color-scheme: dark;
+  --tile-color: var(--primary-color);
+  --nav-offset: 60px;
+  --nav-mobile-offset: 55px;
+  --mobile-series-img-background: true;
+
+  /* Setting Item */
+  --setting-header-text-color: rgb(209, 213, 219);
+  --setting-header-font-size: 1.2rem;
+  --setting-header-font-weight: bold;
+  --setting-break-color: hsl(214, 13%, 32%);
+
+  /* Table */
+  --table-header-bg-color: rgba(30, 40, 54, 0.8);
+  --table-header-text-color: rgb(209, 213, 219);
+  --table-body-bg-color: rgba(29, 38, 53, 0.5);
+  --table-body-text-color: rgb(209, 213, 219);
+  --table-body-border: hidden;
+  --table-body-striped-bg-color: rgba(29, 38, 53, 0.3);
+
+  /* Navbar - ElegantFin glassmorphism style */
+  --navbar-bg-color: rgba(17, 24, 39, 0.85);
+  --navbar-text-color: rgb(209, 213, 219);
+  --navbar-fa-icon-color: rgb(209, 213, 219);
+  --navbar-border-radius: 0px;
+  --navbar-btn-hover-outline-color: rgba(119, 91, 244, 0.6);
+  --navbar-header-margin: 0px;
+  --navbar-header-mobile-x-margin: 0px;
+  --navbar-header-mobile-y-margin: 0px;
+
+  /* Inputs */
+  --input-bg-color: rgb(55, 65, 81);
+  --input-bg-readonly-color: rgb(45, 55, 71);
+  --input-focused-border-color: var(--primary-color);
+  --input-text-color: rgb(209, 213, 219);
+  --input-placeholder-color: rgb(156, 163, 175);
+  --input-border-color: hsl(214, 13%, 32%);
+  --input-focus-boxshadow-color: rgba(119, 91, 244, 0.5);
+
+  /* Buttons - ElegantFin purple accent */
+  --btn-focus-boxshadow-color: rgba(119, 91, 244, 0.5);
+  --btn-primary-text-color: white;
+  --btn-primary-bg-color: var(--primary-color);
+  --btn-primary-border-color: var(--primary-color);
+  --btn-primary-hover-text-color: white;
+  --btn-primary-hover-bg-color: var(--primary-color-darker-shade);
+  --btn-primary-hover-border-color: var(--primary-color-darker-shade);
+  --btn-outline-primary-text-color: var(--primary-color);
+  --btn-outline-primary-bg-color: transparent;
+  --btn-outline-primary-border-color: var(--primary-color);
+  --btn-outline-primary-hover-text-color: white;
+  --btn-outline-primary-hover-bg-color: var(--primary-color-darker-shade);
+  --btn-outline-primary-hover-border-color: var(--primary-color-darker-shade);
+  --btn-secondary-text-color: rgb(209, 213, 219);
+  --btn-secondary-bg-color: rgb(55, 65, 81);
+  --btn-secondary-border-color: hsl(214, 13%, 32%);
+  --btn-secondary-hover-bg-color: rgb(45, 55, 71);
+  --btn-secondary-hover-border-color: hsl(214, 13%, 42%);
+  --btn-secondary-font-weight: 500;
+  --btn-secondary-outline-text-color: rgb(209, 213, 219);
+  --btn-secondary-outline-bg-color: transparent;
+  --btn-secondary-outline-border-color: hsl(214, 13%, 32%);
+  --btn-secondary-outline-hover-text-color: white;
+  --btn-secondary-outline-hover-bg-color: rgb(55, 65, 81);
+  --btn-secondary-outline-hover-border-color: hsl(214, 13%, 42%);
+  --btn-secondary-outline-font-weight: 500;
+  --btn-primary-text-text-color: white;
+  --btn-secondary-text-text-color: rgb(156, 163, 175);
+
+  --btn-danger-text-text-color: #a91d1d;
+  --btn-danger-outline-text-color: white;
+  --btn-danger-outline-bg-color: transparent;
+  --btn-danger-outline-border-color: #a91d1d;
+  --btn-danger-outline-hover-text-color: white;
+  --btn-danger-outline-hover-bg-color: #a91d1d;
+  --btn-danger-outline-hover-border-color: #a91d1d;
+
+  --btn-alt-bg-color: rgba(119, 91, 244, 0.3);
+  --btn-alt-border-color: rgba(119, 91, 244, 0.5);
+  --btn-alt-hover-bg-color: rgba(119, 91, 244, 0.5);
+  --btn-alt-focus-bg-color: rgba(119, 91, 244, 0.4);
+  --btn-alt-focus-boxshadow-color: rgba(119, 91, 244, 0.5);
+  --btn-fa-icon-color: rgb(209, 213, 219);
+  --btn-disabled-bg-color: rgb(45, 55, 71);
+  --btn-disabled-text-color: rgb(156, 163, 175);
+  --btn-disabled-border-color: hsl(214, 13%, 32%);
+  --bs-btn-disabled-border-color: transparent;
+  --btn-actions-border-radius: 0.5em;
+  --btn-actions-hover-bg: rgba(119, 91, 244, 0.2);
+
+  /* Nav (Tabs) */
+  --nav-item-min-width: 150px;
+  --nav-item-max-width: 150px;
+  --nav-tab-border-color: rgba(119, 91, 244, 0.5);
+  --nav-tab-text-color: rgb(156, 163, 175);
+  --nav-tab-bg-color: transparent;
+  --nav-tab-border-width: 0 0 3px 0;
+  --nav-tab-hover-border-color: var(--primary-color);
+  --nav-tab-active-text-color: white;
+  --nav-tab-border-hover-color: transparent;
+  --nav-tab-hover-text-color: white;
+  --nav-tab-hover-bg-color: transparent;
+  --nav-tab-border-top: transparent;
+  --nav-tab-border-left: transparent;
+  --nav-tab-border-bottom: var(--primary-color);
+  --nav-tab-border-right: transparent;
+  --nav-tab-hover-border-top: transparent;
+  --nav-tab-hover-border-left: transparent;
+  --nav-tab-hover-border-bottom: var(--primary-color);
+  --nav-tab-hover-border-right: transparent;
+  --nav-tab-active-hover-bg-color: transparent;
+  --nav-link-bg-color: var(--primary-color);
+  --nav-link-active-text-color: white;
+  --nav-link-text-color: rgb(156, 163, 175);
+
+  /* Modal - ElegantFin drawer style */
+  --modal-bg-color: rgba(30, 40, 54, 0.95);
+
+  /* Header */
+  --nav-header-text-color: rgb(209, 213, 219);
+  --nav-header-bg-color: rgba(30, 40, 54, 0.8);
+
+  /* Toasts */
+  --toast-success-bg-color: rgba(41, 154, 93, 0.9);
+  --toast-error-bg-color: rgba(169, 29, 29, 0.9);
+  --toast-info-bg-color: rgba(37, 99, 235, 0.9);
+  --toast-warning-bg-color: rgba(217, 119, 6, 0.9);
+
+  /* Alerts */
+  --alert-text-color: rgb(209, 213, 219);
+  --alert-bg-color: rgba(29, 38, 53, 0.8);
+
+  /* Checkboxes/Switch - ElegantFin purple */
+  --checkbox-checked-bg-color: rgb(79, 70, 229);
+  --checkbox-border-color: hsl(214, 13%, 32%);
+  --checkbox-focus-border-color: var(--primary-color);
+  --checkbox-focus-boxshadow-color: rgba(119, 91, 244, 0.5);
+
+  /* Tag Badge */
+  --tagbadge-border-color: hsl(214, 13%, 32%);
+  --tagbadge-text-color: rgb(209, 213, 219);
+  --tagbadge-bg-color: rgba(29, 38, 53, 0.8);
+  --tagbadge-filled-border-color: var(--primary-color);
+  --tagbadge-filled-text-color: white;
+  --tagbadge-filled-bg-color: var(--primary-color);
+
+  /* Side Nav - ElegantFin glassmorphism */
+  --side-nav-width: 230px;
+  --side-nav-icon-size: 0.9rem;
+  --side-nav-bg-color: rgba(30, 40, 54, 0.9);
+  --side-nav-mobile-bg-color: rgba(30, 40, 54, 0.95);
+  --side-nav-openclose-transition: 0.15s ease-in-out;
+  --side-nav-box-shadow: 0.1em 0.1em 0.15em hsla(0, 0%, 0%, 0.3);
+  --side-nav-mobile-box-shadow: 3px 0em 5px 10em rgba(0, 0, 0, 0.5);
+  --side-nav-hover-text-color: white;
+  --side-nav-hover-bg-color: rgba(119, 91, 244, 0.2);
+  --side-nav-text-color: rgb(209, 213, 219);
+  --side-nav-header-text-color: rgb(209, 213, 219);
+  --side-nav-border-radius: 0.5em;
+  --side-nav-border: none;
+  --side-nav-border-closed: none;
+  --side-nav-border-transition: 0.5s ease-in-out;
+  --side-nav-companion-bar-transistion: 0.15s linear;
+  --side-nav-bg-color-transition: 0.5s ease-in-out;
+  --side-nav-closed-bg-color: transparent;
+  --side-nav-item-active-color: var(--primary-color);
+  --side-nav-item-active-text-color: white;
+  --side-nav-active-bg-color: rgba(119, 91, 244, 0.15);
+  --side-nav-overlay-color: rgba(17, 24, 39, 0.8);
+  --side-nav-item-color: rgba(119, 91, 244, 0.1);
+  --side-nav-item-closed-color: rgba(255, 255, 255, 0.4);
+  --side-nav-item-closed-hover-color: white;
+  --pref-side-nav-header-text-color: rgb(209, 213, 219);
+
+  /* List items */
+  --list-group-item-text-color: rgb(209, 213, 219);
+  --list-group-item-bg-color: transparent;
+  --search-list-group-item-bg-color: rgba(30, 40, 54, 0.9);
+  --list-group-hover-text-color: white;
+  --list-group-hover-bg-color: rgba(119, 91, 244, 0.2);
+  --list-group-active-border-color: var(--primary-color);
+  --list-group-item-border-top-left-radius: 0.5em;
+  --list-group-item-border-top-right-radius: 0.5em;
+  --list-group-item-border-bottom-left-radius: 0.5em;
+  --list-group-item-border-bottom-right-radius: 0.5em;
+  --list-group-item-border-width: 1px;
+  --list-group-item-border-color: hsl(214, 13%, 32%);
+  --list-group-item-border-style: solid;
+  --list-group-item-first-border-width: 1px;
+  --list-group-item-last-border-width: 1px;
+
+  /* Popover */
+  --popover-body-bg-color: rgba(30, 40, 54, 0.95);
+  --popover-body-text-color: rgb(209, 213, 219);
+  --popover-outerarrow-color: transparent;
+  --popover-arrow-color: transparent;
+  --popover-bg-color: rgba(30, 40, 54, 0.95);
+  --popover-border-color: hsl(214, 13%, 32%);
+
+  /* Pagination */
+  --pagination-active-link-border-color: var(--primary-color);
+  --pagination-active-link-bg-color: var(--primary-color);
+  --pagination-active-link-text-color: white;
+  --pagination-link-border-color: hsl(214, 13%, 32%);
+  --pagination-link-text-color: rgb(209, 213, 219);
+  --pagination-link-bg-color: rgba(29, 38, 53, 0.8);
+  --pagination-focus-border-color: var(--primary-color);
+  --pagination-link-hover-color: var(--primary-color);
+
+  /* Progress Bar */
+  --progress-striped-animated-color: linear-gradient(45deg, rgba(119, 91, 244, 0.75) 25%, rgba(98, 72, 212, 0.75) 25%, rgba(98, 72, 212, 0.75) 50%, rgba(119, 91, 244, 0.75) 50%, rgba(119, 91, 244, 0.75) 75%, rgba(98, 72, 212, 0.75) 75%, rgba(98, 72, 212, 0.75));
+  --progress-bg-color: rgba(29, 38, 53, 0.8);
+  --progress-bar-color: var(--primary-color);
+
+  /* Dropdown */
+  --dropdown-item-hover-text-color: white;
+  --dropdown-item-hover-bg-color: rgba(119, 91, 244, 0.4);
+  --dropdown-item-text-color: rgb(209, 213, 219);
+  --dropdown-item-bg-color: rgba(30, 40, 54, 0.95);
+  --dropdown-overlay-color: rgba(17, 24, 39, 0.5);
+
+  /* Accordion */
+  --accordion-header-text-color: var(--primary-color);
+  --accordion-header-bg-color: rgba(29, 38, 53, 0.8);
+  --accordion-body-bg-color: rgba(29, 38, 53, 0.6);
+  --accordion-body-border-color: hsl(214, 13%, 32%);
+  --accordion-body-text-color: rgb(209, 213, 219);
+  --accordion-header-collapsed-text-color: var(--primary-color);
+  --accordion-header-collapsed-bg-color: rgba(29, 38, 53, 0.6);
+  --accordion-button-focus-border-color: var(--primary-color);
+  --accordion-button-focus-box-shadow: 0 0 0 0.25rem rgba(119, 91, 244, 0.25);
+  --accordion-active-body-bg-color: rgba(29, 38, 53, 0.6);
+  --accordion-body-box-shadow: none;
+
+  /* Breadcrumb */
+  --breadcrumb-bg-color: rgba(29, 38, 53, 0.8);
+  --breadcrumb-item-text-color: rgb(209, 213, 219);
+
+  /* Rating star */
+  --ratingstar-color: rgb(209, 213, 219);
+  --rating-star-color: var(--primary-color);
+  --ratingstar-star-empty: rgb(156, 163, 175);
+  --ratingstar-star-filled: var(--primary-color);
+
+  /* Global */
+  --hr-color: hsl(214, 13%, 32%);
+  --accent-bg-color: rgba(29, 38, 53, 0.8);
+  --accent-text-color: rgb(156, 163, 175);
+  --body-font-family: "Inter", sans-serif;
+  --brand-font-family: "Inter", sans-serif;
+  --html-font-size: 16px;
+
+  /* Card - ElegantFin rounded style with glassmorphism */
+  --card-bg-color: transparent;
+  --card-text-color: rgb(209, 213, 219);
+  --card-border-width: 0;
+  --card-border-style: none;
+  --card-border-color: transparent;
+  --card-border-radius: 0.75em;
+  --card-progress-bar-color: var(--primary-color);
+  --card-overlay-bg-color: rgba(0, 0, 0, 0);
+  --card-overlay-hover-bg-color: rgba(255, 255, 255, 0.05);
+  --card-progress-triangle-size: 28px;
+  --card-body-bg-color: transparent;
+  --card-title-text-color: rgb(209, 213, 219);
+  --card-overlay-text-color: rgb(209, 213, 219);
+  --card-hover-text-color: white;
+  --card-hover-bg-color: rgba(119, 91, 244, 0.15);
+
+  /* Slider */
+  --slider-text-color: rgb(209, 213, 219);
+  --input-range-color: var(--primary-color);
+  --input-range-active-color: var(--primary-color-darker-shade);
+
+  /* Manga Reader */
+  --manga-reader-overlay-filter: blur(10px);
+  --manga-reader-overlay-bg-color: rgba(17, 24, 39, 0.8);
+  --manga-reader-overlay-text-color: rgb(209, 213, 219);
+  --manga-reader-next-highlight-bg-color: rgba(41, 154, 93, 0.5);
+  --manga-reader-prev-highlight-bg-color: rgba(119, 91, 244, 0.5);
+
+  /* Radios */
+  --radio-accent-color: var(--primary-color);
+  --radio-hover-accent-color: var(--primary-color);
+  --radio-focus-boxshadow-color: rgba(119, 91, 244, 0.5);
+
+  /* Carousel */
+  --carousel-header-text-color: rgb(209, 213, 219);
+  --carousel-header-text-decoration: none;
+  --carousel-hover-header-text-decoration: none;
+  --carousel-btn-color: rgb(209, 213, 219);
+
+  /* Drawer - ElegantFin glassmorphism */
+  --drawer-bg-color: rgba(30, 40, 54, 0.95);
+  --drawer-text-color: rgb(209, 213, 219);
+
+  /* Event Widget */
+  --event-widget-bg-color: rgba(17, 24, 39, 0.95);
+  --event-widget-item-bg-color: rgba(29, 38, 53, 0.8);
+  --event-widget-text-color: rgb(209, 213, 219);
+  --event-widget-item-border-color: hsl(214, 13%, 32%);
+  --event-widget-border-color: hsl(214, 13%, 32%);
+  --event-widget-info-bg-color: rgba(37, 99, 235, 0.9);
+  --event-widget-error-bg-color: rgba(169, 29, 29, 0.9);
+  --event-widget-update-bg-color: var(--primary-color);
+  --event-widget-activity-bg-color: var(--primary-color);
+
+  /* Search */
+  --search-result-text-lite-color: var(--primary-color);
+  --searchbar-bg-color: rgba(55, 65, 81, 0.5);
+
+  /* Bulk Selection */
+  --bulk-selection-text-color: rgb(209, 213, 219);
+  --bulk-selection-highlight-text-color: var(--primary-color);
+  --bulk-selection-bg-color: rgba(17, 24, 39, 0.95);
+
+  /* List Card Item */
+  --card-list-item-bg-color: linear-gradient(180deg, rgba(29, 38, 53, 0.3) 0%, rgba(29, 38, 53, 0.1) 100%);
+
+  /* Review Card */
+  --review-card-star-color: gold;
+  --review-spoiler-bg-color: var(--primary-color);
+  --review-spoiler-text-color: white;
+
+  /* Badge */
+  --badge-text-color: white;
+
+  /* Login - ElegantFin style with gradient background */
+  --login-card-bg-color: rgba(30, 40, 54, 0.92);
+  --login-logo-height: 55px;
+  --login-logo-width: 55px;
+  --login-logo-bg-size: contain;
+  --login-logo-bg-repeat: no-repeat;
+  --login-card-border-width: 3px 1px 1px 1px;
+  --login-card-border-style: solid;
+  --login-card-border-color: var(--primary-color);
+  --login-input-border-color: hsl(214, 13%, 28%);
+  --login-input-border-color-focus: var(--primary-color);
+  --login-input-box-shadow-focus: 0 0 0 2px rgba(119, 91, 244, 0.4);
+  --login-input-background-color: rgba(55, 65, 81, 0.8);
+  --login-input-color: rgb(209, 213, 219);
+  --login-forgot-password-color: var(--primary-color);
+  --login-background-size: cover;
+  --login-background-opacity: 0.15;
+  --login-background-color: #0d1117;
+  --login-input-font-family: 'Inter', sans-serif;
+  --login-input-placeholder-opacity: 0.5;
+  --login-input-placeholder-color: rgb(156, 163, 175);
+
+  /* Series Detail */
+  --detail-title-color: rgb(209, 213, 219);
+  --detail-subtitle-color: rgb(156, 163, 175);
+
+  /* Search */
+  --input-hint-border-color: hsl(214, 13%, 32%);
+  --input-hint-text-color: rgb(156, 163, 175);
+
+  /* Charts */
+  --charts-palette1: #775BF4;
+  --charts-palette2: #299a5d;
+  --charts-palette3: #fac858;
+  --charts-palette4: #a91d1d;
+  --charts-palette5: #2563eb;
+  --charts-palette6: #7571e2;
+  --charts-palette7: #fc8452;
+
+  /* Tooltips */
+  --tooltip-bg-color: rgba(30, 40, 54, 0.95);
+  --tooltip-outline-color: hsl(214, 13%, 32%);
+  --tooltip-caret-color: hsl(214, 13%, 32%);
+
+  /* Misc */
+  --offwhite-text-color: rgb(156, 163, 175);
+
+  /* Activity Card */
+  --activity-card-client-platform-badge-bg-color: var(--primary-color);
+  --activity-card-client-device-badge-bg-color: #2563eb;
+}
+
+.bg-elegantfin ngb-tooltip-window {
+  display: none !important;
+}
+
+@keyframes elegantfin-shimmer-in {
+  0% {
+    top: -100%;
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes elegantfin-shimmer-out {
+  0% {
+    top: 100%;
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    top: -100%;
+    opacity: 0;
+  }
+}
+
+@keyframes elegantfin-icon-fade-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes elegantfin-icon-fade-out {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+}
+
+.bg-elegantfin .card,
+.bg-elegantfin app-series-card,
+.bg-elegantfin app-card {
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+}
+
+.bg-elegantfin .card:hover,
+.bg-elegantfin app-series-card:hover,
+.bg-elegantfin app-card:hover {
+  transform: scale(1.02) !important;
+  z-index: 10 !important;
+  position: relative !important;
+}
+
+.bg-elegantfin .card-img-top,
+.bg-elegantfin app-image-holder img,
+.bg-elegantfin .series-card img,
+.bg-elegantfin .card-img-container img {
+  transition: filter 0.3s ease;
+  border-radius: 1em;
+}
+
+.bg-elegantfin .card .overlay::before,
+.bg-elegantfin app-series-card .overlay::before,
+.bg-elegantfin app-card .overlay::before {
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 80%;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.2) 40%,
+    rgba(255, 255, 255, 0.35) 50%,
+    rgba(255, 255, 255, 0.2) 60%,
+    transparent 100%
+  );
+  z-index: 100;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.bg-elegantfin .card:hover .overlay::before,
+.bg-elegantfin app-series-card:hover .overlay::before,
+.bg-elegantfin app-card:hover .overlay::before {
+  animation: elegantfin-shimmer-in 0.5s ease-out forwards;
+}
+
+.bg-elegantfin .card:not(:hover) .overlay::before,
+.bg-elegantfin app-series-card:not(:hover) .overlay::before,
+.bg-elegantfin app-card:not(:hover) .overlay::before {
+  animation: elegantfin-shimmer-out 0.4s ease-out forwards;
+}
+
+.bg-elegantfin .overlay .progress-banner {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  pointer-events: none !important;
+  z-index: 110 !important;
+}
+
+.bg-elegantfin .overlay .progress-banner p {
+  position: absolute !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  margin: 0 !important;
+}
+
+.bg-elegantfin .overlay .progress-banner .progress {
+  height: 4px !important;
+  background: rgba(17, 24, 39, 0.45) !important;
+  border-radius: 0 0 1em 1em !important;
+  overflow: hidden !important;
+}
+
+.bg-elegantfin .overlay .progress-banner .progress-bar {
+  background: var(--primary-color) !important;
+  height: 100% !important;
+  box-shadow: 0 0 6px rgba(119, 91, 244, 0.6) !important;
+}
+
+
+/* ============================================
+   CARD TITLE - 2 lines max, centered, no layer
+   ============================================ */
+
+/* Hide the library name row (e.g., "Books") */
+.bg-elegantfin .card-body.meta-title {
+  display: none !important;
+}
+
+/* Hide format icon completely */
+html body.bg-elegantfin .card-title-container > span:first-child:not(.card-title),
+html body.bg-elegantfin .card-format,
+html body.bg-elegantfin span.card-format,
+html body.bg-elegantfin .card-title-container .card-format,
+html body.bg-elegantfin app-series-format,
+html body.bg-elegantfin .card-title-container > span:first-child i.fa,
+html body.bg-elegantfin .card-title-container i.fa-book,
+html body.bg-elegantfin .card-title-container app-series-format i.fa-solid {
+  display: none !important;
+}
+
+.bg-elegantfin .card-actions i.fa,
+.bg-elegantfin .card-actions i.fa-ellipsis-v {
+  display: inline-block !important;
+}
+
+.bg-elegantfin .card-item-container {
+  position: relative !important;
+}
+
+.bg-elegantfin .card-title-container .card-actions {
+  position: absolute !important;
+  top: auto !important;
+  right: 15px !important;
+  left: auto !important;
+  bottom: calc(100% - 232.91px + 15px) !important;
+  z-index: 120 !important;
+  opacity: 0 !important;
+  transition: opacity 0.25s ease !important;
+}
+
+.bg-elegantfin .card:hover .card-actions,
+.bg-elegantfin .card-item-container:hover .card-actions {
+  opacity: 1 !important;
+}
+
+.bg-elegantfin .card-title-container .card-actions .btn,
+.bg-elegantfin .card-title-container .card-actions button,
+.bg-elegantfin .card-title-container .card-actions .dropdown-toggle {
+  background: rgba(0, 0, 0, 0.7) !important;
+  border-radius: 50% !important;
+  width: 38px !important;
+  height: 38px !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border: none !important;
+  transition: background-color 0.2s ease, transform 0.2s ease !important;
+  transform: scale(1) !important;
+  transform-origin: center center !important;
+  color: white !important;
+  font-size: 15px !important;
+}
+
+.bg-elegantfin .card-title-container .card-actions .btn i,
+.bg-elegantfin .card-title-container .card-actions button i,
+.bg-elegantfin .card-title-container .card-actions .dropdown-toggle i,
+.bg-elegantfin .card-title-container .card-actions .fa-ellipsis-v,
+.bg-elegantfin .card-title-container .card-actions .fa-ellipsis {
+  color: white !important;
+  font-size: 15px !important;
+}
+
+.bg-elegantfin .card-title-container .card-actions .btn:hover,
+.bg-elegantfin .card-title-container .card-actions button:hover,
+.bg-elegantfin .card-title-container .card-actions .dropdown-toggle:hover {
+  background: var(--primary-color) !important;
+  transform: scale(1.15) !important;
+}
+
+html body.bg-elegantfin div.dropdown-menu.show {
+  background: rgba(30, 40, 54, 0.95) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  border-radius: 16px !important;
+  backdrop-filter: blur(16px) !important;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.6) !important;
+  overflow: visible !important;
+  padding: 8px 0 !important;
+}
+
+/* Card body - transparent, no layer effect */
+.bg-elegantfin .card-body,
+.bg-elegantfin app-series-card .card-body,
+.bg-elegantfin app-card .card-body {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  min-height: unset !important;
+  height: auto !important;
+}
+
+.bg-elegantfin .card-body .card-content,
+.bg-elegantfin .card-content {
+  min-height: unset !important;
+  height: auto !important;
+}
+
+/* Title container - centered, no background */
+.bg-elegantfin .card-title-container {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  padding: 0 !important;
+  margin-top: -4px !important;
+  width: 100% !important;
+  background: transparent !important;
+}
+
+.bg-elegantfin .card-title-container .card-title,
+body.bg-elegantfin .card-title-container .card-title,
+html body.bg-elegantfin .card-title-container .card-title,
+html body.bg-elegantfin app-series-card .card-title-container .card-title,
+html body.bg-elegantfin app-series-card .card-title-container span.card-title {
+  width: 100% !important;
+  max-width: 100% !important;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: normal !important;
+  line-height: 1.4 !important;
+  text-align: center !important;
+  font-family: "Inter Tight", "Inter", sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  color: var(--body-text-color) !important;
+  height: auto !important;
+  min-height: auto !important;
+  max-height: none !important;
+}
+
+/* Title text - 2 lines max with ellipsis */
+.bg-elegantfin .card-title-container .card-title {
+  width: 100% !important;
+  max-width: 100% !important;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: normal !important;
+  line-height: 1.35 !important;
+  text-align: center !important;
+  font-size: 0.85rem !important;
+  color: var(--body-text-color) !important;
+  height: auto !important;
+  max-height: 2.7em !important;
+}
+
+.bg-elegantfin .card-title-container .card-title a {
+  display: block !important;
+  width: 100% !important;
+  text-align: center !important;
+  white-space: normal !important;
+  word-wrap: break-word !important;
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+.bg-elegantfin .card-title-container .card-title a:hover {
+  color: white !important;
+}
+
+.bg-elegantfin .card .overlay,
+.bg-elegantfin app-series-card .overlay {
+  position: relative !important;
+}
+
+.bg-elegantfin .overlay-information,
+.bg-elegantfin .series.overlay-information,
+.bg-elegantfin app-series-card .overlay-information {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: auto !important;
+  height: 232.91px !important;
+  width: 100% !important;
+  padding: 0 !important;
+  background: transparent !important;
+  display: block !important;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  border-radius: 1em !important;
+}
+
+.bg-elegantfin .card:hover .overlay-information,
+.bg-elegantfin app-series-card:hover .overlay-information {
+  opacity: 1;
+}
+
+.bg-elegantfin .overlay-information--centered,
+.bg-elegantfin .overlay-information .overlay-information--centered {
+  position: absolute !important;
+  background-color: rgba(0, 0, 0, 0.7) !important;
+  border-radius: 50px !important;
+  top: auto !important;
+  bottom: 15px !important;
+  left: 15px !important;
+  transform: scale(1) !important;
+  transform-origin: center center !important;
+  z-index: 115 !important;
+  width: 38px !important;
+  height: 38px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  transition: background-color 0.2s ease, transform 0.2s ease !important;
+}
+
+.bg-elegantfin .overlay-information--centered:hover,
+.bg-elegantfin .overlay-information .overlay-information--centered:hover {
+  background-color: var(--primary-color) !important;
+  transform: scale(1.15) !important;
+}
+
+.bg-elegantfin .overlay-information .card-title.library,
+.bg-elegantfin .overlay-information--centered .card-title.library {
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  width: auto !important;
+  height: auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.bg-elegantfin .overlay-information .card-title.library > span,
+.bg-elegantfin .overlay-information--centered .card-title.library > span {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.bg-elegantfin .overlay-information .card-title.library div,
+.bg-elegantfin .overlay-information--centered .card-title.library div {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: transparent !important;
+}
+
+.bg-elegantfin .overlay-information .card-title.library div i,
+.bg-elegantfin .overlay-information--centered .card-title.library div i {
+  font-size: 15px !important;
+  line-height: 1 !important;
+}
+
+.bg-elegantfin .card:has(.overlay-information--centered:hover) .card-img-container img,
+.bg-elegantfin .card:has(.overlay-information--centered:hover) app-image img,
+.bg-elegantfin .card:has(.card-actions .btn:hover) .card-img-container img,
+.bg-elegantfin .card:has(.card-actions .btn:hover) app-image img,
+.bg-elegantfin .card:has(.card-actions button:hover) app-image img {
+  filter: blur(4px) !important;
+  transition: filter 0.2s ease !important;
+}
+
+.bg-elegantfin .card-overlay {
+  background: transparent !important;
+}
+
+.bg-elegantfin .card .overlay-information *,
+.bg-elegantfin .overlay-text {
+  color: white !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9) !important;
+}
+
+.bg-elegantfin .card-img-overlay {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.3) 40%, transparent 100%) !important;
+  border-radius: 1em !important;
+}
+
+
+
+/* ============================================
+   CARD STRUCTURE - Cover only, title outside
+   ============================================ */
+
+.bg-elegantfin .card,
+.bg-elegantfin app-series-card .card,
+.bg-elegantfin app-card .card,
+.bg-elegantfin .series-card {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  margin-bottom: 0.25em !important;
+}
+
+.bg-elegantfin .card.selected-highlight,
+.bg-elegantfin .card-item-container.selected-highlight {
+  outline: none !important;
+}
+
+.bg-elegantfin .selected-highlight .overlay {
+  outline: 2px solid var(--primary-color) !important;
+  outline-offset: 0px !important;
+  border-radius: 1em !important;
+}
+
+/* Image container */
+.bg-elegantfin .card .card-img-container,
+.bg-elegantfin app-series-card .card-img-container,
+.bg-elegantfin app-card .card-img-container,
+.bg-elegantfin .series-card .card-img-container {
+  position: relative;
+  border-radius: 1em !important;
+  overflow: visible !important;
+}
+
+.bg-elegantfin .card .overlay,
+.bg-elegantfin app-series-card .overlay,
+.bg-elegantfin app-card .overlay {
+  border-radius: 1em !important;
+  overflow: hidden !important;
+  border: 1px solid transparent !important;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease !important;
+}
+
+/* Hover effect - white border on overlay */
+.bg-elegantfin .card:hover .overlay,
+.bg-elegantfin app-series-card:hover .overlay,
+.bg-elegantfin app-card:hover .overlay,
+.bg-elegantfin .series-card:hover .overlay {
+  border-color: rgba(255, 255, 255, 0.9) !important;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Cover images - full rounded corners */
+.bg-elegantfin .card img,
+.bg-elegantfin app-series-card img,
+.bg-elegantfin app-card img {
+  border-radius: 1em !important;
+}
+
+html body.bg-elegantfin app-series-card img,
+html body.bg-elegantfin app-card img,
+html body.bg-elegantfin .card app-image img,
+html body.bg-elegantfin app-image img.img-placeholder {
+  border-radius: 1em !important;
+}
+
+.bg-elegantfin .not-read-badge,
+.bg-elegantfin .badge-container .not-read-badge {
+  display: none !important;
+}
+
+/* Title container - outside the card, plain background */
+.bg-elegantfin .card .card-title-container,
+.bg-elegantfin app-series-card .card-title-container,
+.bg-elegantfin app-card .card-title-container {
+  background: transparent !important;
+  border: none !important;
+  padding: 0.1em 0.1em 0 !important;
+  margin: 0 !important;
+}
+
+.bg-elegantfin app-library-detail {
+  position: relative;
+}
+
+.bg-elegantfin app-library-detail .grid,
+.bg-elegantfin app-library-detail .grid.row {
+  overflow: visible !important;
+  padding: 10px !important;
+  gap: 0.5em !important;
+}
+
+.bg-elegantfin app-library-detail,
+.bg-elegantfin app-dashboard .main-container {
+  overflow: visible !important;
+}
+
+.bg-elegantfin swiper-container,
+.bg-elegantfin .carousel-container,
+.bg-elegantfin app-carousel-reel {
+  overflow: visible !important;
+}
+
+.bg-elegantfin swiper-slide {
+  padding-top: 5px !important;
+}
+
+.bg-elegantfin swiper-slide {
+  width: 160px !important;
+  overflow: visible !important;
+}
+
+.bg-elegantfin swiper-slide app-series-card,
+.bg-elegantfin swiper-slide app-card {
+  width: 160px !important;
+}
+
+.bg-elegantfin main,
+.bg-elegantfin .main-container,
+.bg-elegantfin app-library-detail,
+.bg-elegantfin [class*="content"] {
+  overflow: visible !important;
+}
+
+
