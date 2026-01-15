@@ -87,9 +87,15 @@
   --theme-color: #111827;
   --color-scheme: dark;
   --tile-color: var(--primary-color);
-  --nav-offset: 60px;
-  --nav-mobile-offset: 55px;
+  --nav-offset: 68px;
+  --nav-mobile-offset: 136px;
+  --nav-compact-offset: 48px;
+  --viewport-offset: var(--nav-offset);
+  --nav-stack-height: calc(var(--nav-offset) + 35px);
   --mobile-series-img-background: true;
+
+  --blur-height: clamp(140px, 20vh, 220px);
+  --content-safe-start: 135px;
 
   /* Setting Item */
   --setting-header-text-color: rgb(209, 213, 219);
@@ -106,7 +112,7 @@
   --table-body-striped-bg-color: rgba(29, 38, 53, 0.3);
 
   /* Navbar - ElegantFin glassmorphism style */
-  --navbar-bg-color: rgba(17, 24, 39, 0.85);
+  --navbar-bg-color: transparent;
   --navbar-text-color: rgb(209, 213, 219);
   --navbar-fa-icon-color: rgb(209, 213, 219);
   --navbar-border-radius: 0px;
@@ -205,7 +211,7 @@
 
   /* Header */
   --nav-header-text-color: rgb(209, 213, 219);
-  --nav-header-bg-color: rgba(30, 40, 54, 0.8);
+  --nav-header-bg-color: transparent;
 
   /* Toasts */
   --toast-success-bg-color: rgba(41, 154, 93, 0.9);
@@ -243,7 +249,7 @@
   --side-nav-hover-bg-color: rgba(119, 91, 244, 0.2);
   --side-nav-text-color: rgb(209, 213, 219);
   --side-nav-header-text-color: rgb(209, 213, 219);
-  --side-nav-border-radius: 0.5em;
+  --side-nav-border-radius: 1.25rem;
   --side-nav-border: none;
   --side-nav-border-closed: none;
   --side-nav-border-transition: 0.5s ease-in-out;
@@ -253,7 +259,7 @@
   --side-nav-item-active-color: var(--primary-color);
   --side-nav-item-active-text-color: white;
   --side-nav-active-bg-color: rgba(119, 91, 244, 0.15);
-  --side-nav-overlay-color: rgba(17, 24, 39, 0.8);
+  --side-nav-overlay-color: transparent;
   --side-nav-item-color: rgba(119, 91, 244, 0.1);
   --side-nav-item-closed-color: rgba(255, 255, 255, 0.4);
   --side-nav-item-closed-hover-color: white;
@@ -462,10 +468,291 @@
   /* Activity Card */
   --activity-card-client-platform-badge-bg-color: var(--primary-color);
   --activity-card-client-device-badge-bg-color: #2563eb;
+
+  /* Overlay Button Positioning (responsive via variable override) */
+  --overlay-btn-inset: 15px;
+  --overlay-btn-size: 38px;
+  --overlay-info-height: 232.91px;
+
+  /* Card Sizing Tokens (responsive) */
+  --card-width: clamp(140px, 18vw, 170px);
+  --card-aspect: 160 / 232.91;
+  --card-title-height: 5.4em;
+  --card-title-lines: 4;
+  --card-min-width: 100px;
+
+  /* Jump Bar Sizing Tokens */
+  --jump-bar-width: 28px;
+  --jump-btn-size: 22px;
+  --jump-btn-font: 12px;
+
+  /* Mobile Nav Companion */
+  --nav-companion-top: 70px;
+  --nav-companion-right: 42px;
+  --nav-companion-btn-size: 36px;
+
+  /* Content Spacing */
+  --content-top-offset: 25px;
+  --page-offset-delta: 0px;
+}
+
+
+.bg-elegantfin nav.navbar.fixed-top {
+  background-color: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+  z-index: 1040;
+  min-height: 68px !important;
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+  align-items: flex-start !important;
+  align-content: flex-start !important;
+  flex-wrap: nowrap !important;
+}
+
+/* Navbar blur layer - bloom/frosted glass effect (inspired by Jellyfin ElegantFin) */
+.bg-elegantfin nav.navbar.fixed-top::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--blur-height);
+  pointer-events: none;
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  -webkit-mask: linear-gradient(180deg, black 0, black var(--nav-offset), transparent 100%);
+  mask: linear-gradient(180deg, black 0, black var(--nav-offset), transparent 100%);
+  z-index: -1;
+}
+
+/* Navbar tint layer - dark overlay with smooth fade */
+.bg-elegantfin nav.navbar.fixed-top::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--blur-height);
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(17, 24, 39, 0.90) 0%, rgba(17, 24, 39, 0.70) var(--nav-offset), transparent 100%) !important;
+  z-index: -1;
+}
+
+.bg-elegantfin nav.navbar.fixed-top > * {
+  position: relative;
+  z-index: 1;
+}
+
+.bg-elegantfin .side-nav-container {
+  z-index: 1050 !important;
+}
+
+.bg-elegantfin app-side-nav-companion-bar {
+  z-index: 1045 !important;
+}
+
+.bg-elegantfin .side-nav-container.closed .side-nav-item .side-nav-text,
+.bg-elegantfin .side-nav-container.closed .side-nav-item .card-actions {
+  display: none !important;
+}
+
+.bg-elegantfin .side-nav-container.closed .side-nav-item .phone-hidden:first-of-type {
+  width: 100% !important;
+  min-width: 0 !important;
+  flex: 1 1 auto !important;
+  margin-left: 0 !important;
+  justify-content: center !important;
+}
+
+.bg-elegantfin .side-nav-container.closed .side-nav-item .phone-hidden:first-of-type div {
+  padding: 0 !important;
+  width: 100% !important;
+  display: flex !important;
+  justify-content: center !important;
 }
 
 .bg-elegantfin ngb-tooltip-window {
   display: none !important;
+}
+
+.bg-elegantfin app-grouped-typeahead,
+.bg-elegantfin form.grouped-typeahead,
+.bg-elegantfin form.grouped-typeahead .typeahead-input,
+.bg-elegantfin form.grouped-typeahead input#nav-search,
+.bg-elegantfin #nav-search {
+  border-radius: 9999px !important;
+}
+
+.bg-elegantfin form.grouped-typeahead {
+  width: clamp(120px, 16vw, 220px) !important;
+  max-width: clamp(120px, 16vw, 220px) !important;
+  flex: 0 1 auto !important;
+  transition: width 0.2s ease, max-width 0.2s ease;
+}
+
+.bg-elegantfin form.grouped-typeahead:focus-within {
+  width: clamp(120px, 16vw, 220px) !important;
+  max-width: clamp(120px, 16vw, 220px) !important;
+}
+
+@media (min-width: 769px) {
+  .bg-elegantfin .typeahead-input .input-hint {
+    display: inline-flex !important;
+    opacity: 1 !important;
+  }
+}
+
+.bg-elegantfin form.grouped-typeahead .typeahead-input,
+.bg-elegantfin form.grouped-typeahead input#nav-search,
+.bg-elegantfin #nav-search {
+  width: 100% !important;
+  max-width: 100% !important;
+  flex: 0 1 auto !important;
+}
+
+.bg-elegantfin form.grouped-typeahead .typeahead-input {
+  overflow: hidden !important;
+}
+
+@media (max-width: 768px) {
+  .bg-elegantfin nav.navbar .nav-item.search {
+    width: 36px !important;
+    min-width: 36px !important;
+    height: 36px !important;
+    position: relative !important;
+    border-radius: 9999px !important;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  .bg-elegantfin nav.navbar .nav-item.search .ng-autocomplete,
+  .bg-elegantfin nav.navbar .nav-item.search app-grouped-typeahead,
+  .bg-elegantfin nav.navbar .nav-item.search form.grouped-typeahead,
+  .bg-elegantfin nav.navbar .nav-item.search .typeahead-input {
+    width: 100% !important;
+    height: 100% !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  .bg-elegantfin nav.navbar .nav-item.search input#nav-search {
+    width: 100% !important;
+    height: 100% !important;
+    padding: 0 12px 0 40px !important;
+    margin: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    opacity: 0 !important;
+    cursor: pointer !important;
+    color: var(--input-text-color) !important;
+    line-height: 36px !important;
+    display: block !important;
+  }
+
+  .bg-elegantfin nav.navbar .nav-item.search:focus-within {
+    position: absolute !important;
+    top: 8px !important;
+    left: 12px !important;
+    right: 12px !important;
+    width: auto !important;
+    background: var(--input-bg-color) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
+    z-index: 1200 !important;
+    border: 1px solid var(--primary-color) !important;
+  }
+
+  .bg-elegantfin nav.navbar.fixed-top:has(.nav-item.search:focus-within) {
+    z-index: 1100 !important;
+  }
+
+  .bg-elegantfin nav.navbar .nav-item.search:focus-within input#nav-search {
+    opacity: 1 !important;
+    cursor: text !important;
+  }
+
+  .bg-elegantfin nav.navbar .nav-item.search::before {
+    content: "\f002";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: var(--navbar-text-color);
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    transition: color 0.2s ease !important;
+    z-index: 10 !important;
+  }
+
+  .bg-elegantfin nav.navbar .nav-item.search:focus-within::before {
+    color: var(--primary-color) !important;
+  }
+}
+
+.bg-elegantfin .sidenav-bottom {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+
+body.bg-elegantfin app-root .side-nav-overlay.closed {
+  display: none !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+
+.bg-elegantfin .side-nav-container:not(.closed) {
+  border-radius: 1.25rem !important;
+  --side-nav-border-radius: 1.25rem !important;
+  height: calc((var(--vh, 1vh) * 100) - var(--viewport-offset)) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important;
+}
+
+.bg-elegantfin .side-nav-container:not(.closed) .side-nav {
+  flex: 1 1 auto !important;
+  overflow-y: auto !important;
+}
+
+.bg-elegantfin .side-nav-container:not(.closed) .sidenav-bottom {
+  position: absolute !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  margin-top: 0 !important;
+  z-index: 10 !important;
+  pointer-events: auto !important;
+}
+
+
+.bg-elegantfin .side-nav-container:not(.closed) .side-nav {
+  flex: 1 1 auto !important;
+  overflow-y: auto !important;
+}
+
+.bg-elegantfin .side-nav-container:not(.closed) .sidenav-bottom {
+  position: absolute !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  margin-top: 0 !important;
+  z-index: 10 !important;
+  pointer-events: auto !important;
 }
 
 @keyframes elegantfin-shimmer-in {
@@ -608,17 +895,10 @@
   height: 100% !important;
   box-shadow: 0 0 6px rgba(119, 91, 244, 0.6) !important;
 }
-
-
-/* ============================================
-   CARD TITLE - 2 lines max, centered, no layer
-   ============================================ */
-
 /* Hide the library name row (e.g., "Books") */
 .bg-elegantfin .card-body.meta-title {
   display: none !important;
 }
-
 /* Hide format icon completely */
 html body.bg-elegantfin .card-title-container > span:first-child:not(.card-title),
 html body.bg-elegantfin .card-format,
@@ -630,39 +910,34 @@ html body.bg-elegantfin .card-title-container i.fa-book,
 html body.bg-elegantfin .card-title-container app-series-format i.fa-solid {
   display: none !important;
 }
-
 .bg-elegantfin .card-actions i.fa,
 .bg-elegantfin .card-actions i.fa-ellipsis-v {
   display: inline-block !important;
 }
-
 .bg-elegantfin .card-item-container {
   position: relative !important;
 }
-
 .bg-elegantfin .card-title-container .card-actions {
   position: absolute !important;
   top: auto !important;
-  right: 15px !important;
+  right: var(--overlay-btn-inset) !important;
   left: auto !important;
-  bottom: calc(100% - 232.91px + 15px) !important;
+  bottom: calc(100% - var(--overlay-info-height) + var(--overlay-btn-inset)) !important;
   z-index: 120 !important;
   opacity: 0 !important;
   transition: opacity 0.25s ease !important;
 }
-
 .bg-elegantfin .card:hover .card-actions,
 .bg-elegantfin .card-item-container:hover .card-actions {
   opacity: 1 !important;
 }
-
 .bg-elegantfin .card-title-container .card-actions .btn,
 .bg-elegantfin .card-title-container .card-actions button,
 .bg-elegantfin .card-title-container .card-actions .dropdown-toggle {
   background: rgba(0, 0, 0, 0.7) !important;
   border-radius: 50% !important;
-  width: 38px !important;
-  height: 38px !important;
+  width: var(--overlay-btn-size) !important;
+  height: var(--overlay-btn-size) !important;
   padding: 0 !important;
   display: flex !important;
   align-items: center !important;
@@ -674,7 +949,7 @@ html body.bg-elegantfin .card-title-container app-series-format i.fa-solid {
   color: white !important;
   font-size: 15px !important;
 }
-
+  transform: scale(1.15) !important;
 .bg-elegantfin .card-title-container .card-actions .btn i,
 .bg-elegantfin .card-title-container .card-actions button i,
 .bg-elegantfin .card-title-container .card-actions .dropdown-toggle i,
@@ -683,7 +958,6 @@ html body.bg-elegantfin .card-title-container app-series-format i.fa-solid {
   color: white !important;
   font-size: 15px !important;
 }
-
 .bg-elegantfin .card-title-container .card-actions .btn:hover,
 .bg-elegantfin .card-title-container .card-actions button:hover,
 .bg-elegantfin .card-title-container .card-actions .dropdown-toggle:hover {
@@ -699,6 +973,7 @@ html body.bg-elegantfin div.dropdown-menu.show {
   box-shadow: 0 12px 48px rgba(0, 0, 0, 0.6) !important;
   overflow: visible !important;
   padding: 8px 0 !important;
+  z-index: 1060 !important;
 }
 
 /* Card body - transparent, no layer effect */
@@ -728,6 +1003,7 @@ html body.bg-elegantfin div.dropdown-menu.show {
   padding: 0 !important;
   margin-top: -4px !important;
   width: 100% !important;
+  min-height: var(--card-title-height) !important;
   background: transparent !important;
 }
 
@@ -739,38 +1015,20 @@ html body.bg-elegantfin app-series-card .card-title-container span.card-title {
   width: 100% !important;
   max-width: 100% !important;
   display: -webkit-box !important;
-  -webkit-line-clamp: 2 !important;
-  -webkit-box-orient: vertical !important;
-  overflow: hidden !important;
-  text-overflow: ellipsis !important;
-  white-space: normal !important;
-  line-height: 1.4 !important;
-  text-align: center !important;
-  font-family: "Inter Tight", "Inter", sans-serif !important;
-  font-size: 13px !important;
-  font-weight: 400 !important;
-  color: var(--body-text-color) !important;
-  height: auto !important;
-  min-height: auto !important;
-  max-height: none !important;
-}
-
-/* Title text - 2 lines max with ellipsis */
-.bg-elegantfin .card-title-container .card-title {
-  width: 100% !important;
-  max-width: 100% !important;
-  display: -webkit-box !important;
-  -webkit-line-clamp: 2 !important;
+  -webkit-line-clamp: var(--card-title-lines) !important;
   -webkit-box-orient: vertical !important;
   overflow: hidden !important;
   text-overflow: ellipsis !important;
   white-space: normal !important;
   line-height: 1.35 !important;
   text-align: center !important;
+  font-family: "Inter Tight", "Inter", sans-serif !important;
   font-size: 0.85rem !important;
+  font-weight: 400 !important;
   color: var(--body-text-color) !important;
   height: auto !important;
-  max-height: 2.7em !important;
+  min-height: auto !important;
+  max-height: none !important;
 }
 
 .bg-elegantfin .card-title-container .card-title a {
@@ -800,7 +1058,7 @@ html body.bg-elegantfin app-series-card .card-title-container span.card-title {
   left: 0 !important;
   right: 0 !important;
   bottom: auto !important;
-  height: 232.91px !important;
+  height: var(--overlay-info-height) !important;
   width: 100% !important;
   padding: 0 !important;
   background: transparent !important;
@@ -821,13 +1079,13 @@ html body.bg-elegantfin app-series-card .card-title-container span.card-title {
   background-color: rgba(0, 0, 0, 0.7) !important;
   border-radius: 50px !important;
   top: auto !important;
-  bottom: 15px !important;
-  left: 15px !important;
+  bottom: var(--overlay-btn-inset) !important;
+  left: var(--overlay-btn-inset) !important;
   transform: scale(1) !important;
   transform-origin: center center !important;
   z-index: 115 !important;
-  width: 38px !important;
-  height: 38px !important;
+  width: var(--overlay-btn-size) !important;
+  height: var(--overlay-btn-size) !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
@@ -900,10 +1158,6 @@ html body.bg-elegantfin app-series-card .card-title-container span.card-title {
 
 
 
-/* ============================================
-   CARD STRUCTURE - Cover only, title outside
-   ============================================ */
-
 .bg-elegantfin .card,
 .bg-elegantfin app-series-card .card,
 .bg-elegantfin app-card .card,
@@ -913,6 +1167,10 @@ html body.bg-elegantfin app-series-card .card-title-container span.card-title {
   border-radius: 0 !important;
   box-shadow: none !important;
   margin-bottom: 0.25em !important;
+}
+
+.bg-elegantfin .card-detail-layout-item {
+  margin-bottom: 0 !important;
 }
 
 .bg-elegantfin .card.selected-highlight,
@@ -987,11 +1245,515 @@ html body.bg-elegantfin app-image img.img-placeholder {
   position: relative;
 }
 
+.bg-elegantfin app-side-nav-companion-bar {
+  position: fixed !important;
+  top: 0 !important;
+  height: 68px !important;
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+  left: 0 !important;
+  width: 100% !important;
+  transform: none !important;
+  max-width: 100vw !important;
+  padding-top: 10px !important;
+  margin: 0 !important;
+  background: transparent !important;
+  z-index: 1045 !important;
+  pointer-events: none !important;
+}
+
+/* Ensure inner container is centered */
+.bg-elegantfin app-side-nav-companion-bar > div:first-child {
+  margin: 0 auto !important;
+}
+
+@media (max-width: 480px) {
+  :root .bg-elegantfin {
+    --nav-offset: 48px;
+    --viewport-offset: var(--nav-offset);
+    --nav-stack-height: calc(var(--nav-offset) + 12px);
+  }
+
+  .bg-elegantfin nav.navbar.fixed-top {
+    min-height: 48px !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    align-items: center !important;
+  }
+
+  body.bg-elegantfin nav.navbar.fixed-top .container-fluid {
+    display: flex !important;
+    align-items: center !important;
+    flex-wrap: nowrap !important;
+  }
+
+  body.bg-elegantfin nav.navbar.fixed-top .navbar-brand {
+    order: 2 !important;
+    margin: 0 6px !important;
+  }
+
+  body.bg-elegantfin nav.navbar.fixed-top .navbar-brand .logo-icon {
+    display: none !important;
+  }
+
+  body.bg-elegantfin nav.navbar.fixed-top .navbar-nav {
+    order: 6 !important;
+    margin-left: auto !important;
+    margin-right: 6px !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+  }
+
+  body.bg-elegantfin nav.navbar.fixed-top .nav-item.search {
+    order: 10 !important;
+  }
+
+  body.bg-elegantfin nav.navbar.fixed-top .btn.btn-outline-secondary.primary-text {
+    order: 7 !important;
+  }
+  
+  body.bg-elegantfin app-root app-side-nav-companion-bar {
+    top: 0 !important;
+    height: 48px !important;
+    padding-top: 0 !important;
+    align-items: center !important;
+    left: 0 !important;
+    width: 100% !important;
+    transform: none !important;
+    justify-content: center !important;
+  }
+}
+
+.bg-elegantfin app-side-nav-companion-bar > div:first-child {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 12px !important;
+  pointer-events: none !important;
+}
+
+.bg-elegantfin app-side-nav-companion-bar > div:first-child > div:first-child {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  gap: 12px !important;
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  pointer-events: auto !important;
+  max-width: none !important;
+  flex: 0 1 auto !important;
+  min-width: 0 !important;
+  overflow: visible !important;
+}
+
+.bg-elegantfin app-side-nav-companion-bar > div:first-child > div:first-child > h4,
+.bg-elegantfin app-side-nav-companion-bar > div:first-child > div:first-child > h2 {
+  order: 2 !important;
+}
+
+.bg-elegantfin app-side-nav-companion-bar > div:first-child > div:first-child > button,
+.bg-elegantfin app-side-nav-companion-bar > div:first-child > div:first-child > .btn,
+.bg-elegantfin app-side-nav-companion-bar > div:first-child > div:first-child > .dropdown-toggle {
+  order: 1 !important;
+}
+
+.bg-elegantfin app-side-nav-companion-bar h4,
+.bg-elegantfin app-side-nav-companion-bar h2,
+.bg-elegantfin app-settings app-side-nav-companion-bar h2,
+.bg-elegantfin app-server-settings app-side-nav-companion-bar h2 {
+  display: inline-flex !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  gap: 12px !important;
+  flex-direction: row-reverse !important;
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  color: var(--body-text-color) !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  line-height: 1.1 !important;
+  max-width: 100% !important;
+  min-height: 36px !important;
+}
+
+.bg-elegantfin app-settings h1,
+.bg-elegantfin app-settings h2,
+.bg-elegantfin app-settings h3,
+.bg-elegantfin app-server-settings h1,
+.bg-elegantfin app-server-settings h2,
+.bg-elegantfin app-server-settings h3 {
+  font-size: 1.15rem !important;
+  line-height: 1.2 !important;
+}
+
+.bg-elegantfin app-side-nav-companion-bar h4 button,
+.bg-elegantfin app-side-nav-companion-bar h4 .btn,
+.bg-elegantfin app-side-nav-companion-bar h4 .dropdown-toggle,
+.bg-elegantfin app-side-nav-companion-bar > div:first-child > div:first-child button,
+.bg-elegantfin app-side-nav-companion-bar > div:first-child > div:first-child .btn,
+.bg-elegantfin app-side-nav-companion-bar > div:first-child > div:first-child .dropdown-toggle {
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  width: 36px !important;
+  height: 36px !important;
+  min-width: 36px !important;
+  min-height: 36px !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  order: -1 !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  transition: background-color 0.2s ease, transform 0.2s ease !important;
+}
+
+.bg-elegantfin app-side-nav-companion-bar h4 button:hover,
+.bg-elegantfin app-side-nav-companion-bar h4 .btn:hover,
+.bg-elegantfin app-side-nav-companion-bar h4 .dropdown-toggle:hover,
+.bg-elegantfin app-side-nav-companion-bar > div:first-child > div:first-child button:hover,
+.bg-elegantfin app-side-nav-companion-bar > div:first-child > div:first-child .btn:hover,
+.bg-elegantfin app-side-nav-companion-bar > div:first-child > div:first-child .dropdown-toggle:hover {
+  background: var(--primary-color) !important;
+  transform: scale(1.15) !important;
+}
+
+.bg-elegantfin app-side-nav-companion-bar h6 {
+  display: inline-flex !important;
+  align-items: center !important;
+  margin: 0 !important;
+  line-height: 1.1 !important;
+  min-height: 36px !important;
+}
+
+/* Hide series count (h5) - redundant info */
+.bg-elegantfin app-side-nav-companion-bar h5 {
+  display: none !important;
+}
+
+/* Filter button container (last div) */
+.bg-elegantfin app-side-nav-companion-bar > div:first-child > div:last-child {
+  margin: 0 !important;
+  pointer-events: auto !important;
+  overflow: visible !important;
+}
+
+/* Filter button styling - circular glassmorphic */
+.bg-elegantfin app-side-nav-companion-bar > div:first-child > div:last-child .btn,
+.bg-elegantfin app-side-nav-companion-bar > div:first-child > div:last-child button {
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-radius: 50% !important;
+  width: 36px !important;
+  height: 36px !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border: none !important;
+  transition: background-color 0.2s ease, transform 0.2s ease !important;
+}
+
+.bg-elegantfin app-side-nav-companion-bar .btn:hover {
+  background: var(--primary-color) !important;
+  transform: scale(1.15) !important;
+}
+
+/* Remove any solid header space from main container */
+.bg-elegantfin app-library-detail .main-container,
+.bg-elegantfin app-all-series .main-container,
+.bg-elegantfin app-browse-people .main-container,
+.bg-elegantfin app-collection-detail .main-container,
+.bg-elegantfin app-reading-lists .main-container,
+.bg-elegantfin app-want-to-read .main-container,
+.bg-elegantfin app-all-collections .main-container,
+.bg-elegantfin app-bookmarks .main-container,
+.bg-elegantfin app-settings .main-container,
+.bg-elegantfin app-server-settings .main-container {
+  padding-top: 0 !important;
+}
+
+@media (min-width: 769px) {
+  .bg-elegantfin app-all-series .main-container {
+    padding-top: var(--content-safe-start) !important;
+  }
+
+  .bg-elegantfin app-series-detail .main-container {
+    padding-top: var(--content-safe-start) !important;
+  }
+
+  /* Variable-based pages (Desktop) */
+  .bg-elegantfin app-library-detail .main-container,
+  .bg-elegantfin app-dashboard .main-container,
+  .bg-elegantfin app-collection-detail .main-container,
+  .bg-elegantfin app-browse-people .main-container,
+  .bg-elegantfin app-reading-lists .main-container,
+  .bg-elegantfin app-want-to-read .main-container,
+  .bg-elegantfin app-all-collections .main-container,
+  .bg-elegantfin app-bookmarks .main-container,
+  .bg-elegantfin app-settings .main-container,
+  .bg-elegantfin app-server-settings .main-container {
+    padding-top: calc(var(--content-safe-start) + var(--page-offset-delta)) !important;
+  }
+
+  /* Page-specific deltas (Desktop) */
+  .bg-elegantfin app-dashboard {
+    --page-offset-delta: 15px;
+  }
+
+  .bg-elegantfin app-library-detail {
+    --page-offset-delta: -10px;
+    --viewport-offset: 3px;
+  }
+  
+  .bg-elegantfin app-all-collections,
+  .bg-elegantfin app-reading-lists,
+  .bg-elegantfin app-want-to-read,
+  .bg-elegantfin app-bookmarks,
+  .bg-elegantfin app-settings,
+  .bg-elegantfin app-server-settings,
+  .bg-elegantfin app-browse-people {
+    --page-offset-delta: 40px;
+  }
+
+  /* Nested container fix */
+  .bg-elegantfin app-want-to-read .main-container .main-container {
+    padding-top: 0 !important;
+  }
+
+  .bg-elegantfin app-dashboard .row.grid,
+  .bg-elegantfin app-collection-detail .row.grid,
+  .bg-elegantfin app-library-detail .row.grid,
+  .bg-elegantfin app-all-series .row.grid {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  :root .bg-elegantfin {
+    --content-top-offset: 40px;
+    --content-safe-start: 60px;
+  }
+
+  body.bg-elegantfin:has(:is(virtual-scroller, .virtual-scroller)) {
+    --content-safe-start: 135px;
+  }
+
+  .bg-elegantfin app-dashboard .main-container,
+  .bg-elegantfin app-collection-detail .main-container,
+  .bg-elegantfin app-browse-people .main-container,
+  .bg-elegantfin app-reading-lists .main-container,
+  .bg-elegantfin app-want-to-read .main-container,
+  .bg-elegantfin app-all-collections .main-container,
+  .bg-elegantfin app-bookmarks .main-container,
+  .bg-elegantfin app-settings .main-container,
+  .bg-elegantfin app-server-settings .main-container,
+  .bg-elegantfin app-series-detail .main-container,
+  .bg-elegantfin app-library-detail .main-container,
+  .bg-elegantfin app-all-series .main-container {
+    padding-top: calc(var(--content-safe-start) + var(--page-offset-delta)) !important;
+  }
+
+  .bg-elegantfin app-settings .main-container,
+  .bg-elegantfin app-server-settings .main-container,
+  .bg-elegantfin app-dashboard .main-container,
+  .bg-elegantfin app-all-collections .main-container,
+  .bg-elegantfin app-reading-lists .main-container,
+  .bg-elegantfin app-want-to-read .main-container,
+  .bg-elegantfin app-bookmarks .main-container,
+  .bg-elegantfin app-collection-detail .main-container,
+  .bg-elegantfin app-series-detail .main-container {
+    padding-top: 108px !important;
+  }
+
+  /* Page-specific deltas (Mobile) */
+  .bg-elegantfin app-dashboard,
+  .bg-elegantfin app-all-collections,
+  .bg-elegantfin app-reading-lists,
+  .bg-elegantfin app-want-to-read,
+  .bg-elegantfin app-bookmarks,
+  .bg-elegantfin app-settings,
+  .bg-elegantfin app-server-settings,
+  .bg-elegantfin app-browse-people,
+  .bg-elegantfin app-series-detail,
+  .bg-elegantfin app-all-series {
+    --page-offset-delta: 30px;
+  }
+
+  .bg-elegantfin app-library-detail {
+    --page-offset-delta: 60px;
+  }
+  
+  .bg-elegantfin app-collection-detail {
+    --page-offset-delta: 0px; /* 20+0=20px */
+  }
+
+  /* Nested container fix */
+  .bg-elegantfin app-want-to-read .main-container .main-container {
+    padding-top: 0 !important;
+  }
+
+  /* Grid Margins (Preserved) */
+  .bg-elegantfin app-dashboard .row.grid,
+  .bg-elegantfin app-library-detail .row.grid,
+  .bg-elegantfin app-all-series .row.grid {
+    margin-top: 15px;
+  }
+}
+
 .bg-elegantfin app-library-detail .grid,
+
 .bg-elegantfin app-library-detail .grid.row {
   overflow: visible !important;
   padding: 10px !important;
   gap: 0.5em !important;
+}
+
+.bg-elegantfin app-browse-people h6 {
+  display: none !important;
+}
+
+.bg-elegantfin :is(.virtual-scroller, virtual-scroller),
+.bg-elegantfin .companion-bar {
+  background: transparent !important;
+  background-color: transparent !important;
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+  -webkit-mask: none !important;
+  mask: none !important;
+}
+
+.bg-elegantfin .content-container,
+.bg-elegantfin .viewport-container {
+  margin-bottom: 0 !important;
+}
+
+html body.bg-elegantfin app-root :is(.virtual-scroller, virtual-scroller) {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: var(--jump-bar-width) !important;
+  width: auto !important;
+  height: 100vh !important;
+  z-index: 0 !important;
+  padding-top: 0 !important;
+  box-sizing: border-box !important;
+  overflow-y: scroll !important;
+  overflow-x: hidden !important;
+  scrollbar-width: none !important;
+}
+
+html body.bg-elegantfin app-root :is(.virtual-scroller, virtual-scroller)::-webkit-scrollbar {
+  width: 0px !important;
+  background: transparent !important;
+}
+
+@media (min-width: 481px) {
+  html body.bg-elegantfin app-root :is(.virtual-scroller, virtual-scroller) {
+    left: 60px !important;
+    right: calc(var(--jump-bar-width) + 10px) !important;
+  }
+}
+
+html body.bg-elegantfin app-root :is(.virtual-scroller, virtual-scroller) .scrollable-content {
+  padding-top: var(--content-safe-start) !important;
+  box-sizing: border-box !important;
+}
+
+html body.bg-elegantfin app-root :is(.virtual-scroller, virtual-scroller) .total-padding {
+  padding-top: var(--content-safe-start) !important;
+  box-sizing: border-box !important;
+}
+
+html body.bg-elegantfin app-root :is(.virtual-scroller, virtual-scroller) .grid,
+html body.bg-elegantfin app-root :is(.virtual-scroller, virtual-scroller) .grid.row {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+html body.bg-elegantfin app-root :is(.virtual-scroller, virtual-scroller) #card-detail-layout-items-container,
+html body.bg-elegantfin app-root :is(.virtual-scroller, virtual-scroller) .card-container,
+html body.bg-elegantfin app-root :is(.virtual-scroller, virtual-scroller) .grid {
+  padding-right: 0 !important;
+}
+
+@media (min-width: 769px) {
+  html body.bg-elegantfin app-root app-metadata-filter > div {
+    position: fixed !important;
+    top: var(--nav-stack-height) !important;
+    left: 50% !important;
+    right: auto !important;
+    transform: translateX(-50%) !important;
+    width: min(860px, calc(100% - 140px)) !important;
+    box-sizing: border-box !important;
+    z-index: 1065 !important;
+    background: rgba(30, 40, 54, 0.92) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border-radius: 16px !important;
+    backdrop-filter: blur(16px) !important;
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.6) !important;
+    padding: 16px 18px !important;
+  }
+}
+
+
+.bg-elegantfin app-root .content-wrapper,
+.bg-elegantfin app-root .companion-bar {
+  height: auto !important;
+  min-height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+.bg-elegantfin .content-wrapper,
+.bg-elegantfin .content-wrapper.closed {
+  height: calc(100vh - var(--nav-offset)) !important;
+}
+
+html[style] {
+  height: 100vh !important;
+  min-height: 100vh !important;
+}
+
+body.bg-elegantfin[style] {
+  height: 100vh !important;
+  min-height: 100vh !important;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+}
+
+html:has(:is(virtual-scroller, .virtual-scroller)),
+body.bg-elegantfin:has(:is(virtual-scroller, .virtual-scroller)),
+body.bg-elegantfin[style]:has(:is(virtual-scroller, .virtual-scroller)) {
+  overflow: hidden !important;
+  scrollbar-width: none !important;
+}
+
+html:has(:is(virtual-scroller, .virtual-scroller))::-webkit-scrollbar,
+body.bg-elegantfin:has(:is(virtual-scroller, .virtual-scroller))::-webkit-scrollbar,
+body.bg-elegantfin[style]:has(:is(virtual-scroller, .virtual-scroller))::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: transparent !important;
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
 }
 
 .bg-elegantfin app-library-detail,
@@ -1007,16 +1769,13 @@ html body.bg-elegantfin app-image img.img-placeholder {
 
 .bg-elegantfin swiper-slide {
   padding-top: 5px !important;
-}
-
-.bg-elegantfin swiper-slide {
-  width: 160px !important;
+  width: var(--card-width) !important;
   overflow: visible !important;
 }
 
 .bg-elegantfin swiper-slide app-series-card,
 .bg-elegantfin swiper-slide app-card {
-  width: 160px !important;
+  width: 100% !important;
 }
 
 .bg-elegantfin main,
@@ -1025,5 +1784,446 @@ html body.bg-elegantfin app-image img.img-placeholder {
 .bg-elegantfin [class*="content"] {
   overflow: visible !important;
 }
+
+
+@media (max-width: 30em) {
+
+  :root .bg-elegantfin {
+    --nav-offset: 48px;
+    --nav-compact-offset: 48px;
+    --nav-mobile-offset: 48px;
+    --viewport-offset: var(--nav-offset);
+    --overlay-btn-inset: 6px;
+    --overlay-btn-size: 28px;
+    --overlay-info-height: 100%;
+    --card-min-width: 95px;
+    --card-width: 100%;
+    --card-title-height: 5.8em;
+    --card-title-lines: 4;
+    --jump-bar-width: 22px;
+    --jump-btn-size: 18px;
+    --jump-btn-font: 10px;
+    
+    --blur-height: 120px;
+    --content-safe-start: 135px;
+  }
+
+  .bg-elegantfin app-library-detail .row.grid,
+  .bg-elegantfin app-library-detail .grid.row {
+    margin-top: 0 !important;
+  }
+
+  .bg-elegantfin app-library-detail .viewport-container {
+    margin-top: 0 !important;
+  }
+
+  .bg-elegantfin app-side-nav-companion-bar {
+    top: 0 !important;
+    height: 48px !important;
+    padding-top: 0 !important;
+    align-items: center !important;
+  }
+
+  body.bg-elegantfin app-root app-side-nav-companion-bar,
+  body.bg-elegantfin[style] app-root app-side-nav-companion-bar {
+    top: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  body.bg-elegantfin[style] {
+    padding-top: var(--nav-offset) !important;
+  }
+
+  .bg-elegantfin .content-wrapper,
+  .bg-elegantfin app-root .content-wrapper {
+    height: calc((var(--vh, 1vh) * 100) - var(--nav-offset)) !important;
+  }
+
+  .bg-elegantfin .companion-bar {
+    margin-top: 0 !important;
+    height: calc((var(--vh, 1vh) * 100) - var(--nav-offset)) !important;
+  }
+
+  .bg-elegantfin app-side-nav-companion-bar > div:first-child > div:first-child {
+    padding: 0 8px !important;
+    border-radius: 14px !important;
+  }
+
+
+  .bg-elegantfin app-side-nav-companion-bar .btn {
+    width: var(--nav-companion-btn-size) !important;
+    height: var(--nav-companion-btn-size) !important;
+  }
+
+  .bg-elegantfin app-side-nav-companion-bar > div:first-child {
+    flex-wrap: nowrap !important;
+    overflow: hidden !important;
+  }
+
+  .bg-elegantfin app-side-nav-companion-bar > div:first-child > div:first-child {
+    min-width: 0 !important;
+    flex: 1 1 auto !important;
+  }
+
+  .bg-elegantfin app-side-nav-companion-bar > div:first-child > div:last-child {
+    flex: 0 0 auto !important;
+  }
+
+  .bg-elegantfin app-side-nav-companion-bar h4,
+  .bg-elegantfin app-side-nav-companion-bar h2 {
+    min-width: 0 !important;
+  }
+
+  .bg-elegantfin app-nav-events-toggle {
+    display: none !important;
+  }
+
+  .bg-elegantfin app-library-detail app-side-nav-companion-bar h4[title] {
+    position: relative !important;
+  }
+
+  .bg-elegantfin app-library-detail app-side-nav-companion-bar h4[title] app-card-actionables {
+    position: absolute !important;
+    inset: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+  }
+
+  .bg-elegantfin app-library-detail app-side-nav-companion-bar h4[title] app-card-actionables .btn,
+  .bg-elegantfin app-library-detail app-side-nav-companion-bar h4[title] app-card-actionables button {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    opacity: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .bg-elegantfin .main-container {
+    padding-top: calc(var(--content-safe-start) + var(--page-offset-delta)) !important;
+    margin-top: 0 !important;
+  }
+
+  body.bg-elegantfin:not(:has(:is(virtual-scroller, .virtual-scroller))) .main-container {
+    padding-top: 60px !important;
+  }
+
+  .bg-elegantfin .grid,
+  .bg-elegantfin app-library-detail .grid,
+  .bg-elegantfin app-library-detail .grid.row {
+    grid-template-columns: repeat(auto-fill, minmax(var(--card-min-width), 1fr)) !important;
+    grid-gap: 6px !important;
+    padding: 0 8px !important;
+    justify-content: center !important;
+  }
+
+  .bg-elegantfin .grid > .card,
+  .bg-elegantfin .grid > .card-detail-layout-item {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  .bg-elegantfin .content-container,
+  .bg-elegantfin .viewport-container {
+    margin-bottom: 0 !important;
+  }
+
+  .bg-elegantfin .viewport-container,
+  .bg-elegantfin :is(.virtual-scroller, virtual-scroller),
+  .bg-elegantfin app-library-detail .viewport-container,
+  .bg-elegantfin app-library-detail :is(.virtual-scroller, virtual-scroller) {
+    height: calc(var(--vh, 1vh) * 100) !important;
+    padding-bottom: 0 !important;
+  }
+
+
+  .bg-elegantfin .card-item-container {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .bg-elegantfin .overlay,
+  .bg-elegantfin .badge-container {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: var(--card-aspect) !important;
+  }
+
+  .bg-elegantfin .overlay img,
+  .bg-elegantfin app-image img,
+  .bg-elegantfin .card-img-container img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+
+  .bg-elegantfin .overlay-information,
+  .bg-elegantfin .series.overlay-information,
+  .bg-elegantfin app-series-card .overlay-information {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    z-index: 120 !important;
+    pointer-events: none !important;
+  }
+
+  .bg-elegantfin .overlay:hover .overlay-information,
+  .bg-elegantfin .card-item-container:hover .overlay-information,
+  .bg-elegantfin app-series-card:hover .overlay-information {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+  }
+
+  .bg-elegantfin .overlay-information--centered,
+  .bg-elegantfin .overlay-information .overlay-information--centered {
+    z-index: 130 !important;
+    pointer-events: auto !important;
+  }
+
+  .bg-elegantfin .overlay:hover .overlay-information--centered,
+  .bg-elegantfin .card-item-container:hover .overlay-information--centered,
+  .bg-elegantfin app-series-card:hover .overlay-information--centered {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: flex !important;
+  }
+
+  .bg-elegantfin swiper-slide {
+    width: min(calc((100vw - 50px) / 3), var(--card-min-width) * 1.2) !important;
+  }
+
+  .bg-elegantfin swiper-slide app-series-card,
+  .bg-elegantfin swiper-slide app-card,
+  .bg-elegantfin swiper-slide .card-item-container {
+    width: 100% !important;
+  }
+
+  html body.bg-elegantfin .card-title-container .card-title,
+  html body.bg-elegantfin app-series-card .card-title-container .card-title,
+  html body.bg-elegantfin app-series-card .card-title-container span.card-title,
+  html body.bg-elegantfin .card-body .card-title,
+  html body.bg-elegantfin .card-title-container .card-title a {
+    max-width: 100% !important;
+    overflow: hidden !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: var(--card-title-lines) !important;
+    -webkit-box-orient: vertical !important;
+    padding: 2px 0 0 0 !important;
+    margin: 0 !important;
+  }
+
+  html body.bg-elegantfin .card-title-container,
+  html body.bg-elegantfin app-series-card .card-title-container {
+    height: var(--card-title-height) !important;
+    min-height: var(--card-title-height) !important;
+    max-height: var(--card-title-height) !important;
+    overflow: hidden !important;
+    padding-top: 0 !important;
+  }
+
+  .bg-elegantfin .card-title-container .card-actions .btn,
+  .bg-elegantfin .card-title-container .card-actions button,
+  .bg-elegantfin .card-title-container .card-actions .dropdown-toggle {
+    width: var(--overlay-btn-size) !important;
+    height: var(--overlay-btn-size) !important;
+  }
+
+  .bg-elegantfin .card-title-container .card-actions {
+    right: var(--overlay-btn-inset) !important;
+    bottom: calc(var(--card-title-height) + var(--overlay-btn-inset)) !important;
+  }
+
+  .bg-elegantfin .card-item-container:hover {
+    transform: scale(1.02) !important;
+    z-index: 10 !important;
+    position: relative !important;
+  }
+
+  .bg-elegantfin .card-item-container:hover .overlay::before {
+    animation: elegantfin-shimmer-in 0.5s ease-out forwards;
+  }
+
+  .bg-elegantfin .card-item-container:hover .overlay-information {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+  }
+
+  .bg-elegantfin .overlay-information--centered i,
+  .bg-elegantfin .overlay-information .card-title.library div i {
+    font-size: 11px !important;
+  }
+
+  .bg-elegantfin .viewport-container {
+    padding-right: 0 !important;
+  }
+}
+
+.bg-elegantfin .jump-bar {
+  --jump-btn-size: 18px !important;
+  --jump-btn-font: 10px !important;
+  
+  width: 22px !important;
+  padding: 0 2px !important;
+  padding-bottom: 20px !important;
+  
+  /* Position relative to viewport, but START below the navbar */
+  position: fixed !important;
+  top: var(--nav-stack-height) !important;
+  bottom: 0 !important;
+  height: auto !important;
+  
+  right: 0 !important;
+  z-index: 9999 !important;
+  
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important; /* Spread to fill height */
+  align-items: center !important;
+  overflow: hidden !important;
+}
+
+
+
+.bg-elegantfin .jump-bar .btn,
+.bg-elegantfin .jump-bar .btn-link,
+.bg-elegantfin .jump-bar .flip-button {
+  padding: 0 !important;
+  font-size: var(--jump-btn-font) !important;
+  width: var(--jump-btn-size) !important;
+  height: auto !important;
+  max-height: 18px !important;
+  min-height: 0 !important; 
+  flex: 1 1 auto !important;
+  
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 !important;
+}
+
+.bg-elegantfin .flip-button-front,
+.bg-elegantfin .flip-button-back {
+  font-size: var(--jump-btn-font) !important;
+}
+
+
+.bg-elegantfin .side-nav-container:not(.closed) {
+  border-radius: 1.25rem !important;
+  --side-nav-border-radius: 1.25rem !important;
+  height: calc((var(--vh, 1vh) * 100) - var(--viewport-offset)) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important;
+}
+
+.bg-elegantfin .side-nav-container:not(.closed) .side-nav {
+  flex: 1 1 auto !important;
+  overflow-y: auto !important;
+}
+
+
+.bg-elegantfin .side-nav-container:not(.closed) app-side-nav-item {
+  display: block !important;
+  width: 100% !important;
+}
+
+
+@media (max-width: 992px) {
+  .bg-elegantfin .side-nav-container:not(.closed) {
+    width: var(--side-nav-width) !important;
+    min-width: var(--side-nav-width) !important;
+    max-width: var(--side-nav-width) !important;
+  }
+}
+
+.bg-elegantfin .side-nav-container.closed .sidenav-bottom .donate .side-nav-item {
+  border-radius: 50% !important;
+}
+
+html body.bg-elegantfin app-root .side-nav-overlay,
+html body.bg-elegantfin app-root .side-nav-overlay.closed {
+  display: none !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+body.bg-elegantfin .side-nav-overlay {
+  display: none !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+.bg-elegantfin .p-sidebar,
+.bg-elegantfin p-sidebar .p-sidebar {
+  z-index: 2000 !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  height: 100vh !important;
+  max-height: 100vh !important;
+  background: var(--drawer-bg-color) !important;
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+  border-left: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.6) !important;
+}
+
+.bg-elegantfin .p-sidebar-mask {
+  z-index: 1990 !important;
+  background-color: rgba(0, 0, 0, 0.6) !important;
+  backdrop-filter: blur(4px) !important;
+  -webkit-backdrop-filter: blur(4px) !important;
+}
+
+.bg-elegantfin .p-sidebar .p-sidebar-header {
+  background: transparent !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+  padding: 1rem 1.5rem !important;
+}
+
+.bg-elegantfin .p-sidebar .p-sidebar-header .p-sidebar-close {
+  color: var(--text-muted-color) !important;
+  width: 2rem !important;
+  height: 2rem !important;
+  border-radius: 50% !important;
+  transition: all 0.2s ease !important;
+}
+
+.bg-elegantfin .p-sidebar .p-sidebar-header .p-sidebar-close:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: var(--primary-color) !important;
+}
+
+
+
+.bg-elegantfin .p-sidebar .p-sidebar-content {
+  padding: 1.5rem !important;
+  height: calc(100% - 60px) !important;
+  overflow-y: auto !important;
+}
+
+@media (max-width: 768px) {
+  .bg-elegantfin .p-sidebar,
+  .bg-elegantfin p-sidebar .p-sidebar {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+@media (max-width: 992px) {
+  .bg-elegantfin .side-nav-container:not(.closed) {
+    width: var(--side-nav-width) !important;
+    min-width: var(--side-nav-width) !important;
+    max-width: var(--side-nav-width) !important;
+  }
+}
+
+
 
 
