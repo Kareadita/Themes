@@ -568,6 +568,15 @@
   justify-content: center !important;
 }
 
+@media (min-width: 768px) and (max-width: 992px) {
+  .bg-elegantfin .side-nav-container.closed {
+    left: 0 !important;
+    margin-left: 0 !important;
+  }
+
+
+}
+
 .bg-elegantfin .side-nav-container.closed .side-nav-item .phone-hidden:first-of-type div {
   padding: 0 !important;
   width: 100% !important;
@@ -618,7 +627,7 @@
   overflow: hidden !important;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .bg-elegantfin nav.navbar .nav-item.search {
     width: 36px !important;
     min-width: 36px !important;
@@ -947,10 +956,7 @@ html body.bg-elegantfin .card-title-container app-series-format i.fa-solid {
   transform: scale(1) !important;
   transform-origin: center center !important;
   color: white !important;
-  font-size: 15px !important;
 }
-  transform: scale(1.15) !important;
-.bg-elegantfin .card-title-container .card-actions .btn i,
 .bg-elegantfin .card-title-container .card-actions button i,
 .bg-elegantfin .card-title-container .card-actions .dropdown-toggle i,
 .bg-elegantfin .card-title-container .card-actions .fa-ellipsis-v,
@@ -1487,7 +1493,7 @@ html body.bg-elegantfin app-image img.img-placeholder {
   padding-top: 0 !important;
 }
 
-@media (min-width: 769px) {
+@media (min-width: 768px) {
   .bg-elegantfin app-all-series .main-container {
     padding-top: var(--content-safe-start) !important;
   }
@@ -1496,10 +1502,39 @@ html body.bg-elegantfin app-image img.img-placeholder {
     padding-top: var(--content-safe-start) !important;
   }
 
+  /* Sidebar Handling for Series Detail & Static Pages (Desktop) */
+  app-series-detail .main-container,
+  app-person-detail .main-container,
+  app-dashboard .main-container,
+  app-settings .main-container,
+  app-server-settings .main-container,
+  app-collection-detail .main-container,
+  app-reading-lists .main-container,
+  app-want-to-read .main-container,
+  app-all-collections .main-container,
+  app-bookmarks .main-container {
+    padding-left: 60px !important;
+    transition: padding-left 0.3s ease !important;
+  }
+
+  body.bg-elegantfin:has(.side-nav-container:not(.closed)) app-series-detail .main-container,
+  body.bg-elegantfin:has(.side-nav-container:not(.closed)) app-person-detail .main-container,
+  body.bg-elegantfin:has(.side-nav-container:not(.closed)) app-dashboard .main-container,
+  body.bg-elegantfin:has(.side-nav-container:not(.closed)) app-settings .main-container,
+  body.bg-elegantfin:has(.side-nav-container:not(.closed)) app-server-settings .main-container,
+  body.bg-elegantfin:has(.side-nav-container:not(.closed)) app-collection-detail .main-container,
+  body.bg-elegantfin:has(.side-nav-container:not(.closed)) app-reading-lists .main-container,
+  body.bg-elegantfin:has(.side-nav-container:not(.closed)) app-want-to-read .main-container,
+  body.bg-elegantfin:has(.side-nav-container:not(.closed)) app-all-collections .main-container,
+  body.bg-elegantfin:has(.side-nav-container:not(.closed)) app-bookmarks .main-container {
+    padding-left: var(--side-nav-width, 230px) !important;
+  }
+
   /* Variable-based pages (Desktop) */
   .bg-elegantfin app-library-detail .main-container,
   .bg-elegantfin app-dashboard .main-container,
   .bg-elegantfin app-collection-detail .main-container,
+  .bg-elegantfin app-person-detail .main-container,
   .bg-elegantfin app-browse-people .main-container,
   .bg-elegantfin app-reading-lists .main-container,
   .bg-elegantfin app-want-to-read .main-container,
@@ -1513,6 +1548,10 @@ html body.bg-elegantfin app-image img.img-placeholder {
   /* Page-specific deltas (Desktop) */
   .bg-elegantfin app-dashboard {
     --page-offset-delta: 15px;
+  }
+
+  .bg-elegantfin app-person-detail {
+    --page-offset-delta: -25px;
   }
 
   .bg-elegantfin app-library-detail {
@@ -1543,7 +1582,7 @@ html body.bg-elegantfin app-image img.img-placeholder {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   :root .bg-elegantfin {
     --content-top-offset: 40px;
     --content-safe-start: 60px;
@@ -1563,6 +1602,7 @@ html body.bg-elegantfin app-image img.img-placeholder {
   .bg-elegantfin app-settings .main-container,
   .bg-elegantfin app-server-settings .main-container,
   .bg-elegantfin app-series-detail .main-container,
+  .bg-elegantfin app-person-detail .main-container,
   .bg-elegantfin app-library-detail .main-container,
   .bg-elegantfin app-all-series .main-container {
     padding-top: calc(var(--content-safe-start) + var(--page-offset-delta)) !important;
@@ -1576,7 +1616,8 @@ html body.bg-elegantfin app-image img.img-placeholder {
   .bg-elegantfin app-want-to-read .main-container,
   .bg-elegantfin app-bookmarks .main-container,
   .bg-elegantfin app-collection-detail .main-container,
-  .bg-elegantfin app-series-detail .main-container {
+  .bg-elegantfin app-series-detail .main-container,
+  .bg-elegantfin app-person-detail .main-container {
     padding-top: 108px !important;
   }
 
@@ -1590,6 +1631,7 @@ html body.bg-elegantfin app-image img.img-placeholder {
   .bg-elegantfin app-server-settings,
   .bg-elegantfin app-browse-people,
   .bg-elegantfin app-series-detail,
+  .bg-elegantfin app-person-detail,
   .bg-elegantfin app-all-series {
     --page-offset-delta: 30px;
   }
@@ -1616,8 +1658,21 @@ html body.bg-elegantfin app-image img.img-placeholder {
 }
 
 .bg-elegantfin app-library-detail .grid,
-
-.bg-elegantfin app-library-detail .grid.row {
+.bg-elegantfin app-library-detail .grid.row,
+.bg-elegantfin app-all-series .grid,
+.bg-elegantfin app-all-series .grid.row,
+.bg-elegantfin app-browse-people .grid,
+.bg-elegantfin app-browse-people .grid.row,
+.bg-elegantfin app-collection-detail .grid,
+.bg-elegantfin app-collection-detail .grid.row,
+.bg-elegantfin app-reading-lists .grid,
+.bg-elegantfin app-reading-lists .grid.row,
+.bg-elegantfin app-want-to-read .grid,
+.bg-elegantfin app-want-to-read .grid.row,
+.bg-elegantfin app-all-collections .grid,
+.bg-elegantfin app-all-collections .grid.row,
+.bg-elegantfin app-bookmarks .grid,
+.bg-elegantfin app-bookmarks .grid.row {
   overflow: visible !important;
   padding: 10px !important;
   gap: 0.5em !important;
@@ -1655,6 +1710,7 @@ html body.bg-elegantfin app-root :is(.virtual-scroller, virtual-scroller) {
   overflow-y: scroll !important;
   overflow-x: hidden !important;
   scrollbar-width: none !important;
+  transition: left 0.3s ease, right 0.3s ease !important;
 }
 
 html body.bg-elegantfin app-root :is(.virtual-scroller, virtual-scroller)::-webkit-scrollbar {
@@ -1662,15 +1718,26 @@ html body.bg-elegantfin app-root :is(.virtual-scroller, virtual-scroller)::-webk
   background: transparent !important;
 }
 
+
+
 @media (min-width: 481px) {
+  /* Default (Closed) */
   html body.bg-elegantfin app-root :is(.virtual-scroller, virtual-scroller) {
     left: 60px !important;
+    right: calc(var(--jump-bar-width) + 10px) !important;
+  }
+
+  /* Sidebar Open Override */
+  html body.bg-elegantfin:has(.side-nav-container:not(.closed)) app-root :is(.virtual-scroller, virtual-scroller) {
+    left: calc(var(--side-nav-width, 230px) + 20px) !important;
     right: calc(var(--jump-bar-width) + 10px) !important;
   }
 }
 
 html body.bg-elegantfin app-root :is(.virtual-scroller, virtual-scroller) .scrollable-content {
   padding-top: var(--content-safe-start) !important;
+  padding-left: 10px !important;
+  padding-right: 10px !important;
   box-sizing: border-box !important;
 }
 
@@ -1679,15 +1746,46 @@ html body.bg-elegantfin app-root :is(.virtual-scroller, virtual-scroller) .total
   box-sizing: border-box !important;
 }
 
-html body.bg-elegantfin app-root :is(.virtual-scroller, virtual-scroller) .grid,
-html body.bg-elegantfin app-root :is(.virtual-scroller, virtual-scroller) .grid.row {
-  margin-top: 0 !important;
+html body.bg-elegantfin app-root app-series-detail :is(.virtual-scroller, virtual-scroller) {
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  right: auto !important;
+  width: auto !important;
+  height: auto !important;
+  z-index: auto !important;
+  overflow: visible !important;
   padding-top: 0 !important;
 }
 
+html body.bg-elegantfin app-root app-series-detail :is(.virtual-scroller, virtual-scroller) .scrollable-content {
+  position: relative !important;
+  height: auto !important;
+  width: auto !important;
+  padding-top: 0 !important;
+}
+
+html body.bg-elegantfin app-root app-series-detail :is(.virtual-scroller, virtual-scroller) .total-padding {
+  padding-top: 0 !important;
+}
+
+@media (min-width: 992px) {
+  body.bg-elegantfin .companion-bar.companion-bar-content {
+    margin-left: 60px !important;
+    width: calc(100% - 60px) !important;
+  }
+}
+
+html body.bg-elegantfin app-root :is(.virtual-scroller, virtual-scroller) .grid,
+html body.bg-elegantfin app-root :is(.virtual-scroller, virtual-scroller) .grid.row {
+  margin-top: 0 !important;
+  padding-top: 10px !important;
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+}
+
 html body.bg-elegantfin app-root :is(.virtual-scroller, virtual-scroller) #card-detail-layout-items-container,
-html body.bg-elegantfin app-root :is(.virtual-scroller, virtual-scroller) .card-container,
-html body.bg-elegantfin app-root :is(.virtual-scroller, virtual-scroller) .grid {
+html body.bg-elegantfin app-root :is(.virtual-scroller, virtual-scroller) .card-container {
   padding-right: 0 !important;
 }
 
@@ -1738,22 +1836,31 @@ body.bg-elegantfin[style] {
   overflow-x: hidden !important;
 }
 
-html:has(:is(virtual-scroller, .virtual-scroller)),
-body.bg-elegantfin:has(:is(virtual-scroller, .virtual-scroller)),
-body.bg-elegantfin[style]:has(:is(virtual-scroller, .virtual-scroller)) {
+html:has(body.bg-elegantfin :is(virtual-scroller, .virtual-scroller)):not(:has(app-series-detail)),
+body.bg-elegantfin:has(:is(virtual-scroller, .virtual-scroller)):not(:has(app-series-detail)),
+body.bg-elegantfin[style]:has(:is(virtual-scroller, .virtual-scroller)):not(:has(app-series-detail)) {
   overflow: hidden !important;
   scrollbar-width: none !important;
 }
 
-html:has(:is(virtual-scroller, .virtual-scroller))::-webkit-scrollbar,
-body.bg-elegantfin:has(:is(virtual-scroller, .virtual-scroller))::-webkit-scrollbar,
-body.bg-elegantfin[style]:has(:is(virtual-scroller, .virtual-scroller))::-webkit-scrollbar {
+html:has(body.bg-elegantfin :is(virtual-scroller, .virtual-scroller)):not(:has(app-series-detail))::-webkit-scrollbar,
+body.bg-elegantfin:has(:is(virtual-scroller, .virtual-scroller)):not(:has(app-series-detail))::-webkit-scrollbar,
+body.bg-elegantfin[style]:has(:is(virtual-scroller, .virtual-scroller)):not(:has(app-series-detail))::-webkit-scrollbar {
   display: none !important;
   width: 0 !important;
   height: 0 !important;
   background: transparent !important;
   -ms-overflow-style: none !important;
   scrollbar-width: none !important;
+}
+
+html:has(app-series-detail):has(:is(virtual-scroller, .virtual-scroller)) {
+  overflow: auto !important;
+}
+
+body.bg-elegantfin:has(app-series-detail):has(:is(virtual-scroller, .virtual-scroller)) {
+  overflow: auto !important;
+  height: auto !important;
 }
 
 .bg-elegantfin app-library-detail,
@@ -1952,7 +2059,6 @@ body.bg-elegantfin[style]:has(:is(virtual-scroller, .virtual-scroller))::-webkit
   }
 
   .bg-elegantfin .overlay img,
-  .bg-elegantfin app-image img,
   .bg-elegantfin .card-img-container img {
     width: 100% !important;
     height: 100% !important;
@@ -2131,11 +2237,30 @@ body.bg-elegantfin[style]:has(:is(virtual-scroller, .virtual-scroller))::-webkit
 }
 
 
-@media (max-width: 992px) {
-  .bg-elegantfin .side-nav-container:not(.closed) {
+@media (min-width: 768px) and (max-width: 992px) {
+  .bg-elegantfin .side-nav-container {
     width: var(--side-nav-width) !important;
-    min-width: var(--side-nav-width) !important;
     max-width: var(--side-nav-width) !important;
+    background-color: var(--side-nav-bg-color) !important;
+    height: calc(var(--vh, 1vh) * 100 - 7.375rem) !important;
+    position: fixed !important;
+    margin: 0 !important;
+    left: 0.625rem !important;
+    top: 4rem !important;
+    border: var(--side-nav-border) !important;
+    border-radius: var(--side-nav-border-radius) !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    z-index: 1050 !important;
+  }
+
+  .bg-elegantfin .side-nav-container.closed {
+    width: 3.125rem !important;
+    height: calc(var(--vh, 1vh) * 100 - 6.5rem) !important;
+    border-radius: unset !important;
+    background-color: var(--side-nav-closed-bg-color) !important;
+    border: var(--side-nav-border-closed) !important;
+    visibility: visible !important;
   }
 }
 
@@ -2208,7 +2333,7 @@ body.bg-elegantfin .side-nav-overlay {
   overflow-y: auto !important;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .bg-elegantfin .p-sidebar,
   .bg-elegantfin p-sidebar .p-sidebar {
     width: 100% !important;
@@ -2224,6 +2349,22 @@ body.bg-elegantfin .side-nav-overlay {
   }
 }
 
+/* 
+   EXPERIMENTAL: EPUB Reader Overrides
+   These styles attempt to override the internal EPUB reader styles.
+   Note: This may not work if the reader is isolated in a cross-origin iframe.
+*/
+.bg-elegantfin .reader-container,
+.reader-container {
+    background-color: var(--bs-body-bg) !important;
+    color: var(--body-text-color) !important;
+}
 
+.bg-elegantfin .book-content {
+    color: var(--body-text-color) !important;
+}
 
-
+.bg-elegantfin .book-content *:not(code):not(a) {
+    background-color: transparent !important;
+    color: inherit !important;
+}
