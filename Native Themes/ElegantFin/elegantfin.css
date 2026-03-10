@@ -447,6 +447,8 @@
   /* Search */
   --input-hint-border-color: hsl(214, 13%, 32%);
   --input-hint-text-color: rgb(156, 163, 175);
+  --search-dropdown-bg: rgba(30, 40, 54, 0.95);
+  --search-dropdown-blur: 16px;
 
   /* Charts */
   --charts-palette1: #775BF4;
@@ -501,6 +503,7 @@
   background-color: transparent !important;
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
+  border: none !important;
   border-bottom: none !important;
   box-shadow: none !important;
   overflow: visible !important;
@@ -511,6 +514,16 @@
   align-items: flex-start !important;
   align-content: flex-start !important;
   flex-wrap: nowrap !important;
+}
+
+.bg-elegantfin app-side-nav-companion-bar {
+  border: none !important;
+  border-bottom: none !important;
+}
+
+.bg-elegantfin .main-container {
+  border: none !important;
+  border-top: none !important;
 }
 
 /* Navbar blur layer - bloom/frosted glass effect (inspired by Jellyfin ElegantFin) */
@@ -542,13 +555,28 @@
   z-index: -1;
 }
 
-.bg-elegantfin nav.navbar.fixed-top > * {
+.bg-elegantfin nav.navbar.fixed-top>* {
   position: relative;
   z-index: 1;
 }
 
+/* Global Navbar Elevation during search - ensure it beats sidebar (1050) */
+.bg-elegantfin nav.navbar.fixed-top:has(.nav-item.search:focus-within) {
+  z-index: 1500 !important;
+}
+
+.bg-elegantfin nav.navbar.fixed-top:has(.nav-item.search:focus-within)::before,
+.bg-elegantfin nav.navbar.fixed-top:has(.nav-item.search:focus-within)::after {
+  display: none !important;
+}
+
 .bg-elegantfin .side-nav-container {
   z-index: 1050 !important;
+}
+
+/* If sidebar is open, it should be above the blurred navbar but below active search */
+.bg-elegantfin .side-nav-container:not(.closed) {
+  z-index: 1100 !important;
 }
 
 .bg-elegantfin app-side-nav-companion-bar {
@@ -639,11 +667,25 @@
     box-shadow: none !important;
   }
 
+  /* Expand full width on focus */
+  .bg-elegantfin nav.navbar .nav-item.search:focus-within {
+    position: absolute !important;
+    top: 8px !important;
+    left: 12px !important;
+    right: 12px !important;
+    width: calc(100% - 24px) !important;
+    background: var(--input-bg-color) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
+    z-index: 1200 !important;
+    border: 1px solid var(--primary-color) !important;
+  }
+
   .bg-elegantfin nav.navbar .nav-item.search .ng-autocomplete,
   .bg-elegantfin nav.navbar .nav-item.search app-grouped-typeahead,
   .bg-elegantfin nav.navbar .nav-item.search form.grouped-typeahead,
   .bg-elegantfin nav.navbar .nav-item.search .typeahead-input {
     width: 100% !important;
+    max-width: 100% !important;
     height: 100% !important;
     background: transparent !important;
     box-shadow: none !important;
@@ -664,25 +706,25 @@
     display: block !important;
   }
 
-  .bg-elegantfin nav.navbar .nav-item.search:focus-within {
-    position: absolute !important;
-    top: 8px !important;
-    left: 12px !important;
-    right: 12px !important;
-    width: auto !important;
-    background: var(--input-bg-color) !important;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
-    z-index: 1200 !important;
-    border: 1px solid var(--primary-color) !important;
-  }
-
-  .bg-elegantfin nav.navbar.fixed-top:has(.nav-item.search:focus-within) {
-    z-index: 1100 !important;
-  }
-
   .bg-elegantfin nav.navbar .nav-item.search:focus-within input#nav-search {
     opacity: 1 !important;
     cursor: text !important;
+  }
+
+  /* Force Results Dropdown to be full width on mobile */
+  .bg-elegantfin .nav-item.search:focus-within .grouped-typeahead .overlay {
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    margin-top: 8px !important;
+  }
+
+  .bg-elegantfin nav.navbar.fixed-top:has(.nav-item.search:focus-within) {
+    z-index: 1500 !important;
   }
 
   .bg-elegantfin nav.navbar .nav-item.search::before {
@@ -708,6 +750,147 @@
   }
 }
 
+/* Search Results Dropdown Fix - Aligns with search bar and matches theme */
+.bg-elegantfin app-grouped-typeahead,
+.bg-elegantfin form.grouped-typeahead {
+  position: relative !important;
+}
+
+.bg-elegantfin .grouped-typeahead .overlay {
+  position: absolute !important;
+  top: 100% !important;
+  left: 0 !important;
+  width: auto !important;
+  min-width: 650px !important;
+  max-width: 95vw !important;
+  height: auto !important;
+  z-index: 2000 !important;
+  margin-top: 4px !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Hide mysterious grey lines near the top */
+.bg-elegantfin app-root>hr,
+.bg-elegantfin .main-container>hr:first-child,
+.bg-elegantfin app-side-nav-companion-bar hr,
+.bg-elegantfin nav.navbar hr {
+  display: none !important;
+}
+
+.bg-elegantfin .grouped-typeahead .dropdown {
+  background: rgba(20, 28, 38, 1) !important;
+  backdrop-filter: blur(var(--search-dropdown-blur, 16px)) !important;
+  -webkit-backdrop-filter: blur(var(--search-dropdown-blur, 16px)) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+  overflow: hidden !important;
+  width: 100% !important;
+  position: relative !important;
+  max-height: none !important;
+}
+
+.bg-elegantfin .grouped-typeahead .list-group {
+  max-height: 70vh !important;
+  overflow-y: auto !important;
+}
+
+.bg-elegantfin .grouped-typeahead .list-group-item {
+  background: transparent !important;
+  border: none !important;
+  color: var(--body-text-color) !important;
+}
+
+.bg-elegantfin .grouped-typeahead .list-group-item:hover {
+  background: rgba(255, 255, 255, 0.05) !important;
+}
+
+.bg-elegantfin .grouped-typeahead .section-header {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Chapter Card Spacing - Reduces vertical gap from 16px to 8px total */
+.bg-elegantfin app-chapter-card {
+  margin-top: 4px !important;
+  margin-bottom: 4px !important;
+}
+
+/* Annotation Card Fixes - Overflow and Aesthetic */
+.bg-elegantfin .annotation-card,
+.bg-elegantfin app-annotation-card .card {
+  background: rgba(30, 40, 54, 0.6) !important;
+  backdrop-filter: blur(8px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+}
+
+.bg-elegantfin app-annotation-card .card-body {
+  word-break: break-word !important;
+  overflow-wrap: anywhere !important;
+  color: var(--body-text-color) !important;
+}
+
+.bg-elegantfin app-annotation-card blockquote {
+  border-left: 3px solid var(--primary-color) !important;
+  background: rgba(255, 255, 255, 0.03) !important;
+  padding: 8px 12px !important;
+  margin: 8px 0 !important;
+  border-radius: 0 4px 4px 0 !important;
+}
+
+.bg-elegantfin app-annotation-card .content-quote {
+  color: rgba(255, 255, 255, 0.7) !important;
+  margin-bottom: 0 !important;
+}
+
+.bg-elegantfin app-annotation-card .card-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+.bg-elegantfin app-annotation-card .card-footer {
+  background: rgba(0, 0, 0, 0.2) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Reviews Tab Spacing - Prevents overlap with cards in volume-detail/series-detail */
+.bg-elegantfin app-reviews {
+  display: block !important;
+  padding-top: 15px !important;
+  clear: both !important;
+}
+
+/* Offcanvas / Preview Drawer Fixes */
+.bg-elegantfin .offcanvas {
+  background: var(--search-dropdown-bg) !important;
+  backdrop-filter: blur(var(--search-dropdown-blur)) !important;
+  -webkit-backdrop-filter: blur(var(--search-dropdown-blur)) !important;
+  border-left: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: var(--body-text-color) !important;
+  padding-left: 0 !important;
+  /* Ensure sidebar padding doesn't inherit */
+}
+
+.bg-elegantfin .offcanvas-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+.bg-elegantfin .offcanvas-title {
+  color: white !important;
+}
+
+.bg-elegantfin .offcanvas-body {
+  word-break: break-word !important;
+  overflow-wrap: anywhere !important;
+}
+
+/* Ensure offcanvas backdrop is dark */
+.bg-elegantfin .offcanvas-backdrop {
+  background-color: rgba(0, 0, 0, 0.7) !important;
+}
+
 .bg-elegantfin .sidenav-bottom {
   background-color: transparent !important;
   border: none !important;
@@ -725,9 +908,11 @@ body.bg-elegantfin app-root .side-nav-overlay.closed {
 
 
 .bg-elegantfin .side-nav-container:not(.closed) {
-  border-radius: 1.25rem !important;
-  --side-nav-border-radius: 1.25rem !important;
-  height: calc((var(--vh, 1vh) * 100) - var(--viewport-offset)) !important;
+  border-radius: 1.25rem 1.25rem 0 0 !important;
+  --side-nav-border-radius: 1.25rem 1.25rem 0 0 !important;
+  height: auto !important;
+  bottom: 0 !important;
+  top: var(--nav-offset) !important;
   display: flex !important;
   flex-direction: column !important;
   overflow: hidden !important;
@@ -769,9 +954,11 @@ body.bg-elegantfin app-root .side-nav-overlay.closed {
     top: -100%;
     opacity: 0;
   }
+
   50% {
     opacity: 0.7;
   }
+
   100% {
     top: 100%;
     opacity: 0;
@@ -783,9 +970,11 @@ body.bg-elegantfin app-root .side-nav-overlay.closed {
     top: 100%;
     opacity: 0;
   }
+
   50% {
     opacity: 0.5;
   }
+
   100% {
     top: -100%;
     opacity: 0;
@@ -797,6 +986,7 @@ body.bg-elegantfin app-root .side-nav-overlay.closed {
     opacity: 0;
     transform: scale(0.8);
   }
+
   100% {
     opacity: 1;
     transform: scale(1);
@@ -808,6 +998,7 @@ body.bg-elegantfin app-root .side-nav-overlay.closed {
     opacity: 1;
     transform: scale(1);
   }
+
   100% {
     opacity: 0;
     transform: scale(0.8);
@@ -845,14 +1036,12 @@ body.bg-elegantfin app-root .side-nav-overlay.closed {
   left: 0;
   width: 100%;
   height: 80%;
-  background: linear-gradient(
-    180deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.2) 40%,
-    rgba(255, 255, 255, 0.35) 50%,
-    rgba(255, 255, 255, 0.2) 60%,
-    transparent 100%
-  );
+  background: linear-gradient(180deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.2) 40%,
+      rgba(255, 255, 255, 0.35) 50%,
+      rgba(255, 255, 255, 0.2) 60%,
+      transparent 100%);
   z-index: 100;
   pointer-events: none;
   opacity: 0;
@@ -904,28 +1093,33 @@ body.bg-elegantfin app-root .side-nav-overlay.closed {
   height: 100% !important;
   box-shadow: 0 0 6px rgba(119, 91, 244, 0.6) !important;
 }
+
 /* Hide the library name row (e.g., "Books") */
 .bg-elegantfin .card-body.meta-title {
   display: none !important;
 }
+
 /* Hide format icon completely */
-html body.bg-elegantfin .card-title-container > span:first-child:not(.card-title),
+html body.bg-elegantfin .card-title-container>span:first-child:not(.card-title),
 html body.bg-elegantfin .card-format,
 html body.bg-elegantfin span.card-format,
 html body.bg-elegantfin .card-title-container .card-format,
 html body.bg-elegantfin app-series-format,
-html body.bg-elegantfin .card-title-container > span:first-child i.fa,
+html body.bg-elegantfin .card-title-container>span:first-child i.fa,
 html body.bg-elegantfin .card-title-container i.fa-book,
 html body.bg-elegantfin .card-title-container app-series-format i.fa-solid {
   display: none !important;
 }
+
 .bg-elegantfin .card-actions i.fa,
 .bg-elegantfin .card-actions i.fa-ellipsis-v {
   display: inline-block !important;
 }
+
 .bg-elegantfin .card-item-container {
   position: relative !important;
 }
+
 .bg-elegantfin .card-title-container .card-actions {
   position: absolute !important;
   top: auto !important;
@@ -936,10 +1130,12 @@ html body.bg-elegantfin .card-title-container app-series-format i.fa-solid {
   opacity: 0 !important;
   transition: opacity 0.25s ease !important;
 }
+
 .bg-elegantfin .card:hover .card-actions,
 .bg-elegantfin .card-item-container:hover .card-actions {
   opacity: 1 !important;
 }
+
 .bg-elegantfin .card-title-container .card-actions .btn,
 .bg-elegantfin .card-title-container .card-actions button,
 .bg-elegantfin .card-title-container .card-actions .dropdown-toggle {
@@ -957,6 +1153,7 @@ html body.bg-elegantfin .card-title-container app-series-format i.fa-solid {
   transform-origin: center center !important;
   color: white !important;
 }
+
 .bg-elegantfin .card-title-container .card-actions button i,
 .bg-elegantfin .card-title-container .card-actions .dropdown-toggle i,
 .bg-elegantfin .card-title-container .card-actions .fa-ellipsis-v,
@@ -964,11 +1161,18 @@ html body.bg-elegantfin .card-title-container app-series-format i.fa-solid {
   color: white !important;
   font-size: 15px !important;
 }
+
 .bg-elegantfin .card-title-container .card-actions .btn:hover,
 .bg-elegantfin .card-title-container .card-actions button:hover,
 .bg-elegantfin .card-title-container .card-actions .dropdown-toggle:hover {
   background: var(--primary-color) !important;
   transform: scale(1.15) !important;
+}
+
+/* Angular CDK Overlays - MUST be strictly higher than the side-nav (1100) */
+.cdk-overlay-container,
+.bg-elegantfin .cdk-overlay-container {
+  z-index: 2100 !important;
 }
 
 html body.bg-elegantfin div.dropdown-menu.show {
@@ -979,7 +1183,7 @@ html body.bg-elegantfin div.dropdown-menu.show {
   box-shadow: 0 12px 48px rgba(0, 0, 0, 0.6) !important;
   overflow: visible !important;
   padding: 8px 0 !important;
-  z-index: 1060 !important;
+  z-index: 2100 !important;
 }
 
 /* Card body - transparent, no layer effect */
@@ -1117,8 +1321,8 @@ html body.bg-elegantfin app-series-card .card-title-container span.card-title {
   justify-content: center !important;
 }
 
-.bg-elegantfin .overlay-information .card-title.library > span,
-.bg-elegantfin .overlay-information--centered .card-title.library > span {
+.bg-elegantfin .overlay-information .card-title.library>span,
+.bg-elegantfin .overlay-information--centered .card-title.library>span {
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
@@ -1237,6 +1441,75 @@ html body.bg-elegantfin app-image img.img-placeholder {
   display: none !important;
 }
 
+/* Read Status Indicator (ElegantFin style) */
+/* Targets book/series cards that are NOT unread, NOT in-progress, and NOT error */
+/* Explicitly excludes people cards and author page works where progress data is often missing */
+.bg-elegantfin app-series-card .card-item-container:has(.overlay):not(:has(.not-read-badge)):not(:has(.progress-banner p)):not(:has(.error-banner)) .overlay::after,
+.bg-elegantfin app-card .card-item-container:has(.overlay):not(:has(.not-read-badge)):not(:has(.progress-banner p)):not(:has(.error-banner)) .overlay::after,
+.bg-elegantfin app-chapter-card .card-item-container:has(.overlay):not(:has(.not-read-badge)):not(:has(.progress-banner p)):not(:has(.error-banner)) .overlay::after {
+  content: "\f00c" !important;
+  font-family: "Font Awesome 5 Free" !important;
+  font-weight: 900 !important;
+  position: absolute !important;
+  top: 10px !important;
+  right: 10px !important;
+  background: rgba(41, 154, 93, 0.9) !important;
+  /* Success green */
+  color: white !important;
+  width: 24px !important;
+  height: 24px !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 12px !important;
+  z-index: 130 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4) !important;
+  pointer-events: none !important;
+}
+
+/* Hide read indicator on people cards and author page works */
+.bg-elegantfin app-person-card .overlay::after,
+.bg-elegantfin app-person-detail .overlay::after {
+  display: none !important;
+}
+
+/* Dimming and grayscale for read items */
+.bg-elegantfin app-series-card .card-item-container:has(.overlay):not(:has(.not-read-badge)):not(:has(.progress-banner p)):not(:has(.error-banner)) .card-img-container img,
+.bg-elegantfin app-card .card-item-container:has(.overlay):not(:has(.not-read-badge)):not(:has(.progress-banner p)):not(:has(.error-banner)) .card-img-container img,
+.bg-elegantfin app-series-card .card-item-container:has(.overlay):not(:has(.not-read-badge)):not(:has(.progress-banner p)):not(:has(.error-banner)) app-image img,
+.bg-elegantfin app-card .card-item-container:has(.overlay):not(:has(.not-read-badge)):not(:has(.progress-banner p)):not(:has(.error-banner)) app-image img {
+  opacity: 0.7 !important;
+  filter: grayscale(0.3) brightness(0.9) !important;
+  transition: opacity 0.3s ease, filter 0.3s ease !important;
+}
+
+/* Ensure people cards and author works aren't dimmed */
+.bg-elegantfin app-person-card img,
+.bg-elegantfin app-person-detail img {
+  opacity: 1 !important;
+  filter: none !important;
+}
+
+.bg-elegantfin app-series-card .card-item-container:has(.overlay):not(:has(.not-read-badge)):not(:has(.progress-banner p)):not(:has(.error-banner)):hover .card-img-container img,
+.bg-elegantfin app-card .card-item-container:has(.overlay):not(:has(.not-read-badge)):not(:has(.progress-banner p)):not(:has(.error-banner)):hover .card-img-container img,
+.bg-elegantfin app-series-card .card-item-container:has(.overlay):not(:has(.not-read-badge)):not(:has(.progress-banner p)):not(:has(.error-banner)):hover app-image img,
+.bg-elegantfin app-card .card-item-container:has(.overlay):not(:has(.not-read-badge)):not(:has(.progress-banner p)):not(:has(.error-banner)):hover app-image img {
+  opacity: 1 !important;
+  filter: grayscale(0) brightness(1) !important;
+}
+
+/* Series Detail page cover read status */
+.bg-elegantfin app-series-detail .card:has(.overlay):not(:has(.progress-banner.series)):not(:has(.error-banner)) .overlay::after {
+  top: 15px !important;
+  right: 15px !important;
+  width: 28px !important;
+  height: 28px !important;
+  font-size: 14px !important;
+  font-family: "Font Awesome 5 Free" !important;
+  font-weight: 900 !important;
+}
+
 /* Title container - outside the card, plain background */
 .bg-elegantfin .card .card-title-container,
 .bg-elegantfin app-series-card .card-title-container,
@@ -1269,8 +1542,13 @@ html body.bg-elegantfin app-image img.img-placeholder {
   pointer-events: none !important;
 }
 
+/* Ensure inner elements (search, buttons) are clickable */
+.bg-elegantfin app-side-nav-companion-bar>* {
+  pointer-events: auto !important;
+}
+
 /* Ensure inner container is centered */
-.bg-elegantfin app-side-nav-companion-bar > div:first-child {
+.bg-elegantfin app-side-nav-companion-bar>div:first-child {
   margin: 0 auto !important;
 }
 
@@ -1303,6 +1581,11 @@ html body.bg-elegantfin app-image img.img-placeholder {
     display: none !important;
   }
 
+  body.bg-elegantfin:has(app-settings) nav.navbar.fixed-top .navbar-brand .logo-icon,
+  body.bg-elegantfin:has(app-server-settings) nav.navbar.fixed-top .navbar-brand .logo-icon {
+    display: flex !important;
+  }
+
   body.bg-elegantfin nav.navbar.fixed-top .navbar-nav {
     order: 6 !important;
     margin-left: auto !important;
@@ -1319,7 +1602,7 @@ html body.bg-elegantfin app-image img.img-placeholder {
   body.bg-elegantfin nav.navbar.fixed-top .btn.btn-outline-secondary.primary-text {
     order: 7 !important;
   }
-  
+
   body.bg-elegantfin app-root app-side-nav-companion-bar {
     top: 0 !important;
     height: 48px !important;
@@ -1332,7 +1615,7 @@ html body.bg-elegantfin app-image img.img-placeholder {
   }
 }
 
-.bg-elegantfin app-side-nav-companion-bar > div:first-child {
+.bg-elegantfin app-side-nav-companion-bar>div:first-child {
   display: flex !important;
   flex-direction: row !important;
   justify-content: center !important;
@@ -1341,7 +1624,7 @@ html body.bg-elegantfin app-image img.img-placeholder {
   pointer-events: none !important;
 }
 
-.bg-elegantfin app-side-nav-companion-bar > div:first-child > div:first-child {
+.bg-elegantfin app-side-nav-companion-bar>div:first-child>div:first-child {
   display: flex !important;
   flex-direction: row !important;
   flex-wrap: nowrap !important;
@@ -1359,14 +1642,14 @@ html body.bg-elegantfin app-image img.img-placeholder {
   overflow: visible !important;
 }
 
-.bg-elegantfin app-side-nav-companion-bar > div:first-child > div:first-child > h4,
-.bg-elegantfin app-side-nav-companion-bar > div:first-child > div:first-child > h2 {
+.bg-elegantfin app-side-nav-companion-bar>div:first-child>div:first-child>h4,
+.bg-elegantfin app-side-nav-companion-bar>div:first-child>div:first-child>h2 {
   order: 2 !important;
 }
 
-.bg-elegantfin app-side-nav-companion-bar > div:first-child > div:first-child > button,
-.bg-elegantfin app-side-nav-companion-bar > div:first-child > div:first-child > .btn,
-.bg-elegantfin app-side-nav-companion-bar > div:first-child > div:first-child > .dropdown-toggle {
+.bg-elegantfin app-side-nav-companion-bar>div:first-child>div:first-child>button,
+.bg-elegantfin app-side-nav-companion-bar>div:first-child>div:first-child>.btn,
+.bg-elegantfin app-side-nav-companion-bar>div:first-child>div:first-child>.dropdown-toggle {
   order: 1 !important;
 }
 
@@ -1405,9 +1688,9 @@ html body.bg-elegantfin app-image img.img-placeholder {
 .bg-elegantfin app-side-nav-companion-bar h4 button,
 .bg-elegantfin app-side-nav-companion-bar h4 .btn,
 .bg-elegantfin app-side-nav-companion-bar h4 .dropdown-toggle,
-.bg-elegantfin app-side-nav-companion-bar > div:first-child > div:first-child button,
-.bg-elegantfin app-side-nav-companion-bar > div:first-child > div:first-child .btn,
-.bg-elegantfin app-side-nav-companion-bar > div:first-child > div:first-child .dropdown-toggle {
+.bg-elegantfin app-side-nav-companion-bar>div:first-child>div:first-child button,
+.bg-elegantfin app-side-nav-companion-bar>div:first-child>div:first-child .btn,
+.bg-elegantfin app-side-nav-companion-bar>div:first-child>div:first-child .dropdown-toggle {
   background: transparent !important;
   background-color: transparent !important;
   border: none !important;
@@ -1430,9 +1713,9 @@ html body.bg-elegantfin app-image img.img-placeholder {
 .bg-elegantfin app-side-nav-companion-bar h4 button:hover,
 .bg-elegantfin app-side-nav-companion-bar h4 .btn:hover,
 .bg-elegantfin app-side-nav-companion-bar h4 .dropdown-toggle:hover,
-.bg-elegantfin app-side-nav-companion-bar > div:first-child > div:first-child button:hover,
-.bg-elegantfin app-side-nav-companion-bar > div:first-child > div:first-child .btn:hover,
-.bg-elegantfin app-side-nav-companion-bar > div:first-child > div:first-child .dropdown-toggle:hover {
+.bg-elegantfin app-side-nav-companion-bar>div:first-child>div:first-child button:hover,
+.bg-elegantfin app-side-nav-companion-bar>div:first-child>div:first-child .btn:hover,
+.bg-elegantfin app-side-nav-companion-bar>div:first-child>div:first-child .dropdown-toggle:hover {
   background: var(--primary-color) !important;
   transform: scale(1.15) !important;
 }
@@ -1451,15 +1734,15 @@ html body.bg-elegantfin app-image img.img-placeholder {
 }
 
 /* Filter button container (last div) */
-.bg-elegantfin app-side-nav-companion-bar > div:first-child > div:last-child {
+.bg-elegantfin app-side-nav-companion-bar>div:first-child>div:last-child {
   margin: 0 !important;
   pointer-events: auto !important;
   overflow: visible !important;
 }
 
 /* Filter button styling - circular glassmorphic */
-.bg-elegantfin app-side-nav-companion-bar > div:first-child > div:last-child .btn,
-.bg-elegantfin app-side-nav-companion-bar > div:first-child > div:last-child button {
+.bg-elegantfin app-side-nav-companion-bar>div:first-child>div:last-child .btn,
+.bg-elegantfin app-side-nav-companion-bar>div:first-child>div:last-child button {
   background: transparent !important;
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
@@ -1489,12 +1772,17 @@ html body.bg-elegantfin app-image img.img-placeholder {
 .bg-elegantfin app-all-collections .main-container,
 .bg-elegantfin app-bookmarks .main-container,
 .bg-elegantfin app-settings .main-container,
-.bg-elegantfin app-server-settings .main-container {
+.bg-elegantfin app-server-settings .main-container,
+.bg-elegantfin app-volume-detail .main-container,
+.bg-elegantfin app-chapter-detail .main-container {
   padding-top: 0 !important;
 }
 
 @media (min-width: 768px) {
-  .bg-elegantfin app-all-series .main-container {
+
+  .bg-elegantfin app-all-series .main-container,
+  .bg-elegantfin app-volume-detail .main-container,
+  .bg-elegantfin app-chapter-detail .main-container {
     padding-top: var(--content-safe-start) !important;
   }
 
@@ -1512,7 +1800,9 @@ html body.bg-elegantfin app-image img.img-placeholder {
   app-reading-lists .main-container,
   app-want-to-read .main-container,
   app-all-collections .main-container,
-  app-bookmarks .main-container {
+  app-bookmarks .main-container,
+  app-volume-detail .main-container,
+  app-chapter-detail .main-container {
     padding-left: 60px !important;
     transition: padding-left 0.3s ease !important;
   }
@@ -1526,7 +1816,26 @@ html body.bg-elegantfin app-image img.img-placeholder {
   body.bg-elegantfin:has(.side-nav-container:not(.closed)) app-reading-lists .main-container,
   body.bg-elegantfin:has(.side-nav-container:not(.closed)) app-want-to-read .main-container,
   body.bg-elegantfin:has(.side-nav-container:not(.closed)) app-all-collections .main-container,
-  body.bg-elegantfin:has(.side-nav-container:not(.closed)) app-bookmarks .main-container {
+  body.bg-elegantfin:has(.side-nav-container:not(.closed)) app-bookmarks .main-container,
+  body.bg-elegantfin:has(.side-nav-container:not(.closed)) app-volume-detail .main-container,
+  body.bg-elegantfin:has(.side-nav-container:not(.closed)) app-chapter-detail .main-container {
+    padding-left: var(--side-nav-width, 230px) !important;
+  }
+
+  /* Profile and Stats Layout (No .main-container exists natively inside app-profile) */
+  .bg-elegantfin app-profile,
+  .bg-elegantfin app-stats {
+    display: block !important;
+    padding-left: 60px !important;
+    padding-top: calc(var(--content-safe-start) + var(--page-offset-delta)) !important;
+    height: 100vh !important;
+    overflow-y: auto !important;
+    box-sizing: border-box !important;
+    transition: padding-left 0.3s ease !important;
+  }
+
+  body.bg-elegantfin:has(.side-nav-container:not(.closed)) app-profile,
+  body.bg-elegantfin:has(.side-nav-container:not(.closed)) app-stats {
     padding-left: var(--side-nav-width, 230px) !important;
   }
 
@@ -1541,7 +1850,9 @@ html body.bg-elegantfin app-image img.img-placeholder {
   .bg-elegantfin app-all-collections .main-container,
   .bg-elegantfin app-bookmarks .main-container,
   .bg-elegantfin app-settings .main-container,
-  .bg-elegantfin app-server-settings .main-container {
+  .bg-elegantfin app-server-settings .main-container,
+  .bg-elegantfin app-volume-detail .main-container,
+  .bg-elegantfin app-chapter-detail .main-container {
     padding-top: calc(var(--content-safe-start) + var(--page-offset-delta)) !important;
   }
 
@@ -1558,14 +1869,16 @@ html body.bg-elegantfin app-image img.img-placeholder {
     --page-offset-delta: -10px;
     --viewport-offset: 3px;
   }
-  
+
   .bg-elegantfin app-all-collections,
   .bg-elegantfin app-reading-lists,
   .bg-elegantfin app-want-to-read,
   .bg-elegantfin app-bookmarks,
   .bg-elegantfin app-settings,
   .bg-elegantfin app-server-settings,
-  .bg-elegantfin app-browse-people {
+  .bg-elegantfin app-browse-people,
+  .bg-elegantfin app-volume-detail,
+  .bg-elegantfin app-chapter-detail {
     --page-offset-delta: 40px;
   }
 
@@ -1639,9 +1952,10 @@ html body.bg-elegantfin app-image img.img-placeholder {
   .bg-elegantfin app-library-detail {
     --page-offset-delta: 60px;
   }
-  
+
   .bg-elegantfin app-collection-detail {
-    --page-offset-delta: 0px; /* 20+0=20px */
+    --page-offset-delta: 0px;
+    /* 20+0=20px */
   }
 
   /* Nested container fix */
@@ -1652,8 +1966,25 @@ html body.bg-elegantfin app-image img.img-placeholder {
   /* Grid Margins (Preserved) */
   .bg-elegantfin app-dashboard .row.grid,
   .bg-elegantfin app-library-detail .row.grid,
-  .bg-elegantfin app-all-series .row.grid {
+  .bg-elegantfin app-all-series .row.grid,
+  .bg-elegantfin app-volume-detail .row.grid,
+  .bg-elegantfin app-chapter-detail .row.grid {
     margin-top: 15px;
+  }
+
+  /* Reader Clipping Fix - Ensures sidebar doesn't overlap reader content */
+  app-manga-reader,
+  app-pdf-reader,
+  app-book-reader {
+    padding-left: 60px !important;
+    transition: padding-left 0.3s ease !important;
+    display: block !important;
+  }
+
+  body.bg-elegantfin:has(.side-nav-container:not(.closed)) app-manga-reader,
+  body.bg-elegantfin:has(.side-nav-container:not(.closed)) app-pdf-reader,
+  body.bg-elegantfin:has(.side-nav-container:not(.closed)) app-book-reader {
+    padding-left: var(--side-nav-width, 230px) !important;
   }
 }
 
@@ -1721,6 +2052,7 @@ html body.bg-elegantfin app-root :is(.virtual-scroller, virtual-scroller)::-webk
 
 
 @media (min-width: 481px) {
+
   /* Default (Closed) */
   html body.bg-elegantfin app-root :is(.virtual-scroller, virtual-scroller) {
     left: 60px !important;
@@ -1746,29 +2078,6 @@ html body.bg-elegantfin app-root :is(.virtual-scroller, virtual-scroller) .total
   box-sizing: border-box !important;
 }
 
-html body.bg-elegantfin app-root app-series-detail :is(.virtual-scroller, virtual-scroller) {
-  position: relative !important;
-  top: auto !important;
-  left: auto !important;
-  right: auto !important;
-  width: auto !important;
-  height: auto !important;
-  z-index: auto !important;
-  overflow: visible !important;
-  padding-top: 0 !important;
-}
-
-html body.bg-elegantfin app-root app-series-detail :is(.virtual-scroller, virtual-scroller) .scrollable-content {
-  position: relative !important;
-  height: auto !important;
-  width: auto !important;
-  padding-top: 0 !important;
-}
-
-html body.bg-elegantfin app-root app-series-detail :is(.virtual-scroller, virtual-scroller) .total-padding {
-  padding-top: 0 !important;
-}
-
 @media (min-width: 992px) {
   body.bg-elegantfin .companion-bar.companion-bar-content {
     margin-left: 60px !important;
@@ -1789,8 +2098,10 @@ html body.bg-elegantfin app-root :is(.virtual-scroller, virtual-scroller) .card-
   padding-right: 0 !important;
 }
 
+/* End of Theme */
+
 @media (min-width: 769px) {
-  html body.bg-elegantfin app-root app-metadata-filter > div {
+  html body.bg-elegantfin app-root app-metadata-filter>div {
     position: fixed !important;
     top: var(--nav-stack-height) !important;
     left: 50% !important;
@@ -1910,7 +2221,7 @@ body.bg-elegantfin:has(app-series-detail):has(:is(virtual-scroller, .virtual-scr
     --jump-bar-width: 22px;
     --jump-btn-size: 18px;
     --jump-btn-font: 10px;
-    
+
     --blur-height: 120px;
     --content-safe-start: 135px;
   }
@@ -1951,7 +2262,7 @@ body.bg-elegantfin:has(app-series-detail):has(:is(virtual-scroller, .virtual-scr
     height: calc((var(--vh, 1vh) * 100) - var(--nav-offset)) !important;
   }
 
-  .bg-elegantfin app-side-nav-companion-bar > div:first-child > div:first-child {
+  .bg-elegantfin app-side-nav-companion-bar>div:first-child>div:first-child {
     padding: 0 8px !important;
     border-radius: 14px !important;
   }
@@ -1962,17 +2273,17 @@ body.bg-elegantfin:has(app-series-detail):has(:is(virtual-scroller, .virtual-scr
     height: var(--nav-companion-btn-size) !important;
   }
 
-  .bg-elegantfin app-side-nav-companion-bar > div:first-child {
+  .bg-elegantfin app-side-nav-companion-bar>div:first-child {
     flex-wrap: nowrap !important;
     overflow: hidden !important;
   }
 
-  .bg-elegantfin app-side-nav-companion-bar > div:first-child > div:first-child {
+  .bg-elegantfin app-side-nav-companion-bar>div:first-child>div:first-child {
     min-width: 0 !important;
     flex: 1 1 auto !important;
   }
 
-  .bg-elegantfin app-side-nav-companion-bar > div:first-child > div:last-child {
+  .bg-elegantfin app-side-nav-companion-bar>div:first-child>div:last-child {
     flex: 0 0 auto !important;
   }
 
@@ -2026,8 +2337,8 @@ body.bg-elegantfin:has(app-series-detail):has(:is(virtual-scroller, .virtual-scr
     justify-content: center !important;
   }
 
-  .bg-elegantfin .grid > .card,
-  .bg-elegantfin .grid > .card-detail-layout-item {
+  .bg-elegantfin .grid>.card,
+  .bg-elegantfin .grid>.card-detail-layout-item {
     margin-top: 0 !important;
     margin-bottom: 0 !important;
   }
@@ -2170,23 +2481,24 @@ body.bg-elegantfin:has(app-series-detail):has(:is(virtual-scroller, .virtual-scr
 .bg-elegantfin .jump-bar {
   --jump-btn-size: 18px !important;
   --jump-btn-font: 10px !important;
-  
+
   width: 22px !important;
   padding: 0 2px !important;
   padding-bottom: 20px !important;
-  
+
   /* Position relative to viewport, but START below the navbar */
   position: fixed !important;
   top: var(--nav-stack-height) !important;
   bottom: 0 !important;
   height: auto !important;
-  
+
   right: 0 !important;
   z-index: 9999 !important;
-  
+
   display: flex !important;
   flex-direction: column !important;
-  justify-content: space-between !important; /* Spread to fill height */
+  justify-content: space-between !important;
+  /* Spread to fill height */
   align-items: center !important;
   overflow: hidden !important;
 }
@@ -2201,9 +2513,9 @@ body.bg-elegantfin:has(app-series-detail):has(:is(virtual-scroller, .virtual-scr
   width: var(--jump-btn-size) !important;
   height: auto !important;
   max-height: 18px !important;
-  min-height: 0 !important; 
+  min-height: 0 !important;
   flex: 1 1 auto !important;
-  
+
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
@@ -2217,12 +2529,17 @@ body.bg-elegantfin:has(app-series-detail):has(:is(virtual-scroller, .virtual-scr
 
 
 .bg-elegantfin .side-nav-container:not(.closed) {
-  border-radius: 1.25rem !important;
-  --side-nav-border-radius: 1.25rem !important;
-  height: calc((var(--vh, 1vh) * 100) - var(--viewport-offset)) !important;
+  border-radius: 1.25rem 1.25rem 0 0 !important;
+  --side-nav-border-radius: 1.25rem 1.25rem 0 0 !important;
+  height: auto !important;
+  bottom: 0 !important;
+  top: var(--nav-offset) !important;
   display: flex !important;
   flex-direction: column !important;
-  overflow: hidden !important;
+  overflow: visible !important;
+
+  /* Fix scrollbar-induced layout shifts */
+  box-sizing: border-box !important;
 }
 
 .bg-elegantfin .side-nav-container:not(.closed) .side-nav {
@@ -2234,10 +2551,77 @@ body.bg-elegantfin:has(app-series-detail):has(:is(virtual-scroller, .virtual-scr
 .bg-elegantfin .side-nav-container:not(.closed) app-side-nav-item {
   display: block !important;
   width: 100% !important;
+  box-sizing: border-box !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.bg-elegantfin .side-nav-container:not(.closed) app-side-nav-item .side-nav-item {
+  position: relative !important;
+  display: flex !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  margin: 0 !important;
+  border-radius: 1rem 0 0 1rem !important;
+  overflow: hidden !important;
+}
+
+.bg-elegantfin .side-nav-container:not(.closed) app-side-nav-item .side-nav-item.active {
+  width: calc(100% + 11px) !important;
+  margin-right: -11px !important;
+}
+
+.bg-elegantfin .side-nav-container:not(.closed) app-side-nav-item .side-nav-item:hover,
+.bg-elegantfin .side-nav-container:not(.closed) app-side-nav-item .side-nav-item:focus-visible {
+  width: calc(100% + 11px) !important;
+  margin-right: -11px !important;
+}
+
+.bg-elegantfin .side-nav-container:not(.closed) app-side-nav-item:first-child .side-nav-item.active {
+  border-top-right-radius: 1.25rem !important;
+}
+
+.bg-elegantfin .side-nav-container:not(.closed) app-side-nav-item:first-child .side-nav-item:hover,
+.bg-elegantfin .side-nav-container:not(.closed) app-side-nav-item:first-child .side-nav-item:focus-visible {
+  border-top-right-radius: 1.25rem !important;
+}
+
+.bg-elegantfin .side-nav-container:not(.closed) app-side-nav-item .card-actions {
+  position: absolute !important;
+  right: 4px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  margin: 0 !important;
+}
+
+.bg-elegantfin .side-nav-container:not(.closed) app-side-nav-item .card-actions .btn,
+.bg-elegantfin .side-nav-container:not(.closed) app-side-nav-item .card-actions button,
+.bg-elegantfin .side-nav-container:not(.closed) app-side-nav-item .card-actions .dropdown-toggle {
+  padding: 0 !important;
+  width: 32px !important;
+  height: 32px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 !important;
+  border: none !important;
+  box-sizing: border-box !important;
 }
 
 
 @media (min-width: 768px) and (max-width: 992px) {
+  body.bg-elegantfin:has(app-settings) nav.navbar.fixed-top,
+  body.bg-elegantfin:has(app-server-settings) nav.navbar.fixed-top {
+    z-index: 1200 !important;
+  }
+
+  body.bg-elegantfin:has(app-settings) nav.navbar.fixed-top::before,
+  body.bg-elegantfin:has(app-settings) nav.navbar.fixed-top::after,
+  body.bg-elegantfin:has(app-server-settings) nav.navbar.fixed-top::before,
+  body.bg-elegantfin:has(app-server-settings) nav.navbar.fixed-top::after {
+    display: none !important;
+  }
+
   .bg-elegantfin .side-nav-container {
     width: var(--side-nav-width) !important;
     max-width: var(--side-nav-width) !important;
@@ -2261,6 +2645,26 @@ body.bg-elegantfin:has(app-series-detail):has(:is(virtual-scroller, .virtual-scr
     background-color: var(--side-nav-closed-bg-color) !important;
     border: var(--side-nav-border-closed) !important;
     visibility: visible !important;
+  }
+
+  body.bg-elegantfin:has(.side-nav-container:not(.closed)) app-series-detail .main-container,
+  body.bg-elegantfin:has(.side-nav-container:not(.closed)) app-person-detail .main-container,
+  body.bg-elegantfin:has(.side-nav-container:not(.closed)) app-dashboard .main-container,
+  body.bg-elegantfin:has(.side-nav-container:not(.closed)) app-settings .main-container,
+  body.bg-elegantfin:has(.side-nav-container:not(.closed)) app-server-settings .main-container,
+  body.bg-elegantfin:has(.side-nav-container:not(.closed)) app-collection-detail .main-container,
+  body.bg-elegantfin:has(.side-nav-container:not(.closed)) app-reading-lists .main-container,
+  body.bg-elegantfin:has(.side-nav-container:not(.closed)) app-want-to-read .main-container,
+  body.bg-elegantfin:has(.side-nav-container:not(.closed)) app-all-collections .main-container,
+  body.bg-elegantfin:has(.side-nav-container:not(.closed)) app-bookmarks .main-container,
+  body.bg-elegantfin:has(.side-nav-container:not(.closed)) app-volume-detail .main-container,
+  body.bg-elegantfin:has(.side-nav-container:not(.closed)) app-chapter-detail .main-container,
+  body.bg-elegantfin:has(.side-nav-container:not(.closed)) app-profile,
+  body.bg-elegantfin:has(.side-nav-container:not(.closed)) app-stats,
+  body.bg-elegantfin:has(.side-nav-container:not(.closed)) app-manga-reader,
+  body.bg-elegantfin:has(.side-nav-container:not(.closed)) app-pdf-reader,
+  body.bg-elegantfin:has(.side-nav-container:not(.closed)) app-book-reader {
+    padding-left: calc(var(--side-nav-width, 230px) + 20px) !important;
   }
 }
 
@@ -2334,6 +2738,7 @@ body.bg-elegantfin .side-nav-overlay {
 }
 
 @media (max-width: 767px) {
+
   .bg-elegantfin .p-sidebar,
   .bg-elegantfin p-sidebar .p-sidebar {
     width: 100% !important;
@@ -2356,15 +2761,53 @@ body.bg-elegantfin .side-nav-overlay {
 */
 .bg-elegantfin .reader-container,
 .reader-container {
-    background-color: var(--bs-body-bg) !important;
-    color: var(--body-text-color) !important;
+  background-color: var(--bs-body-bg) !important;
+  color: var(--body-text-color) !important;
 }
 
 .bg-elegantfin .book-content {
-    color: var(--body-text-color) !important;
+  color: var(--body-text-color) !important;
 }
 
 .bg-elegantfin .book-content *:not(code):not(a) {
-    background-color: transparent !important;
-    color: inherit !important;
+  background-color: transparent !important;
+  color: inherit !important;
+}
+
+/* High specificity override for series detail virtual scrollers to prevent double-offsetting */
+.bg-elegantfin app-series-detail virtual-scroller,
+.bg-elegantfin app-series-detail .virtual-scroller,
+html body.bg-elegantfin app-root app-series-detail :is(.virtual-scroller, virtual-scroller),
+html body.bg-elegantfin:has(.side-nav-container:not(.closed)) app-root app-series-detail :is(.virtual-scroller, virtual-scroller) {
+  position: relative !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  height: auto !important;
+  z-index: auto !important;
+  overflow: visible !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  transform: none !important;
+}
+
+.bg-elegantfin app-series-detail :is(.virtual-scroller, virtual-scroller) .scrollable-content,
+html body.bg-elegantfin app-root app-series-detail :is(.virtual-scroller, virtual-scroller) .scrollable-content,
+html body.bg-elegantfin:has(.side-nav-container:not(.closed)) app-root app-series-detail :is(.virtual-scroller, virtual-scroller) .scrollable-content {
+  position: relative !important;
+  height: auto !important;
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  left: 0 !important;
+}
+
+.bg-elegantfin app-series-detail :is(.virtual-scroller, virtual-scroller) .total-padding,
+html body.bg-elegantfin app-root app-series-detail :is(.virtual-scroller, virtual-scroller) .total-padding,
+html body.bg-elegantfin:has(.side-nav-container:not(.closed)) app-root app-series-detail :is(.virtual-scroller, virtual-scroller) .total-padding {
+  padding: 0 !important;
+  margin: 0 !important;
+  height: 0 !important;
+  width: 0 !important;
 }
