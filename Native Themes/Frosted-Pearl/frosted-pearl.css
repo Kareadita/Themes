@@ -1,0 +1,1343 @@
+/* ==========================================================================
+ * Theme Name: Frosted Pearl (Light Translucent Acrylic Edition)
+ * Description: Modern translucent acrylic UI with spatial glassmorphism
+ * Compatibility: Kavita Angular 22+ (app-entity-card & app-person-card)
+ * ========================================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+/* --------------------------------------------------------------------------
+ * 1. Core Design Tokens & Variable Overrides
+ * -------------------------------------------------------------------------- */
+:root .bg-frosted-pearl,
+:root .bg-kavita-frosted-pearl {
+  /* Typography */
+  --body-font-family: -apple-system, BlinkMacSystemFont, "Inter", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif !important;
+  --brand-font-family: -apple-system, BlinkMacSystemFont, "Inter", "PingFang SC", sans-serif !important;
+  --bs-body-font-family: var(--body-font-family) !important;
+  --html-font-size: 15px !important;
+
+  /* Frosted glass palette */
+  --glass-canvas: #f2f4f8;
+  --glass-solid-fallback: #ffffff;
+  --glass-surface-light: rgba(0, 0, 0, 0.045);
+  --glass-surface-hover: rgba(0, 0, 0, 0.085);
+  --glass-modal-bg: rgba(255, 255, 255, 0.78);
+  --glass-dropdown-bg: linear-gradient(145deg, rgba(255, 255, 255, 0.85) 0%, rgba(244, 245, 250, 0.75) 100%);
+  --glass-border: rgba(0, 0, 0, 0.08);
+  --glass-border-highlight: rgba(0, 0, 0, 0.16);
+  --glass-inner-glow: rgba(255, 255, 255, 0.85);
+
+  /* Accent colors */
+  --accent-primary: #0066cc;
+  --accent-hover: #0052a3;
+  --accent-subtle: rgba(0, 102, 204, 0.20);
+  --accent-glow: rgba(0, 102, 204, 0.38);
+  --status-success: #30d158;
+  --status-warning: #ff9f0a;
+  --status-danger: #ff453a;
+
+  /* Kavita global variables */
+  --primary-color: var(--accent-primary) !important;
+  --primary-color-dark-shade: #0055b3 !important;
+  --primary-color-darker-shade: #004494 !important;
+  --primary-color-darkest-shade: #003370 !important;
+  --bs-primary: var(--accent-primary) !important;
+  --bs-primary-rgb: 0, 102, 204 !important;
+  --error-color: var(--status-danger) !important;
+  --warning-color: var(--status-warning) !important;
+  --success-color: var(--status-success) !important;
+
+  /* Text hierarchy */
+  --body-text-color: #1d1d1f !important;
+  --text-muted-color: rgba(29, 29, 31, 0.58) !important;
+  --offwhite-text-color: rgba(29, 29, 31, 0.75) !important;
+  --bs-body-color: #1d1d1f !important;
+  --bs-body-bg: var(--glass-canvas) !important;
+  --bs-tertiary-bg: rgba(0, 0, 0, 0.045) !important;
+  --bs-secondary-bg: rgba(0, 0, 0, 0.085) !important;
+  --theme-color: var(--glass-canvas) !important;
+  --color-scheme: light !important;
+  --btn-icon-filter: none !important;
+
+  /* Elevation layers */
+  --elevation-layer0: transparent !important;
+  --elevation-layer1: rgba(0, 0, 0, 0.045) !important;
+  --elevation-layer2: rgba(0, 0, 0, 0.085) !important;
+  --elevation-layer3: rgba(0, 0, 0, 0.085) !important;
+  --elevation-layer0-dark-solid: #f2f4f8 !important;
+  --elevation-layer1-dark-solid: rgba(255, 255, 255, 0.78) !important;
+  --elevation-layer2-dark-solid: rgba(255, 255, 255, 0.78) !important;
+
+  /* Dimensions & layout */
+  --nav-offset: 64px !important;
+  --nav-mobile-offset: 56px !important;
+  --side-nav-width: 232px !important;
+  --card-image-width: 9rem !important;
+  --card-image-height: 13rem !important;
+  --card-border-radius: 14px !important;
+
+  /* Component tokens */
+  --navbar-bg-color: transparent !important;
+  --navbar-text-color: #1d1d1f !important;
+  --navbar-fa-icon-color: rgba(29, 29, 31, 0.75) !important;
+  --nav-header-text-color: #1d1d1f !important;
+  --side-nav-bg-color: transparent !important;
+  --side-nav-text-color: rgba(29, 29, 31, 0.75) !important;
+  --side-nav-hover-bg-color: var(--glass-surface-light) !important;
+  --side-nav-hover-text-color: #1d1d1f !important;
+  --side-nav-active-bg-color: var(--accent-subtle) !important;
+  --side-nav-item-active-color: var(--accent-primary) !important;
+  --side-nav-item-active-text-color: var(--accent-hover) !important;
+
+  /* Modal, popover & dropdown tokens */
+  --modal-bg-color: var(--glass-modal-bg) !important;
+  --modal-body-bg-color: transparent !important;
+  --modal-footer-bg-color: transparent !important;
+  --modal-footer-border-top-color: var(--glass-border) !important;
+  --drawer-bg-color: var(--glass-modal-bg) !important;
+  --drawer-text-color: #1d1d1f !important;
+  --popover-bg-color: transparent !important;
+  --popover-body-bg-color: transparent !important;
+  --popover-body-text-color: #1d1d1f !important;
+  --popover-border-color: var(--glass-border-highlight) !important;
+  --dropdown-item-bg-color: transparent !important;
+  --dropdown-item-text-color: #1d1d1f !important;
+  --dropdown-item-hover-bg-color: var(--accent-primary) !important;
+  --dropdown-item-hover-text-color: #ffffff !important;
+
+  /* Inputs & Select2 */
+  --searchbar-bg-color: var(--glass-surface-light) !important;
+  --input-bg-color: rgba(0, 0, 0, 0.045) !important;
+  --input-bg-readonly-color: rgba(0, 0, 0, 0.045) !important;
+  --input-text-color: #1d1d1f !important;
+  --input-placeholder-color: rgba(29, 29, 31, 0.58) !important;
+  --input-border-color: var(--glass-border) !important;
+  --input-focused-border-color: var(--accent-primary) !important;
+  --select2-dropdown-background: transparent !important;
+  --select2-dropdown-border-color: var(--glass-border-highlight) !important;
+  --select2-option-text-color: #1d1d1f !important;
+  --select2-option-highlighted-background: var(--accent-primary) !important;
+  --select2-option-highlighted-text-color: #ffffff !important;
+  --select2-option-selected-background: var(--accent-subtle) !important;
+  --select2-option-selected-text-color: var(--accent-hover) !important;
+  --select2-selection-background: rgba(0, 0, 0, 0.045) !important;
+  --select2-selection-text-color: #1d1d1f !important;
+  --select2-selection-border-color: var(--glass-border) !important;
+  --detail-title-color: #1d1d1f !important;
+  --detail-subtitle-color: rgba(29, 29, 31, 0.75) !important;
+  --setting-header-text-color: #1d1d1f !important;
+  --setting-break-color: var(--glass-border) !important;
+  --hr-color: var(--glass-border) !important;
+}
+
+/* --------------------------------------------------------------------------
+ * 2. Global Canvas & Ambient Lighting
+ * -------------------------------------------------------------------------- */
+html body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) {
+  background-color: var(--glass-canvas) !important;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 50% -15%, rgba(0, 102, 204, 0.09), transparent),
+    radial-gradient(ellipse 60% 45% at 85% 25%, rgba(120, 100, 255, 0.06), transparent) !important;
+  background-attachment: fixed !important;
+  color: var(--body-text-color) !important;
+  font-family: var(--body-font-family) !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .fullpage-background,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) #backgroundCanvas {
+  display: none !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .companion-bar {
+  mask-image: none !important;
+  -webkit-mask-image: none !important;
+  padding-top: 12px !important;
+  padding-right: 20px !important;
+}
+
+/* --------------------------------------------------------------------------
+ * 3. Top Navigation Bar & Search Capsule
+ * -------------------------------------------------------------------------- */
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-nav-header nav.navbar.fixed-top {
+  background: rgba(255, 255, 255, 0.72) !important;
+  backdrop-filter: blur(32px) saturate(200%) !important;
+  -webkit-backdrop-filter: blur(32px) saturate(200%) !important;
+  border-bottom: 1px solid var(--glass-border) !important;
+  box-shadow: 0 1px 0 0 var(--glass-inner-glow) inset, 0 8px 28px rgba(0, 0, 0, 0.18) !important;
+  height: var(--nav-offset) !important;
+  min-height: var(--nav-offset) !important;
+  padding: 0 20px !important;
+  z-index: 1050 !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .navbar-brand .logo span,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .navbar .side-nav-toggle i,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .navbar .nav-item .btn-icon i {
+  color: var(--body-text-color) !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .navbar .side-nav-toggle,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .navbar .nav-item .btn-icon {
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 10px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 2px !important;
+  background: transparent !important;
+  border: none !important;
+  transition: background-color 0.2s ease, transform 0.15s ease !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .navbar .side-nav-toggle:hover,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .navbar .nav-item .btn-icon:hover {
+  background-color: var(--glass-surface-hover) !important;
+  transform: scale(1.04) !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-grouped-typeahead .typeahead-input {
+  background-color: var(--glass-surface-light) !important;
+  border: 1px solid var(--glass-border) !important;
+  border-radius: 9999px !important;
+  height: 36px !important;
+  min-height: 36px !important;
+  width: clamp(220px, 26vw, 360px) !important;
+  padding: 0 6px 0 14px !important;
+  display: flex !important;
+  align-items: center !important;
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-grouped-typeahead .typeahead-input.focused,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-grouped-typeahead .typeahead-input:focus-within {
+  width: clamp(280px, 34vw, 440px) !important;
+  background-color: var(--glass-surface-hover) !important;
+  border-color: var(--accent-primary) !important;
+  box-shadow: 0 0 0 3px var(--accent-subtle) !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-grouped-typeahead .typeahead-input .search {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: unset !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-grouped-typeahead .typeahead-input input#nav-search {
+  font-size: 0.86rem !important;
+  color: var(--body-text-color) !important;
+  padding: 0 !important;
+  left: 0 !important;
+  height: 100% !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-grouped-typeahead .input-hint {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 22px !important;
+  padding: 0 7px !important;
+  margin: 0 2px 0 8px !important;
+  background: var(--glass-surface-light) !important;
+  border: 1px solid var(--glass-border-highlight) !important;
+  border-bottom-width: 2px !important;
+  border-radius: 6px !important;
+  color: var(--text-muted-color) !important;
+  font-family: var(--bs-font-monospace) !important;
+  font-size: 0.70rem !important;
+  font-weight: 500 !important;
+  line-height: 1 !important;
+  flex-shrink: 0 !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-grouped-typeahead .list-group.results {
+  background: var(--glass-dropdown-bg) !important;
+  backdrop-filter: blur(40px) saturate(210%) !important;
+  -webkit-backdrop-filter: blur(40px) saturate(210%) !important;
+  border: 1px solid var(--glass-border-highlight) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45) !important;
+  padding: 8px !important;
+}
+
+/* --------------------------------------------------------------------------
+ * 4. Side Navigation Dock
+ * -------------------------------------------------------------------------- */
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-side-nav .side-nav-container {
+  background: rgba(255, 255, 255, 0.65) !important;
+  backdrop-filter: blur(32px) saturate(190%) !important;
+  -webkit-backdrop-filter: blur(32px) saturate(190%) !important;
+  border-right: 1px solid var(--glass-border) !important;
+  padding: 10px 8px !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-side-nav-item .side-nav-item {
+  border-radius: 10px !important;
+  margin: 2px 4px !important;
+  padding: 0 10px !important;
+  height: 38px !important;
+  display: flex !important;
+  align-items: center !important;
+  color: var(--offwhite-text-color) !important;
+  font-size: 0.88rem !important;
+  font-weight: 500 !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-side-nav-item .side-nav-item .active-highlight {
+  display: none !important;
+  width: 0 !important;
+  opacity: 0 !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-side-nav-item .side-nav-item i {
+  color: var(--text-muted-color) !important;
+  transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.18s ease !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-side-nav-item .side-nav-item:hover {
+  background: var(--glass-surface-hover) !important;
+  color: var(--body-text-color) !important;
+  transform: translateX(3px) !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-side-nav-item .side-nav-item:hover i {
+  transform: scale(1.15) !important;
+  color: var(--body-text-color) !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-side-nav-item .side-nav-item.active {
+  background: var(--accent-subtle) !important;
+  color: var(--accent-hover) !important;
+  font-weight: 600 !important;
+  box-shadow: 0 0 0 1px rgba(0, 102, 204, 0.28) inset !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-side-nav-item .side-nav-item.active i {
+  color: var(--accent-primary) !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-side-nav-item .side-nav-item .card-actions {
+  opacity: 0 !important;
+  transition: opacity 0.18s ease !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-side-nav-item .side-nav-item:hover .card-actions {
+  opacity: 1 !important;
+}
+
+/* Collapsed side navigation */
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .side-nav-container.closed {
+  width: 56px !important;
+  min-width: 56px !important;
+  padding: 10px 4px !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .side-nav-container.closed .side-nav-text,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .side-nav-container.closed .card-actions {
+  display: none !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .side-nav-container.closed app-side-nav-item .side-nav-item {
+  width: 42px !important;
+  height: 42px !important;
+  margin: 4px auto !important;
+  padding: 0 !important;
+  justify-content: center !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .side-nav-container.closed .side-nav-item .phone-hidden,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .side-nav-container.closed .side-nav-item .phone-hidden > div {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* --------------------------------------------------------------------------
+ * 5. Form Lock / Unlock Button
+ * Note: lock-active is applied on the parent .input-group, not the text span
+ * -------------------------------------------------------------------------- */
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .input-group:not(.lock-active) > .input-group-text.clickable {
+  background: rgba(0, 0, 0, 0.05) !important;
+  background-color: rgba(0, 0, 0, 0.05) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1px solid var(--glass-border) !important;
+  border-right: none !important;
+  border-radius: 10px 0 0 10px !important;
+  color: rgba(29, 29, 31, 0.42) !important;
+  min-width: 42px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  box-shadow: none !important;
+  transition: all 0.2s ease !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .input-group:not(.lock-active) > .input-group-text.clickable i,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .input-group:not(.lock-active) > .input-group-text.clickable span {
+  color: rgba(29, 29, 31, 0.42) !important;
+  opacity: 0.75 !important;
+  font-size: 0.92rem !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .input-group:not(.lock-active) > .input-group-text.clickable:hover {
+  background-color: var(--glass-surface-hover) !important;
+  color: var(--body-text-color) !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .input-group.lock-active > .input-group-text.clickable {
+  background: var(--accent-primary) !important;
+  background-color: var(--accent-primary) !important;
+  border: 1px solid var(--accent-primary) !important;
+  border-radius: 10px 0 0 10px !important;
+  color: #ffffff !important;
+  min-width: 42px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: 0 0 14px var(--accent-glow) inset !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .input-group.lock-active > .input-group-text.clickable i,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .input-group.lock-active > .input-group-text.clickable span {
+  color: #ffffff !important;
+  opacity: 1 !important;
+  font-size: 0.92rem !important;
+}
+
+/* --------------------------------------------------------------------------
+ * 6. Form Inputs, Native Select & Select2
+ * -------------------------------------------------------------------------- */
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .form-control {
+  background-color: var(--glass-surface-light) !important;
+  border: 1px solid var(--glass-border) !important;
+  border-radius: 10px !important;
+  color: var(--body-text-color) !important;
+  color-scheme: light !important;
+  transition: all 0.2s ease !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .typeahead-input input,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .form-control input,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-typeahead input.form-control,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .select2-search__field {
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  backdrop-filter: none !important;
+  padding-left: 4px !important;
+  color: var(--body-text-color) !important;
+  width: 100% !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .form-select,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) select.form-control,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) select {
+  background-color: var(--glass-solid-fallback) !important;
+  border: 1px solid var(--glass-border-highlight) !important;
+  border-radius: 10px !important;
+  color: var(--body-text-color) !important;
+  color-scheme: light !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .form-control:focus,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .form-select:focus {
+  border-color: var(--accent-primary) !important;
+  box-shadow: 0 0 0 3px var(--accent-subtle) !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) select option,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .form-select option {
+  background-color: var(--glass-solid-fallback) !important;
+  color: var(--body-text-color) !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .select2-container--default .select2-selection--single,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .select2-container--default .select2-selection--multiple,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .ng-select .ng-select-container {
+  background: var(--glass-surface-light) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border: 1px solid var(--glass-border) !important;
+  border-radius: 10px !important;
+  color: var(--body-text-color) !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .select2-dropdown,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .select2-container--open .select2-dropdown,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .ng-dropdown-panel {
+  background: var(--glass-dropdown-bg) !important;
+  backdrop-filter: blur(36px) saturate(210%) !important;
+  -webkit-backdrop-filter: blur(36px) saturate(210%) !important;
+  border: 1px solid var(--glass-border-highlight) !important;
+  border-radius: 14px !important;
+  color: var(--body-text-color) !important;
+  padding: 6px !important;
+  margin-top: 4px !important;
+  box-shadow:
+    0 1px 0 0 var(--glass-inner-glow) inset,
+    0 20px 50px rgba(0, 0, 0, 0.48) !important;
+  overflow: hidden !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .select2-results__options {
+  background: transparent !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .select2-results__option,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .ng-dropdown-panel .ng-option {
+  background: transparent !important;
+  color: var(--body-text-color) !important;
+  border-radius: 8px !important;
+  padding: 8px 12px !important;
+  margin-bottom: 2px !important;
+  transition: background-color 0.15s ease !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .select2-results__option[aria-selected="true"] {
+  background: var(--accent-subtle) !important;
+  color: var(--accent-hover) !important;
+  font-weight: 600 !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .select2-results__option--highlighted,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .select2-results__option--highlighted[aria-selected],
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .ng-dropdown-panel .ng-option.ng-option-marked {
+  background: var(--accent-primary) !important;
+  color: #ffffff !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .select2-container--default .select2-selection--multiple .select2-selection__choice {
+  background: var(--accent-subtle) !important;
+  border: 1px solid rgba(0, 102, 204, 0.35) !important;
+  border-radius: 7px !important;
+  color: var(--body-text-color) !important;
+  padding: 2px 8px !important;
+}
+
+/* --------------------------------------------------------------------------
+ * 7. Publisher Logo Visibility
+ * -------------------------------------------------------------------------- */
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-metadata-detail-row img,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) img[src*="api/image/publisher"] {
+  filter: none !important;
+  background-color: var(--glass-surface-light) !important;
+  padding: 3px !important;
+  border-radius: 6px !important;
+  box-sizing: border-box !important;
+}
+
+/* --------------------------------------------------------------------------
+ * 8. Modals, Popovers & Dropdown Menus
+ * -------------------------------------------------------------------------- */
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .modal-backdrop.show,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .offcanvas-backdrop.show {
+  background-color: rgba(0, 0, 0, 0.42) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  opacity: 1 !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .modal-content {
+  background: var(--glass-modal-bg) !important;
+  backdrop-filter: blur(42px) saturate(210%) !important;
+  -webkit-backdrop-filter: blur(42px) saturate(210%) !important;
+  border: 1px solid var(--glass-border-highlight) !important;
+  border-radius: 20px !important;
+  box-shadow:
+    0 1px 0 0 var(--glass-inner-glow) inset,
+    0 28px 70px rgba(0, 0, 0, 0.55) !important;
+  color: var(--body-text-color) !important;
+  overflow: hidden !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .modal-header,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .modal-body,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .modal-footer {
+  background: transparent !important;
+  background-color: transparent !important;
+  color: var(--body-text-color) !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .modal-header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  border-bottom: 1px solid var(--glass-border) !important;
+  padding: 16px 22px !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .modal-header .modal-title,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .offcanvas-header .offcanvas-title {
+  font-size: 1.18rem !important;
+  font-weight: 700 !important;
+  color: var(--body-text-color) !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .modal-header .btn-close {
+  margin-left: auto !important;
+  margin-right: 0 !important;
+  filter: none !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .modal-footer {
+  border-top: 1px solid var(--glass-border) !important;
+  background: rgba(0, 0, 0, 0.08) !important;
+  padding: 12px 24px !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .modal-body .nav-pills .nav-link {
+  border-radius: 10px !important;
+  color: var(--offwhite-text-color) !important;
+  padding: 8px 14px !important;
+  margin-bottom: 4px !important;
+  font-weight: 500 !important;
+  transition: all 0.2s ease !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .modal-body .nav-pills .nav-link:hover {
+  background: var(--glass-surface-light) !important;
+  color: var(--body-text-color) !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .modal-body .nav-pills .nav-link.active {
+  background: var(--accent-primary) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px var(--accent-glow) !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .dropdown-menu,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .dropdown-menu.show,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) div[ngbdropdownmenu],
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .popover,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) ngb-popover-window,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) ngb-popover-window.popover,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .nav-events .popover,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .dark-menu,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .tooltip-inner {
+  background: var(--glass-dropdown-bg) !important;
+  background-color: transparent !important;
+  backdrop-filter: blur(38px) saturate(210%) !important;
+  -webkit-backdrop-filter: blur(38px) saturate(210%) !important;
+  border: 1px solid var(--glass-border-highlight) !important;
+  border-radius: 14px !important;
+  padding: 6px !important;
+  box-shadow:
+    0 1px 0 0 var(--glass-inner-glow) inset,
+    0 20px 48px rgba(0, 0, 0, 0.48) !important;
+  color: var(--body-text-color) !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .dropdown-menu .dropdown-item,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .dropdown-menu button.dropdown-item,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .dropdown-menu a.dropdown-item,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .dropdown-menu .btn {
+  border-radius: 9px !important;
+  padding: 8px 14px !important;
+  font-size: 0.88rem !important;
+  font-weight: 500 !important;
+  color: var(--body-text-color) !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 8px !important;
+  transition: background-color 0.15s ease, color 0.15s ease !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .dropdown-menu .dropdown-item:hover,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .dropdown-menu button.dropdown-item:hover,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .dropdown-menu a.dropdown-item:hover {
+  background: var(--accent-primary) !important;
+  background-color: var(--accent-primary) !important;
+  color: #ffffff !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .dropdown-menu .dropdown-item:hover i {
+  color: #ffffff !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .nav-events .popover,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) ngb-popover-window {
+  min-width: unset !important;
+  max-width: 320px !important;
+  width: max-content !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .nav-events .popover-body,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .popover-body,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .dark-menu,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .dark-menu-item {
+  min-width: unset !important;
+  max-width: 100% !important;
+  width: auto !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  color: var(--body-text-color) !important;
+  padding: 4px 10px !important;
+  margin: 0 !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-metadata-filter .accordion-body,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-metadata-filter > div,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .offcanvas {
+  background: var(--glass-modal-bg) !important;
+  backdrop-filter: blur(36px) saturate(200%) !important;
+  -webkit-backdrop-filter: blur(36px) saturate(200%) !important;
+  border: 1px solid var(--glass-border) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 16px 44px rgba(0, 0, 0, 0.32) !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .btn-secondary,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .btn-outline-secondary,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .btn-icon:not(.navbar .btn-icon):not(.dropdown-item):not(a.btn-icon) {
+  background: var(--glass-surface-light) !important;
+  border: 1px solid var(--glass-border) !important;
+  color: var(--body-text-color) !important;
+  border-radius: 10px !important;
+  transition: all 0.2s ease !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .btn-secondary:hover,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .btn-outline-secondary:hover {
+  background: var(--glass-surface-hover) !important;
+  border-color: var(--glass-border-highlight) !important;
+  color: var(--body-text-color) !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .btn-primary {
+  background-color: var(--accent-primary) !important;
+  border-color: transparent !important;
+  color: #ffffff !important;
+  border-radius: 10px !important;
+  font-weight: 500 !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .btn-primary:hover {
+  background-color: var(--accent-hover) !important;
+}
+
+/* --------------------------------------------------------------------------
+ * 9. Metadata Tags & Badges
+ * -------------------------------------------------------------------------- */
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-badge-expander .content,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .badge-expander .content {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  gap: 6px !important;
+  height: auto !important;
+  overflow: visible !important;
+}
+
+/* Keep person-detail spans visible for alias labels */
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-person-detail span {
+  display: inline !important;
+  color: var(--body-text-color) !important;
+  font-size: 0.88rem !important;
+}
+
+/* Hide comma separators injected between badge-expander tags */
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-badge-expander .content > span {
+  display: none !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-badge-expander .content a,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-metadata-detail a.btn-icon,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-series-detail app-metadata-detail a,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-metadata-detail .badge,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-person-detail .badge,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .tagbadge,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .badge:not(.overlay .badge):not(.dl-count-pill) {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 5px 12px !important;
+  margin: 2px 2px 2px 0 !important;
+  font-size: 0.82rem !important;
+  font-weight: 500 !important;
+  line-height: 1.25 !important;
+  color: var(--body-text-color) !important;
+  background: rgba(0, 0, 0, 0.055) !important;
+  border: 1px solid rgba(0, 0, 0, 0.12) !important;
+  border-radius: 8px !important;
+  text-decoration: none !important;
+  width: auto !important;
+  height: auto !important;
+  transition: all 0.18s ease !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-badge-expander .content a:hover,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-metadata-detail a.btn-icon:hover,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-series-detail app-metadata-detail a:hover,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .tagbadge:hover {
+  background: var(--accent-primary) !important;
+  border-color: transparent !important;
+  color: #ffffff !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Reset host element so only the inner .tagbadge shows the pill frame */
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-tag-badge {
+  display: inline-flex !important;
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  box-shadow: none !important;
+}
+
+/* --------------------------------------------------------------------------
+ * 10. Entity Cards & Person Cards
+ * -------------------------------------------------------------------------- */
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-carousel-reel .carousel-container {
+  mask-image: none !important;
+  -webkit-mask-image: none !important;
+  margin-bottom: 24px !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-carousel-reel .section-title {
+  font-size: 1.25rem !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.022em !important;
+  color: var(--body-text-color) !important;
+  margin-left: 6px !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) swiper-slide {
+  padding: 8px 4px 12px 4px !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-entity-card .card-item-container,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .card-item-container.card {
+  width: var(--card-image-width) !important;
+  max-width: var(--card-image-width) !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-entity-card .card-item-container:hover,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-person-card .card-item-container:hover {
+  transform: translateY(-6px) scale(1.02) !important;
+  z-index: 20 !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-entity-card .overlay,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .card-item-container .overlay {
+  width: var(--card-image-width) !important;
+  height: var(--card-image-height) !important;
+  border-radius: var(--card-border-radius) !important;
+  overflow: hidden !important;
+  position: relative !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.28), 0 0 0 1px var(--glass-border) !important;
+  transition: box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-entity-card .card-item-container:hover .overlay {
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.48), 0 0 0 1.5px var(--accent-primary) !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-entity-card .overlay app-image,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-entity-card .overlay img.img-placeholder {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  border-radius: var(--card-border-radius) !important;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-entity-card .card-item-container:hover .overlay img.img-placeholder {
+  transform: scale(1.04) !important;
+}
+
+/* Person cards: keep outer width aligned with the square avatar */
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .card.card-detail-layout-item:has(app-person-card),
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .card.col-auto:has(app-person-card) {
+  width: 11rem !important;
+  max-width: 11rem !important;
+  min-width: 11rem !important;
+  padding: 0 !important;
+  margin: 0.5rem !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-person-card {
+  display: block !important;
+  width: 100% !important;
+  max-width: 11rem !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-person-card .card-item-container {
+  width: 100% !important;
+  max-width: 11rem !important;
+  min-width: 0 !important;
+  background: var(--glass-surface-light) !important;
+  border: 1px solid var(--glass-border) !important;
+  border-radius: var(--card-border-radius) !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-person-card .card-item-container .overlay {
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 1 / 1 !important;
+  max-height: none !important;
+  border-radius: 0 !important;
+  background: rgba(0, 0, 0, 0.18) !important;
+  box-shadow: none !important;
+  display: block !important;
+  overflow: hidden !important;
+  position: relative !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-person-card .card-item-container .overlay app-image,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-person-card .card-item-container .overlay img,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-person-card .card-item-container .overlay .img-placeholder {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  aspect-ratio: 1 / 1 !important;
+  object-fit: cover !important;
+  border-radius: 0 !important;
+  display: block !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-person-card .card-item-container .card-body {
+  background: transparent !important;
+  padding: 8px 10px !important;
+  border-top: 1px solid var(--glass-border) !important;
+  margin: 0 !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-person-card .card-item-container:hover {
+  transform: translateY(-6px) scale(1.02) !important;
+  z-index: 20 !important;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.48), 0 0 0 1.5px var(--accent-primary) !important;
+  border-color: transparent !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-person-card .card-item-container:hover .overlay {
+  box-shadow: none !important;
+}
+
+/* Hide redundant series format clutter on entity cards */
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-entity-card .card-body.meta-title,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-entity-card .overlay:hover + .meta-title,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-entity-card app-series-format,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .card-title-container app-series-format,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .card-format {
+  display: none !important;
+}
+
+/* Progress bar */
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-entity-card .progress-banner {
+  position: absolute !important;
+  left: 8px !important;
+  right: 8px !important;
+  bottom: 8px !important;
+  width: calc(100% - 16px) !important;
+  height: 4px !important;
+  z-index: 30 !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-entity-card .progress-banner .progress {
+  height: 4px !important;
+  background-color: rgba(0, 0, 0, 0.55) !important;
+  backdrop-filter: blur(4px) !important;
+  border-radius: 999px !important;
+  overflow: hidden !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-entity-card .progress-banner .progress-bar {
+  background-color: var(--accent-primary) !important;
+  border-radius: 999px !important;
+  box-shadow: 0 0 8px var(--accent-primary) !important;
+}
+
+/* Unread & count badges */
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-entity-card .badge-container .not-read-badge {
+  top: 10px !important;
+  right: 10px !important;
+  width: 10px !important;
+  height: 10px !important;
+  border-radius: 50% !important;
+  background-color: var(--accent-primary) !important;
+  box-shadow: 0 0 0 2px var(--glass-canvas), 0 2px 6px var(--accent-glow) !important;
+  transform: none !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-entity-card .overlay .count .badge.bg-primary {
+  background: rgba(15, 15, 20, 0.72) !important;
+  backdrop-filter: blur(12px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(12px) saturate(180%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  color: #ffffff !important;
+  font-size: 0.72rem !important;
+  font-weight: 600 !important;
+  padding: 4px 8px !important;
+  border-radius: 8px !important;
+}
+
+/* Centered read button & floating more button */
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-entity-card .overlay .overlay-information--centered {
+  width: 46px !important;
+  height: 46px !important;
+  border-radius: 50% !important;
+  background: rgba(20, 20, 26, 0.72) !important;
+  backdrop-filter: blur(16px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.22) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-entity-card .overlay .overlay-information--centered:hover {
+  background: var(--accent-primary) !important;
+  border-color: transparent !important;
+  transform: translate(-50%, -50%) scale(1.12) !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-entity-card .card-title-container {
+  padding: 8px 2px 0 2px !important;
+  justify-content: center !important;
+  position: static !important;
+  background: transparent !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-entity-card .card-title-container .card-title {
+  max-width: 100% !important;
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  text-align: center !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-entity-card .card-title-container .card-title a {
+  font-size: 0.85rem !important;
+  font-weight: 500 !important;
+  color: var(--body-text-color) !important;
+  line-height: 1.35 !important;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2 !important;
+  -webkit-box-orient: vertical !important;
+  white-space: normal !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-entity-card .card-title-container .card-actions {
+  position: absolute !important;
+  top: calc(var(--card-image-height) - 38px) !important;
+  right: 8px !important;
+  z-index: 125 !important;
+  opacity: 0 !important;
+  transition: opacity 0.2s ease !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-entity-card .card-item-container:hover .card-title-container .card-actions {
+  opacity: 1 !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-entity-card .card-title-container .card-actions .btn {
+  width: 30px !important;
+  height: 30px !important;
+  border-radius: 50% !important;
+  background: rgba(18, 18, 24, 0.78) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  color: #ffffff !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-entity-card .card-title-container .card-actions .btn:hover {
+  background: var(--accent-primary) !important;
+  border-color: transparent !important;
+}
+
+/* --------------------------------------------------------------------------
+ * 11. Layout, Grids, Modals & Jump Bar
+ * -------------------------------------------------------------------------- */
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-metadata-filter label + button,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-metadata-filter .form-label + .btn,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-metadata-filter button:has(.fa-arrow-up, .fa-arrow-down) {
+  margin-left: 8px !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .btn:not(.list-group-item):not(.submenu-toggle):not(.dropdown-item):not(.w-100):not(.btn-icon) {
+  white-space: nowrap !important;
+  min-width: fit-content !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+}
+
+/* Compact action modal only; leave edit-series and large forms alone */
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) ngb-modal-window .modal-dialog:not(.modal-lg):not(.modal-xl):not(:has(.nav-pills)):not(:has(form)):has(.list-group-item) {
+  max-width: 320px !important;
+  width: fit-content !important;
+  min-width: 240px !important;
+  margin: 10vh auto !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .modal-body .list-group-item,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-card-actionables .list-group-item,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .submenu-toggle {
+  background: var(--glass-surface-light) !important;
+  border: 1px solid var(--glass-border) !important;
+  border-radius: 10px !important;
+  margin-bottom: 6px !important;
+  padding: 10px 16px !important;
+  color: var(--body-text-color) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  text-align: left !important;
+  width: 100% !important;
+  transition: all 0.18s ease !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .modal-body .list-group-item:hover,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-card-actionables .list-group-item:hover,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .submenu-toggle:hover {
+  background: var(--accent-primary) !important;
+  border-color: transparent !important;
+  color: #ffffff !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .main-container,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-person-detail .main-container,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-want-to-read .main-container,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-library-detail .main-container,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-all-series .main-container,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-series-detail .main-container,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-dashboard .main-container {
+  padding-left: 16px !important;
+  padding-right: 16px !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .main-container .main-container {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-person-detail .info-container {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  gap: 28px !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-person-detail .info-container > .image-container {
+  width: auto !important;
+  flex: 0 0 auto !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-person-detail .info-container > div:not(.image-container) {
+  flex: 1 1 300px !important;
+  width: auto !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(var(--card-image-width), 1fr)) !important;
+  justify-content: space-between !important;
+  gap: 20px 16px !important;
+  padding: 12px 12px 24px 0 !important;
+  width: 100% !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .grid app-entity-card .card-item-container,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .grid app-series-card .card-item-container,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .grid .card-item-container.card:not(app-person-card .card-item-container) {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .grid app-entity-card .overlay,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .grid app-series-card .overlay {
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 9 / 13 !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-browse-people .grid {
+  grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr)) !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .card-title-container,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-entity-card .card-body {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .jump-bar {
+  width: 38px !important;
+  min-width: 38px !important;
+  padding: 6px 4px !important;
+  margin-left: 6px !important;
+  background: var(--glass-surface-light) !important;
+  backdrop-filter: blur(16px) !important;
+  border: 1px solid var(--glass-border) !important;
+  border-radius: 999px !important;
+  overflow: visible !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .jump-bar .btn {
+  width: 28px !important;
+  min-width: 28px !important;
+  height: 22px !important;
+  padding: 0 !important;
+  font-size: 0.78rem !important;
+  font-weight: 500 !important;
+  color: var(--text-muted-color) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 6px !important;
+  white-space: nowrap !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .jump-bar .btn:hover {
+  background: var(--accent-subtle) !important;
+  color: var(--accent-hover) !important;
+}
+
+/* --------------------------------------------------------------------------
+ * Light theme overrides: force dark text and icons on light surfaces
+ * -------------------------------------------------------------------------- */
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .btn-actions,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .btn-actions i,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .btn-actions .fa,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .btn-actions .fa-regular,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .card-actions .btn,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .card-actions .btn i,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-card-actionables .btn,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-card-actionables .btn i,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-download-button .btn,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-download-button .btn i,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .btn-outline-primary,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .btn-outline-primary i,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .btn-outline-secondary,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .btn-outline-secondary i,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .btn-secondary,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .btn-secondary i,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .read-btn--text,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .dropdown-toggle.btn-outline-primary {
+  color: var(--body-text-color) !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .btn-outline-primary:hover,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .btn-outline-primary:hover i,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .btn-outline-primary:hover .read-btn--text {
+  color: #ffffff !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .btn-actions:hover,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .btn-actions:hover i,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .card-actions .btn:hover,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .card-actions .btn:hover i,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-card-actionables .btn:hover i,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-download-button .btn:hover i {
+  color: var(--accent-primary) !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .card-title,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .card-title a,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .section-title,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .modal-title,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .offcanvas-title,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .dropdown-item,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .list-group-item,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .side-nav-item,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .form-control,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .form-select,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) label,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .fw-bold {
+  color: var(--body-text-color) !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .text-muted,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .text-muted-color,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) small,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .tag-meta,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .tag-meta div {
+  color: var(--text-muted-color) !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .side-nav-header,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) h5.side-nav-header,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .kv-section-header,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) h2.kv-section-header {
+  color: var(--body-text-color) !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .alert,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .alert-warning,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .alert p,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) p.alert {
+  color: var(--body-text-color) !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .nav-tabs .nav-link,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .nav.nav-tabs .nav-link,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) ul.nav-tabs .nav-link {
+  color: var(--text-muted-color) !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .nav-tabs .nav-link:hover,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .nav.nav-tabs .nav-link:hover {
+  color: var(--body-text-color) !important;
+}
+
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .nav-tabs .nav-link.active,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .nav.nav-tabs .nav-link.active {
+  color: var(--accent-primary) !important;
+}
