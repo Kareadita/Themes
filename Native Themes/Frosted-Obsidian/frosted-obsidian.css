@@ -4,17 +4,15 @@
  * Compatibility: Kavita Angular 22+ (app-entity-card & app-person-card)
  * ========================================================================== */
 
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
-
 /* --------------------------------------------------------------------------
  * 1. Core Design Tokens & Variable Overrides
  * -------------------------------------------------------------------------- */
-:root .bg-frosted-obsidian,
-:root .bg-kavita-frosted-obsidian,
-:root .bg-kavita-frosted {
+html.bg-frosted-obsidian, body.bg-frosted-obsidian,
+html.bg-kavita-frosted-obsidian, body.bg-kavita-frosted-obsidian,
+html.bg-kavita-frosted, body.bg-kavita-frosted {
   /* Typography */
-  --body-font-family: -apple-system, BlinkMacSystemFont, "Inter", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif !important;
-  --brand-font-family: -apple-system, BlinkMacSystemFont, "Inter", "PingFang SC", sans-serif !important;
+  --body-font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Ubuntu", "Cantarell", "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", "Source Han Sans SC", "WenQuanYi Micro Hei", sans-serif !important;
+  --brand-font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Ubuntu", "Cantarell", sans-serif !important;
   --bs-body-font-family: var(--body-font-family) !important;
   --html-font-size: 15px !important;
 
@@ -760,12 +758,22 @@ body:is(.bg-frosted-obsidian, .bg-kavita-frosted-obsidian, .bg-kavita-frosted) a
   font-size: 0.88rem !important;
 }
 
-/* Hide comma separators injected between badge-expander tags */
-body:is(.bg-frosted-obsidian, .bg-kavita-frosted-obsidian, .bg-kavita-frosted) app-badge-expander .content > span {
-  display: none !important;
+/* Person detail: enlarge and bold the person name */
+body:is(.bg-frosted-obsidian, .bg-kavita-frosted-obsidian, .bg-kavita-frosted) app-person-detail h2.title > span {
+  font-size: 1.6rem !important;
+  font-weight: 700 !important;
+  line-height: 1.25 !important;
 }
 
-body:is(.bg-frosted-obsidian, .bg-kavita-frosted-obsidian, .bg-kavita-frosted) app-badge-expander .content a,
+/* Hide comma separators injected between badge-expander tags */
+body:is(.bg-frosted-obsidian, .bg-kavita-frosted-obsidian, .bg-kavita-frosted) app-person-detail span {
+  display: inline !important;
+  color: var(--body-text-color) !important;
+}
+
+body:is(.bg-frosted-obsidian, .bg-kavita-frosted-obsidian, .bg-kavita-frosted) app-badge-expander .content > a + span {
+  display: none !important;
+}
 body:is(.bg-frosted-obsidian, .bg-kavita-frosted-obsidian, .bg-kavita-frosted) app-metadata-detail a.btn-icon,
 body:is(.bg-frosted-obsidian, .bg-kavita-frosted-obsidian, .bg-kavita-frosted) app-series-detail app-metadata-detail a,
 body:is(.bg-frosted-obsidian, .bg-kavita-frosted-obsidian, .bg-kavita-frosted) app-metadata-detail .badge,
