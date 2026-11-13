@@ -19,17 +19,17 @@ html.bg-kavita-frosted-emerald, body.bg-kavita-frosted-emerald {
   --glass-canvas: #060c09;
   --glass-solid-fallback: #16161f;
   --glass-surface-light: rgba(255, 255, 255, 0.06);
-  --glass-surface-hover: rgba(255, 255, 255, 0.12);
-  --glass-modal-bg: rgba(20, 20, 28, 0.72);
-  --glass-dropdown-bg: linear-gradient(145deg, rgba(34, 34, 46, 0.78) 0%, rgba(18, 18, 26, 0.68) 100%);
-  --glass-border: rgba(255, 255, 255, 0.09);
-  --glass-border-highlight: rgba(255, 255, 255, 0.22);
-  --glass-inner-glow: rgba(255, 255, 255, 0.06);
+  --glass-surface-hover: rgba(255, 255, 255, 0.14);
+  --glass-modal-bg: linear-gradient(145deg, rgba(24, 24, 34, 0.74) 0%, rgba(16, 185, 129, 0.14) 100%);
+  --glass-dropdown-bg: linear-gradient(145deg, rgba(30, 30, 44, 0.54) 0%, rgba(16, 185, 129, 0.16) 50%, rgba(18, 18, 28, 0.50) 100%);
+  --glass-border: rgba(255, 255, 255, 0.14);
+  --glass-border-highlight: rgba(255, 255, 255, 0.28);
+  --glass-inner-glow: rgba(255, 255, 255, 0.12);
 
   /* Accent colors */
   --accent-primary: #10b981;
   --accent-hover: #34d399;
-  --accent-subtle: rgba(16, 185, 129, 0.20);
+  --accent-subtle: rgba(16, 185, 129, 0.22);
   --accent-glow: rgba(16, 185, 129, 0.38);
   --status-success: #30d158;
   --status-warning: #ff9f0a;
@@ -48,12 +48,12 @@ html.bg-kavita-frosted-emerald, body.bg-kavita-frosted-emerald {
 
   /* Text hierarchy */
   --body-text-color: #f5f5f7 !important;
-  --text-muted-color: rgba(235, 235, 245, 0.58) !important;
-  --offwhite-text-color: rgba(235, 235, 245, 0.78) !important;
+  --text-muted-color: rgba(235, 235, 245, 0.65) !important;
+  --offwhite-text-color: rgba(235, 235, 245, 0.85) !important;
   --bs-body-color: #f5f5f7 !important;
   --bs-body-bg: var(--glass-canvas) !important;
   --bs-tertiary-bg: rgba(255, 255, 255, 0.06) !important;
-  --bs-secondary-bg: rgba(255, 255, 255, 0.12) !important;
+  --bs-secondary-bg: rgba(255, 255, 255, 0.14) !important;
   --theme-color: var(--glass-canvas) !important;
   --color-scheme: dark !important;
   --btn-icon-filter: invert(1) grayscale(100%) brightness(200%) !important;
@@ -61,11 +61,11 @@ html.bg-kavita-frosted-emerald, body.bg-kavita-frosted-emerald {
   /* Elevation layers */
   --elevation-layer0: transparent !important;
   --elevation-layer1: rgba(255, 255, 255, 0.06) !important;
-  --elevation-layer2: rgba(255, 255, 255, 0.12) !important;
-  --elevation-layer3: rgba(255, 255, 255, 0.12) !important;
+  --elevation-layer2: rgba(255, 255, 255, 0.14) !important;
+  --elevation-layer3: rgba(255, 255, 255, 0.14) !important;
   --elevation-layer0-dark-solid: #060c09 !important;
-  --elevation-layer1-dark-solid: rgba(20, 20, 28, 0.72) !important;
-  --elevation-layer2-dark-solid: rgba(20, 20, 28, 0.72) !important;
+  --elevation-layer1-dark-solid: linear-gradient(145deg, rgba(24, 24, 34, 0.74) 0%, rgba(16, 185, 129, 0.14) 100%) !important;
+  --elevation-layer2-dark-solid: linear-gradient(145deg, rgba(24, 24, 34, 0.74) 0%, rgba(16, 185, 129, 0.14) 100%) !important;
 
   /* Dimensions & layout */
   --nav-offset: 64px !important;
@@ -78,10 +78,10 @@ html.bg-kavita-frosted-emerald, body.bg-kavita-frosted-emerald {
   /* Component tokens */
   --navbar-bg-color: transparent !important;
   --navbar-text-color: #f5f5f7 !important;
-  --navbar-fa-icon-color: rgba(235, 235, 245, 0.78) !important;
+  --navbar-fa-icon-color: rgba(235, 235, 245, 0.85) !important;
   --nav-header-text-color: #f5f5f7 !important;
   --side-nav-bg-color: transparent !important;
-  --side-nav-text-color: rgba(235, 235, 245, 0.78) !important;
+  --side-nav-text-color: rgba(235, 235, 245, 0.85) !important;
   --side-nav-hover-bg-color: var(--glass-surface-light) !important;
   --side-nav-hover-text-color: #f5f5f7 !important;
   --side-nav-active-bg-color: var(--accent-subtle) !important;
@@ -89,11 +89,11 @@ html.bg-kavita-frosted-emerald, body.bg-kavita-frosted-emerald {
   --side-nav-item-active-text-color: var(--accent-hover) !important;
 
   /* Modal, popover & dropdown tokens */
-  --modal-bg-color: var(--glass-modal-bg) !important;
+  --modal-bg-color: transparent !important;
   --modal-body-bg-color: transparent !important;
   --modal-footer-bg-color: transparent !important;
   --modal-footer-border-top-color: var(--glass-border) !important;
-  --drawer-bg-color: var(--glass-modal-bg) !important;
+  --drawer-bg-color: transparent !important;
   --drawer-text-color: #f5f5f7 !important;
   --popover-bg-color: transparent !important;
   --popover-body-bg-color: transparent !important;
@@ -109,7 +109,7 @@ html.bg-kavita-frosted-emerald, body.bg-kavita-frosted-emerald {
   --input-bg-color: rgba(255, 255, 255, 0.06) !important;
   --input-bg-readonly-color: rgba(255, 255, 255, 0.06) !important;
   --input-text-color: #f5f5f7 !important;
-  --input-placeholder-color: rgba(235, 235, 245, 0.58) !important;
+  --input-placeholder-color: rgba(235, 235, 245, 0.65) !important;
   --input-border-color: var(--glass-border) !important;
   --input-focused-border-color: var(--accent-primary) !important;
   --select2-dropdown-background: transparent !important;
@@ -123,7 +123,7 @@ html.bg-kavita-frosted-emerald, body.bg-kavita-frosted-emerald {
   --select2-selection-text-color: #f5f5f7 !important;
   --select2-selection-border-color: var(--glass-border) !important;
   --detail-title-color: #f5f5f7 !important;
-  --detail-subtitle-color: rgba(235, 235, 245, 0.78) !important;
+  --detail-subtitle-color: rgba(235, 235, 245, 0.85) !important;
   --setting-header-text-color: #f5f5f7 !important;
   --setting-break-color: var(--glass-border) !important;
   --hr-color: var(--glass-border) !important;
@@ -160,11 +160,11 @@ body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .companion-bar {
  * 3. Top Navigation Bar & Search Capsule
  * -------------------------------------------------------------------------- */
 body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) app-nav-header nav.navbar.fixed-top {
-  background: rgba(12, 12, 18, 0.68) !important;
-  backdrop-filter: blur(32px) saturate(200%) !important;
-  -webkit-backdrop-filter: blur(32px) saturate(200%) !important;
+  background: rgba(12, 12, 18, 0.72) !important;
+  backdrop-filter: blur(36px) saturate(210%) !important;
+  -webkit-backdrop-filter: blur(36px) saturate(210%) !important;
   border-bottom: 1px solid var(--glass-border) !important;
-  box-shadow: 0 1px 0 0 var(--glass-inner-glow) inset, 0 8px 28px rgba(0, 0, 0, 0.18) !important;
+  box-shadow: 0 1px 0 0 var(--glass-inner-glow) inset, 0 8px 28px rgba(0, 0, 0, 0.14) !important;
   height: var(--nav-offset) !important;
   min-height: var(--nav-offset) !important;
   padding: 0 20px !important;
@@ -254,23 +254,132 @@ body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) app-grouped-typeahead .
   flex-shrink: 0 !important;
 }
 
-body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) app-grouped-typeahead .list-group.results {
+/* 仅当下拉框内存在真正的结果项（带 role="option"）时，才模糊背后主内容区与侧边栏 */
+html body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald):has(ul#dropdown.list-group li.list-group-item[role="option"]) .main-container,
+html body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald):has(ul#dropdown.list-group li.list-group-item[role="option"]) app-side-nav,
+html body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald):has(ul#dropdown.list-group li.list-group-item[role="option"]) .side-nav,
+html body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald):has(ul#dropdown.list-group li.list-group-item[role="option"]) .companion-bar {
+  filter: blur(10px) brightness(0.92) !important;
+  transition: filter 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  pointer-events: none !important;
+}
+
+/* 没有真正结果项（包括空框、拼音上屏瞬间、或 "No results found" 状态）时，彻底隐藏整个下拉框 */
+html body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) app-grouped-typeahead ul#dropdown.list-group:not(:has(li.list-group-item[role="option"])),
+html body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) ul#dropdown.list-group:not(:has(li.list-group-item[role="option"])) {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* 搜索下拉框外层容器 ul#dropdown（高对比度亚克力面板，防止底层文字重影） */
+html body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) app-grouped-typeahead ul#dropdown.list-group,
+html body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) ul#dropdown.list-group {
+  --bs-list-group-bg: transparent !important;
+  --bs-list-group-border-color: transparent !important;
+  --bs-list-group-color: var(--body-text-color) !important;
   background: var(--glass-dropdown-bg) !important;
+  background-color: transparent !important;
   backdrop-filter: blur(40px) saturate(210%) !important;
   -webkit-backdrop-filter: blur(40px) saturate(210%) !important;
   border: 1px solid var(--glass-border-highlight) !important;
   border-radius: 16px !important;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45) !important;
-  padding: 8px !important;
+  box-shadow:
+    0 1px 0 0 var(--glass-inner-glow) inset,
+    0 24px 60px rgba(0, 0, 0, 0.28) !important;
+  padding: 8px 10px !important;
+  overflow-x: hidden !important;
+}
+
+/* 强制清空内部所有子列表与列表项的原生实色背景 */
+html body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) ul#dropdown.list-group .list-group.results,
+html body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) ul#dropdown.list-group li.list-group-item,
+html body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) ul#dropdown.list-group .list-group-item {
+  --bs-list-group-bg: transparent !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  color: var(--body-text-color) !important;
+}
+
+/* 分组标题（Series / 收藏 / 标签） */
+html body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) ul#dropdown.list-group .list-group-item.section-header {
+  border-bottom: 1px solid var(--glass-border) !important;
+  border-radius: 0 !important;
+  padding: 8px 10px 4px 10px !important;
+  margin-top: 4px !important;
+}
+
+html body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) ul#dropdown.list-group .list-group-item.section-header h5 {
+  color: var(--accent-primary) !important;
+  font-size: 0.90rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.02em !important;
+  text-transform: none !important;
+  margin: 0 !important;
+}
+
+/* 搜索结果条目：添加与侧边栏一致的悬停放大与右移流畅动效 */
+html body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) ul#dropdown.list-group .list-group.results .list-group-item {
+  border-radius: 10px !important;
+  margin: 2px 2px !important;
+  padding: 4px 8px !important;
+  transform-origin: left center !important;
+  transition:
+    transform 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 0.18s ease,
+    box-shadow 0.18s ease,
+    color 0.18s ease !important;
+}
+
+html body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) ul#dropdown.list-group .list-group.results .list-group-item app-image img {
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+
+/* 悬停与键盘选中高亮 + 放大效果 */
+html body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) ul#dropdown.list-group .list-group.results .list-group-item:hover,
+html body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) ul#dropdown.list-group .list-group.results .list-group-item:focus,
+html body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) ul#dropdown.list-group .list-group.results .list-group-item.active {
+  background: var(--accent-subtle) !important;
+  background-color: var(--accent-subtle) !important;
+  color: var(--body-text-color) !important;
+  transform: translateX(4px) scale(1.015) !important;
+  box-shadow: 0 0 0 1px rgba(16, 185, 129, 0.28) inset !important;
+}
+
+html body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) ul#dropdown.list-group .list-group.results .list-group-item:hover app-image img,
+html body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) ul#dropdown.list-group .list-group.results .list-group-item:focus app-image img {
+  transform: scale(1.12) !important;
+}
+
+/* 覆盖副标题（"in 漫画" 与 "Created by: xxx"）文字颜色 */
+html body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) ul#dropdown.list-group .text-light,
+html body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) ul#dropdown.list-group .text-accent,
+html body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) ul#dropdown.list-group app-collection-owner div {
+  color: var(--text-muted-color) !important;
+}
+
+/* 底部 "包括章节和文件" 分割线与标签 */
+html body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) ul#dropdown.list-group > li.list-group-item:last-child:not(.section-header) {
+  border-top: 1px solid var(--glass-border) !important;
+  border-radius: 0 0 10px 10px !important;
+  margin-top: 6px !important;
+  padding-top: 8px !important;
+}
+
+html body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) ul#dropdown.list-group .form-check-label {
+  color: var(--offwhite-text-color) !important;
+  font-size: 0.84rem !important;
 }
 
 /* --------------------------------------------------------------------------
  * 4. Side Navigation Dock
  * -------------------------------------------------------------------------- */
 body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) app-side-nav .side-nav-container {
-  background: rgba(14, 14, 20, 0.65) !important;
-  backdrop-filter: blur(32px) saturate(190%) !important;
-  -webkit-backdrop-filter: blur(32px) saturate(190%) !important;
+  background: rgba(14, 14, 20, 0.68) !important;
+  backdrop-filter: blur(36px) saturate(200%) !important;
+  -webkit-backdrop-filter: blur(36px) saturate(200%) !important;
   border-right: 1px solid var(--glass-border) !important;
   padding: 10px 8px !important;
 }
@@ -365,14 +474,14 @@ body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .side-nav-container.clo
  * Note: lock-active is applied on the parent .input-group, not the text span
  * -------------------------------------------------------------------------- */
 body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .input-group:not(.lock-active) > .input-group-text.clickable {
-  background: rgba(255, 255, 255, 0.05) !important;
-  background-color: rgba(255, 255, 255, 0.05) !important;
+  background: rgba(255, 255, 255, 0.06) !important;
+  background-color: rgba(255, 255, 255, 0.06) !important;
   backdrop-filter: blur(12px) !important;
   -webkit-backdrop-filter: blur(12px) !important;
   border: 1px solid var(--glass-border) !important;
   border-right: none !important;
   border-radius: 10px 0 0 10px !important;
-  color: rgba(235, 235, 245, 0.42) !important;
+  color: rgba(235, 235, 245, 0.45) !important;
   min-width: 42px !important;
   display: flex !important;
   align-items: center !important;
@@ -384,7 +493,7 @@ body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .input-group:not(.lock-
 
 body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .input-group:not(.lock-active) > .input-group-text.clickable i,
 body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .input-group:not(.lock-active) > .input-group-text.clickable span {
-  color: rgba(235, 235, 245, 0.42) !important;
+  color: rgba(235, 235, 245, 0.45) !important;
   opacity: 0.75 !important;
   font-size: 0.92rem !important;
 }
@@ -478,8 +587,9 @@ body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .select2-dropdown,
 body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .select2-container--open .select2-dropdown,
 body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .ng-dropdown-panel {
   background: var(--glass-dropdown-bg) !important;
-  backdrop-filter: blur(36px) saturate(210%) !important;
-  -webkit-backdrop-filter: blur(36px) saturate(210%) !important;
+  background-color: transparent !important;
+  backdrop-filter: blur(42px) saturate(220%) !important;
+  -webkit-backdrop-filter: blur(42px) saturate(220%) !important;
   border: 1px solid var(--glass-border-highlight) !important;
   border-radius: 14px !important;
   color: var(--body-text-color) !important;
@@ -487,7 +597,7 @@ body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .ng-dropdown-panel {
   margin-top: 4px !important;
   box-shadow:
     0 1px 0 0 var(--glass-inner-glow) inset,
-    0 20px 50px rgba(0, 0, 0, 0.48) !important;
+    0 20px 50px rgba(0, 0, 0, 0.36) !important;
   overflow: hidden !important;
 }
 
@@ -539,38 +649,43 @@ body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) img[src*="api/image/pub
 }
 
 /* --------------------------------------------------------------------------
- * 8. Modals, Popovers & Dropdown Menus
+ * 8. Modals, Popovers & Dropdown Menus (高透毛玻璃弹窗)
  * -------------------------------------------------------------------------- */
-body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .modal-backdrop.show,
-body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .offcanvas-backdrop.show {
-  background-color: rgba(0, 0, 0, 0.42) !important;
-  backdrop-filter: blur(12px) !important;
-  -webkit-backdrop-filter: blur(12px) !important;
+html body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .modal-backdrop.show,
+html body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .offcanvas-backdrop.show {
+  background-color: rgba(0, 0, 0, 0.32) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
   opacity: 1 !important;
 }
 
-body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .modal-content {
+html body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) ngb-modal-window .modal-content,
+html body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .modal-content {
+  --bs-modal-bg: transparent !important;
+  --bs-modal-header-border-color: var(--glass-border) !important;
+  --bs-modal-footer-border-color: var(--glass-border) !important;
   background: var(--glass-modal-bg) !important;
+  background-color: transparent !important;
   backdrop-filter: blur(42px) saturate(210%) !important;
   -webkit-backdrop-filter: blur(42px) saturate(210%) !important;
   border: 1px solid var(--glass-border-highlight) !important;
   border-radius: 20px !important;
   box-shadow:
     0 1px 0 0 var(--glass-inner-glow) inset,
-    0 28px 70px rgba(0, 0, 0, 0.55) !important;
+    0 24px 64px rgba(0, 0, 0, 0.36) !important;
   color: var(--body-text-color) !important;
   overflow: hidden !important;
 }
 
-body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .modal-header,
-body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .modal-body,
-body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .modal-footer {
+html body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .modal-header,
+html body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .modal-body,
+html body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .modal-footer {
   background: transparent !important;
   background-color: transparent !important;
   color: var(--body-text-color) !important;
 }
 
-body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .modal-header {
+html body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .modal-header {
   display: flex !important;
   align-items: center !important;
   justify-content: space-between !important;
@@ -578,26 +693,26 @@ body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .modal-header {
   padding: 16px 22px !important;
 }
 
-body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .modal-header .modal-title,
-body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .offcanvas-header .offcanvas-title {
+html body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .modal-header .modal-title,
+html body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .offcanvas-header .offcanvas-title {
   font-size: 1.18rem !important;
   font-weight: 700 !important;
   color: var(--body-text-color) !important;
 }
 
-body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .modal-header .btn-close {
+html body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .modal-header .btn-close {
   margin-left: auto !important;
   margin-right: 0 !important;
   filter: invert(1) grayscale(100%) brightness(200%) !important;
 }
 
-body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .modal-footer {
+html body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .modal-footer {
   border-top: 1px solid var(--glass-border) !important;
-  background: rgba(0, 0, 0, 0.08) !important;
+  background: rgba(255, 255, 255, 0.04) !important;
   padding: 12px 24px !important;
 }
 
-body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .modal-body .nav-pills .nav-link {
+html body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .modal-body .nav-pills .nav-link {
   border-radius: 10px !important;
   color: var(--offwhite-text-color) !important;
   padding: 8px 14px !important;
@@ -606,43 +721,45 @@ body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .modal-body .nav-pills 
   transition: all 0.2s ease !important;
 }
 
-body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .modal-body .nav-pills .nav-link:hover {
+html body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .modal-body .nav-pills .nav-link:hover {
   background: var(--glass-surface-light) !important;
   color: var(--body-text-color) !important;
 }
 
-body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .modal-body .nav-pills .nav-link.active {
+html body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .modal-body .nav-pills .nav-link.active {
   background: var(--accent-primary) !important;
   color: #ffffff !important;
   box-shadow: 0 4px 14px var(--accent-glow) !important;
 }
 
-body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .dropdown-menu,
-body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .dropdown-menu.show,
-body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) div[ngbdropdownmenu],
-body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .popover,
-body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) ngb-popover-window,
-body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) ngb-popover-window.popover,
-body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .nav-events .popover,
-body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .dark-menu,
-body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .tooltip-inner {
+html body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .dropdown-menu,
+html body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .dropdown-menu.show,
+html body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) div[ngbdropdownmenu],
+html body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .popover,
+html body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) ngb-popover-window,
+html body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) ngb-popover-window.popover,
+html body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .nav-events .popover,
+html body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .dark-menu,
+html body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .tooltip-inner {
+  --bs-dropdown-bg: transparent !important;
+  --bs-popover-bg: transparent !important;
   background: var(--glass-dropdown-bg) !important;
   background-color: transparent !important;
-  backdrop-filter: blur(38px) saturate(210%) !important;
-  -webkit-backdrop-filter: blur(38px) saturate(210%) !important;
+  backdrop-filter: blur(42px) saturate(215%) !important;
+  -webkit-backdrop-filter: blur(42px) saturate(215%) !important;
   border: 1px solid var(--glass-border-highlight) !important;
   border-radius: 14px !important;
   padding: 6px !important;
   box-shadow:
     0 1px 0 0 var(--glass-inner-glow) inset,
-    0 20px 48px rgba(0, 0, 0, 0.48) !important;
+    0 20px 48px rgba(0, 0, 0, 0.34) !important;
   color: var(--body-text-color) !important;
 }
 
-body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .dropdown-menu .dropdown-item,
-body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .dropdown-menu button.dropdown-item,
-body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .dropdown-menu a.dropdown-item,
-body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .dropdown-menu .btn {
+html body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .dropdown-menu .dropdown-item,
+html body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .dropdown-menu button.dropdown-item,
+html body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .dropdown-menu a.dropdown-item,
+html body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .dropdown-menu .btn {
   border-radius: 9px !important;
   padding: 8px 14px !important;
   font-size: 0.88rem !important;
@@ -662,29 +779,29 @@ body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .dropdown-menu .btn {
   transition: background-color 0.15s ease, color 0.15s ease !important;
 }
 
-body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .dropdown-menu .dropdown-item:hover,
-body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .dropdown-menu button.dropdown-item:hover,
-body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .dropdown-menu a.dropdown-item:hover {
+html body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .dropdown-menu .dropdown-item:hover,
+html body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .dropdown-menu button.dropdown-item:hover,
+html body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .dropdown-menu a.dropdown-item:hover {
   background: var(--accent-primary) !important;
   background-color: var(--accent-primary) !important;
   color: #ffffff !important;
 }
 
-body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .dropdown-menu .dropdown-item:hover i {
+html body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .dropdown-menu .dropdown-item:hover i {
   color: #ffffff !important;
 }
 
-body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .nav-events .popover,
-body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) ngb-popover-window {
+html body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .nav-events .popover,
+html body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) ngb-popover-window {
   min-width: unset !important;
   max-width: 320px !important;
   width: max-content !important;
 }
 
-body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .nav-events .popover-body,
-body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .popover-body,
-body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .dark-menu,
-body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .dark-menu-item {
+html body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .nav-events .popover-body,
+html body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .popover-body,
+html body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .dark-menu,
+html body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .dark-menu-item {
   min-width: unset !important;
   max-width: 100% !important;
   width: auto !important;
@@ -697,15 +814,17 @@ body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .dark-menu-item {
   margin: 0 !important;
 }
 
-body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) app-metadata-filter .accordion-body,
-body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) app-metadata-filter > div,
-body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .offcanvas {
+html body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) app-metadata-filter .accordion-body,
+html body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) app-metadata-filter > div,
+html body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .offcanvas {
+  --bs-offcanvas-bg: transparent !important;
   background: var(--glass-modal-bg) !important;
-  backdrop-filter: blur(36px) saturate(200%) !important;
-  -webkit-backdrop-filter: blur(36px) saturate(200%) !important;
-  border: 1px solid var(--glass-border) !important;
+  background-color: transparent !important;
+  backdrop-filter: blur(42px) saturate(215%) !important;
+  -webkit-backdrop-filter: blur(42px) saturate(215%) !important;
+  border: 1px solid var(--glass-border-highlight) !important;
   border-radius: 16px !important;
-  box-shadow: 0 16px 44px rgba(0, 0, 0, 0.32) !important;
+  box-shadow: 0 16px 44px rgba(0, 0, 0, 0.28) !important;
 }
 
 body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .btn-secondary,
@@ -765,11 +884,6 @@ body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) app-person-detail h2.ti
 }
 
 /* Hide comma separators injected between badge-expander tags */
-body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) app-person-detail span {
-  display: inline !important;
-  color: var(--body-text-color) !important;
-}
-
 body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) app-badge-expander .content > a + span {
   display: none !important;
 }
@@ -788,8 +902,8 @@ body:is(.bg-frosted-emerald, .bg-kavita-frosted-emerald) .badge:not(.overlay .ba
   font-weight: 500 !important;
   line-height: 1.25 !important;
   color: var(--body-text-color) !important;
-  background: rgba(255, 255, 255, 0.08) !important;
-  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  background: rgba(255, 255, 255, 0.09) !important;
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
   border-radius: 8px !important;
   text-decoration: none !important;
   width: auto !important;

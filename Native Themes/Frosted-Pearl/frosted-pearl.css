@@ -18,18 +18,18 @@ html.bg-kavita-frosted-pearl, body.bg-kavita-frosted-pearl {
   /* Frosted glass palette */
   --glass-canvas: #f2f4f8;
   --glass-solid-fallback: #ffffff;
-  --glass-surface-light: rgba(0, 0, 0, 0.045);
-  --glass-surface-hover: rgba(0, 0, 0, 0.085);
-  --glass-modal-bg: rgba(255, 255, 255, 0.78);
-  --glass-dropdown-bg: linear-gradient(145deg, rgba(255, 255, 255, 0.85) 0%, rgba(244, 245, 250, 0.75) 100%);
-  --glass-border: rgba(0, 0, 0, 0.08);
-  --glass-border-highlight: rgba(0, 0, 0, 0.16);
-  --glass-inner-glow: rgba(255, 255, 255, 0.85);
+  --glass-surface-light: rgba(255, 255, 255, 0.45);
+  --glass-surface-hover: rgba(255, 255, 255, 0.68);
+  --glass-modal-bg: linear-gradient(145deg, rgba(255, 255, 255, 0.80) 0%, rgba(0, 102, 204, 0.12) 100%);
+  --glass-dropdown-bg: linear-gradient(145deg, rgba(255, 255, 255, 0.78) 0%, rgba(0, 102, 204, 0.16) 100%);
+  --glass-border: rgba(255, 255, 255, 0.55);
+  --glass-border-highlight: rgba(255, 255, 255, 0.85);
+  --glass-inner-glow: rgba(255, 255, 255, 0.95);
 
   /* Accent colors */
   --accent-primary: #0066cc;
   --accent-hover: #0052a3;
-  --accent-subtle: rgba(0, 102, 204, 0.20);
+  --accent-subtle: rgba(0, 102, 204, 0.22);
   --accent-glow: rgba(0, 102, 204, 0.38);
   --status-success: #30d158;
   --status-warning: #ff9f0a;
@@ -47,25 +47,25 @@ html.bg-kavita-frosted-pearl, body.bg-kavita-frosted-pearl {
   --success-color: var(--status-success) !important;
 
   /* Text hierarchy */
-  --body-text-color: #1d1d1f !important;
-  --text-muted-color: rgba(29, 29, 31, 0.58) !important;
-  --offwhite-text-color: rgba(29, 29, 31, 0.75) !important;
-  --bs-body-color: #1d1d1f !important;
+  --body-text-color: #09090b !important;
+  --text-muted-color: rgba(9, 9, 11, 0.76) !important;
+  --offwhite-text-color: rgba(9, 9, 11, 0.88) !important;
+  --bs-body-color: #09090b !important;
   --bs-body-bg: var(--glass-canvas) !important;
-  --bs-tertiary-bg: rgba(0, 0, 0, 0.045) !important;
-  --bs-secondary-bg: rgba(0, 0, 0, 0.085) !important;
+  --bs-tertiary-bg: rgba(255, 255, 255, 0.45) !important;
+  --bs-secondary-bg: rgba(255, 255, 255, 0.68) !important;
   --theme-color: var(--glass-canvas) !important;
   --color-scheme: light !important;
   --btn-icon-filter: none !important;
 
   /* Elevation layers */
   --elevation-layer0: transparent !important;
-  --elevation-layer1: rgba(0, 0, 0, 0.045) !important;
-  --elevation-layer2: rgba(0, 0, 0, 0.085) !important;
-  --elevation-layer3: rgba(0, 0, 0, 0.085) !important;
+  --elevation-layer1: rgba(255, 255, 255, 0.45) !important;
+  --elevation-layer2: rgba(255, 255, 255, 0.68) !important;
+  --elevation-layer3: rgba(255, 255, 255, 0.68) !important;
   --elevation-layer0-dark-solid: #f2f4f8 !important;
-  --elevation-layer1-dark-solid: rgba(255, 255, 255, 0.78) !important;
-  --elevation-layer2-dark-solid: rgba(255, 255, 255, 0.78) !important;
+  --elevation-layer1-dark-solid: linear-gradient(145deg, rgba(255, 255, 255, 0.80) 0%, rgba(0, 102, 204, 0.12) 100%) !important;
+  --elevation-layer2-dark-solid: linear-gradient(145deg, rgba(255, 255, 255, 0.80) 0%, rgba(0, 102, 204, 0.12) 100%) !important;
 
   /* Dimensions & layout */
   --nav-offset: 64px !important;
@@ -77,54 +77,54 @@ html.bg-kavita-frosted-pearl, body.bg-kavita-frosted-pearl {
 
   /* Component tokens */
   --navbar-bg-color: transparent !important;
-  --navbar-text-color: #1d1d1f !important;
-  --navbar-fa-icon-color: rgba(29, 29, 31, 0.75) !important;
-  --nav-header-text-color: #1d1d1f !important;
+  --navbar-text-color: #09090b !important;
+  --navbar-fa-icon-color: rgba(9, 9, 11, 0.88) !important;
+  --nav-header-text-color: #09090b !important;
   --side-nav-bg-color: transparent !important;
-  --side-nav-text-color: rgba(29, 29, 31, 0.75) !important;
+  --side-nav-text-color: rgba(9, 9, 11, 0.88) !important;
   --side-nav-hover-bg-color: var(--glass-surface-light) !important;
-  --side-nav-hover-text-color: #1d1d1f !important;
+  --side-nav-hover-text-color: #09090b !important;
   --side-nav-active-bg-color: var(--accent-subtle) !important;
   --side-nav-item-active-color: var(--accent-primary) !important;
   --side-nav-item-active-text-color: var(--accent-hover) !important;
 
   /* Modal, popover & dropdown tokens */
-  --modal-bg-color: var(--glass-modal-bg) !important;
+  --modal-bg-color: transparent !important;
   --modal-body-bg-color: transparent !important;
   --modal-footer-bg-color: transparent !important;
   --modal-footer-border-top-color: var(--glass-border) !important;
-  --drawer-bg-color: var(--glass-modal-bg) !important;
-  --drawer-text-color: #1d1d1f !important;
+  --drawer-bg-color: transparent !important;
+  --drawer-text-color: #09090b !important;
   --popover-bg-color: transparent !important;
   --popover-body-bg-color: transparent !important;
-  --popover-body-text-color: #1d1d1f !important;
+  --popover-body-text-color: #09090b !important;
   --popover-border-color: var(--glass-border-highlight) !important;
   --dropdown-item-bg-color: transparent !important;
-  --dropdown-item-text-color: #1d1d1f !important;
+  --dropdown-item-text-color: #09090b !important;
   --dropdown-item-hover-bg-color: var(--accent-primary) !important;
   --dropdown-item-hover-text-color: #ffffff !important;
 
   /* Inputs & Select2 */
   --searchbar-bg-color: var(--glass-surface-light) !important;
-  --input-bg-color: rgba(0, 0, 0, 0.045) !important;
-  --input-bg-readonly-color: rgba(0, 0, 0, 0.045) !important;
-  --input-text-color: #1d1d1f !important;
-  --input-placeholder-color: rgba(29, 29, 31, 0.58) !important;
+  --input-bg-color: rgba(255, 255, 255, 0.45) !important;
+  --input-bg-readonly-color: rgba(255, 255, 255, 0.45) !important;
+  --input-text-color: #09090b !important;
+  --input-placeholder-color: rgba(9, 9, 11, 0.76) !important;
   --input-border-color: var(--glass-border) !important;
   --input-focused-border-color: var(--accent-primary) !important;
   --select2-dropdown-background: transparent !important;
   --select2-dropdown-border-color: var(--glass-border-highlight) !important;
-  --select2-option-text-color: #1d1d1f !important;
+  --select2-option-text-color: #09090b !important;
   --select2-option-highlighted-background: var(--accent-primary) !important;
   --select2-option-highlighted-text-color: #ffffff !important;
   --select2-option-selected-background: var(--accent-subtle) !important;
   --select2-option-selected-text-color: var(--accent-hover) !important;
-  --select2-selection-background: rgba(0, 0, 0, 0.045) !important;
-  --select2-selection-text-color: #1d1d1f !important;
+  --select2-selection-background: rgba(255, 255, 255, 0.45) !important;
+  --select2-selection-text-color: #09090b !important;
   --select2-selection-border-color: var(--glass-border) !important;
-  --detail-title-color: #1d1d1f !important;
-  --detail-subtitle-color: rgba(29, 29, 31, 0.75) !important;
-  --setting-header-text-color: #1d1d1f !important;
+  --detail-title-color: #09090b !important;
+  --detail-subtitle-color: rgba(9, 9, 11, 0.88) !important;
+  --setting-header-text-color: #09090b !important;
   --setting-break-color: var(--glass-border) !important;
   --hr-color: var(--glass-border) !important;
 }
@@ -161,10 +161,10 @@ body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .companion-bar {
  * -------------------------------------------------------------------------- */
 body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-nav-header nav.navbar.fixed-top {
   background: rgba(255, 255, 255, 0.72) !important;
-  backdrop-filter: blur(32px) saturate(200%) !important;
-  -webkit-backdrop-filter: blur(32px) saturate(200%) !important;
+  backdrop-filter: blur(36px) saturate(210%) !important;
+  -webkit-backdrop-filter: blur(36px) saturate(210%) !important;
   border-bottom: 1px solid var(--glass-border) !important;
-  box-shadow: 0 1px 0 0 var(--glass-inner-glow) inset, 0 8px 28px rgba(0, 0, 0, 0.18) !important;
+  box-shadow: 0 1px 0 0 var(--glass-inner-glow) inset, 0 8px 28px rgba(0, 0, 0, 0.14) !important;
   height: var(--nav-offset) !important;
   min-height: var(--nav-offset) !important;
   padding: 0 20px !important;
@@ -254,23 +254,132 @@ body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-grouped-typeahead .inpu
   flex-shrink: 0 !important;
 }
 
-body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-grouped-typeahead .list-group.results {
+/* 仅当下拉框内存在真正的结果项（带 role="option"）时，才模糊背后主内容区与侧边栏 */
+html body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl):has(ul#dropdown.list-group li.list-group-item[role="option"]) .main-container,
+html body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl):has(ul#dropdown.list-group li.list-group-item[role="option"]) app-side-nav,
+html body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl):has(ul#dropdown.list-group li.list-group-item[role="option"]) .side-nav,
+html body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl):has(ul#dropdown.list-group li.list-group-item[role="option"]) .companion-bar {
+  filter: blur(10px) brightness(0.92) !important;
+  transition: filter 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  pointer-events: none !important;
+}
+
+/* 没有真正结果项（包括空框、拼音上屏瞬间、或 "No results found" 状态）时，彻底隐藏整个下拉框 */
+html body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-grouped-typeahead ul#dropdown.list-group:not(:has(li.list-group-item[role="option"])),
+html body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) ul#dropdown.list-group:not(:has(li.list-group-item[role="option"])) {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* 搜索下拉框外层容器 ul#dropdown（高对比度亚克力面板，防止底层文字重影） */
+html body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-grouped-typeahead ul#dropdown.list-group,
+html body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) ul#dropdown.list-group {
+  --bs-list-group-bg: transparent !important;
+  --bs-list-group-border-color: transparent !important;
+  --bs-list-group-color: var(--body-text-color) !important;
   background: var(--glass-dropdown-bg) !important;
+  background-color: transparent !important;
   backdrop-filter: blur(40px) saturate(210%) !important;
   -webkit-backdrop-filter: blur(40px) saturate(210%) !important;
   border: 1px solid var(--glass-border-highlight) !important;
   border-radius: 16px !important;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45) !important;
-  padding: 8px !important;
+  box-shadow:
+    0 1px 0 0 var(--glass-inner-glow) inset,
+    0 24px 60px rgba(0, 0, 0, 0.28) !important;
+  padding: 8px 10px !important;
+  overflow-x: hidden !important;
+}
+
+/* 强制清空内部所有子列表与列表项的原生实色背景 */
+html body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) ul#dropdown.list-group .list-group.results,
+html body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) ul#dropdown.list-group li.list-group-item,
+html body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) ul#dropdown.list-group .list-group-item {
+  --bs-list-group-bg: transparent !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  color: var(--body-text-color) !important;
+}
+
+/* 分组标题（Series / 收藏 / 标签） */
+html body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) ul#dropdown.list-group .list-group-item.section-header {
+  border-bottom: 1px solid var(--glass-border) !important;
+  border-radius: 0 !important;
+  padding: 8px 10px 4px 10px !important;
+  margin-top: 4px !important;
+}
+
+html body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) ul#dropdown.list-group .list-group-item.section-header h5 {
+  color: var(--accent-primary) !important;
+  font-size: 0.90rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.02em !important;
+  text-transform: none !important;
+  margin: 0 !important;
+}
+
+/* 搜索结果条目：添加与侧边栏一致的悬停放大与右移流畅动效 */
+html body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) ul#dropdown.list-group .list-group.results .list-group-item {
+  border-radius: 10px !important;
+  margin: 2px 2px !important;
+  padding: 4px 8px !important;
+  transform-origin: left center !important;
+  transition:
+    transform 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 0.18s ease,
+    box-shadow 0.18s ease,
+    color 0.18s ease !important;
+}
+
+html body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) ul#dropdown.list-group .list-group.results .list-group-item app-image img {
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+
+/* 悬停与键盘选中高亮 + 放大效果 */
+html body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) ul#dropdown.list-group .list-group.results .list-group-item:hover,
+html body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) ul#dropdown.list-group .list-group.results .list-group-item:focus,
+html body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) ul#dropdown.list-group .list-group.results .list-group-item.active {
+  background: var(--accent-subtle) !important;
+  background-color: var(--accent-subtle) !important;
+  color: var(--body-text-color) !important;
+  transform: translateX(4px) scale(1.015) !important;
+  box-shadow: 0 0 0 1px rgba(0, 102, 204, 0.28) inset !important;
+}
+
+html body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) ul#dropdown.list-group .list-group.results .list-group-item:hover app-image img,
+html body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) ul#dropdown.list-group .list-group.results .list-group-item:focus app-image img {
+  transform: scale(1.12) !important;
+}
+
+/* 覆盖副标题（"in 漫画" 与 "Created by: xxx"）文字颜色 */
+html body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) ul#dropdown.list-group .text-light,
+html body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) ul#dropdown.list-group .text-accent,
+html body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) ul#dropdown.list-group app-collection-owner div {
+  color: var(--text-muted-color) !important;
+}
+
+/* 底部 "包括章节和文件" 分割线与标签 */
+html body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) ul#dropdown.list-group > li.list-group-item:last-child:not(.section-header) {
+  border-top: 1px solid var(--glass-border) !important;
+  border-radius: 0 0 10px 10px !important;
+  margin-top: 6px !important;
+  padding-top: 8px !important;
+}
+
+html body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) ul#dropdown.list-group .form-check-label {
+  color: var(--offwhite-text-color) !important;
+  font-size: 0.84rem !important;
 }
 
 /* --------------------------------------------------------------------------
  * 4. Side Navigation Dock
  * -------------------------------------------------------------------------- */
 body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-side-nav .side-nav-container {
-  background: rgba(255, 255, 255, 0.65) !important;
-  backdrop-filter: blur(32px) saturate(190%) !important;
-  -webkit-backdrop-filter: blur(32px) saturate(190%) !important;
+  background: rgba(255, 255, 255, 0.66) !important;
+  backdrop-filter: blur(36px) saturate(200%) !important;
+  -webkit-backdrop-filter: blur(36px) saturate(200%) !important;
   border-right: 1px solid var(--glass-border) !important;
   padding: 10px 8px !important;
 }
@@ -372,7 +481,7 @@ body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .input-group:not(.lock-acti
   border: 1px solid var(--glass-border) !important;
   border-right: none !important;
   border-radius: 10px 0 0 10px !important;
-  color: rgba(29, 29, 31, 0.42) !important;
+  color: rgba(24, 24, 27, 0.45) !important;
   min-width: 42px !important;
   display: flex !important;
   align-items: center !important;
@@ -384,7 +493,7 @@ body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .input-group:not(.lock-acti
 
 body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .input-group:not(.lock-active) > .input-group-text.clickable i,
 body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .input-group:not(.lock-active) > .input-group-text.clickable span {
-  color: rgba(29, 29, 31, 0.42) !important;
+  color: rgba(24, 24, 27, 0.45) !important;
   opacity: 0.75 !important;
   font-size: 0.92rem !important;
 }
@@ -478,8 +587,9 @@ body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .select2-dropdown,
 body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .select2-container--open .select2-dropdown,
 body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .ng-dropdown-panel {
   background: var(--glass-dropdown-bg) !important;
-  backdrop-filter: blur(36px) saturate(210%) !important;
-  -webkit-backdrop-filter: blur(36px) saturate(210%) !important;
+  background-color: transparent !important;
+  backdrop-filter: blur(42px) saturate(220%) !important;
+  -webkit-backdrop-filter: blur(42px) saturate(220%) !important;
   border: 1px solid var(--glass-border-highlight) !important;
   border-radius: 14px !important;
   color: var(--body-text-color) !important;
@@ -487,7 +597,7 @@ body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .ng-dropdown-panel {
   margin-top: 4px !important;
   box-shadow:
     0 1px 0 0 var(--glass-inner-glow) inset,
-    0 20px 50px rgba(0, 0, 0, 0.48) !important;
+    0 20px 50px rgba(0, 0, 0, 0.36) !important;
   overflow: hidden !important;
 }
 
@@ -539,38 +649,43 @@ body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) img[src*="api/image/publish
 }
 
 /* --------------------------------------------------------------------------
- * 8. Modals, Popovers & Dropdown Menus
+ * 8. Modals, Popovers & Dropdown Menus (高透毛玻璃弹窗)
  * -------------------------------------------------------------------------- */
-body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .modal-backdrop.show,
-body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .offcanvas-backdrop.show {
-  background-color: rgba(0, 0, 0, 0.42) !important;
-  backdrop-filter: blur(12px) !important;
-  -webkit-backdrop-filter: blur(12px) !important;
+html body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .modal-backdrop.show,
+html body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .offcanvas-backdrop.show {
+  background-color: rgba(0, 0, 0, 0.32) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
   opacity: 1 !important;
 }
 
-body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .modal-content {
+html body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) ngb-modal-window .modal-content,
+html body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .modal-content {
+  --bs-modal-bg: transparent !important;
+  --bs-modal-header-border-color: var(--glass-border) !important;
+  --bs-modal-footer-border-color: var(--glass-border) !important;
   background: var(--glass-modal-bg) !important;
+  background-color: transparent !important;
   backdrop-filter: blur(42px) saturate(210%) !important;
   -webkit-backdrop-filter: blur(42px) saturate(210%) !important;
   border: 1px solid var(--glass-border-highlight) !important;
   border-radius: 20px !important;
   box-shadow:
     0 1px 0 0 var(--glass-inner-glow) inset,
-    0 28px 70px rgba(0, 0, 0, 0.55) !important;
+    0 24px 64px rgba(0, 0, 0, 0.36) !important;
   color: var(--body-text-color) !important;
   overflow: hidden !important;
 }
 
-body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .modal-header,
-body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .modal-body,
-body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .modal-footer {
+html body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .modal-header,
+html body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .modal-body,
+html body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .modal-footer {
   background: transparent !important;
   background-color: transparent !important;
   color: var(--body-text-color) !important;
 }
 
-body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .modal-header {
+html body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .modal-header {
   display: flex !important;
   align-items: center !important;
   justify-content: space-between !important;
@@ -578,26 +693,26 @@ body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .modal-header {
   padding: 16px 22px !important;
 }
 
-body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .modal-header .modal-title,
-body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .offcanvas-header .offcanvas-title {
+html body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .modal-header .modal-title,
+html body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .offcanvas-header .offcanvas-title {
   font-size: 1.18rem !important;
   font-weight: 700 !important;
   color: var(--body-text-color) !important;
 }
 
-body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .modal-header .btn-close {
+html body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .modal-header .btn-close {
   margin-left: auto !important;
   margin-right: 0 !important;
   filter: none !important;
 }
 
-body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .modal-footer {
+html body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .modal-footer {
   border-top: 1px solid var(--glass-border) !important;
-  background: rgba(0, 0, 0, 0.08) !important;
+  background: rgba(255, 255, 255, 0.04) !important;
   padding: 12px 24px !important;
 }
 
-body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .modal-body .nav-pills .nav-link {
+html body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .modal-body .nav-pills .nav-link {
   border-radius: 10px !important;
   color: var(--offwhite-text-color) !important;
   padding: 8px 14px !important;
@@ -606,43 +721,45 @@ body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .modal-body .nav-pills .nav
   transition: all 0.2s ease !important;
 }
 
-body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .modal-body .nav-pills .nav-link:hover {
+html body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .modal-body .nav-pills .nav-link:hover {
   background: var(--glass-surface-light) !important;
   color: var(--body-text-color) !important;
 }
 
-body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .modal-body .nav-pills .nav-link.active {
+html body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .modal-body .nav-pills .nav-link.active {
   background: var(--accent-primary) !important;
   color: #ffffff !important;
   box-shadow: 0 4px 14px var(--accent-glow) !important;
 }
 
-body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .dropdown-menu,
-body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .dropdown-menu.show,
-body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) div[ngbdropdownmenu],
-body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .popover,
-body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) ngb-popover-window,
-body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) ngb-popover-window.popover,
-body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .nav-events .popover,
-body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .dark-menu,
-body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .tooltip-inner {
+html body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .dropdown-menu,
+html body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .dropdown-menu.show,
+html body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) div[ngbdropdownmenu],
+html body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .popover,
+html body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) ngb-popover-window,
+html body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) ngb-popover-window.popover,
+html body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .nav-events .popover,
+html body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .dark-menu,
+html body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .tooltip-inner {
+  --bs-dropdown-bg: transparent !important;
+  --bs-popover-bg: transparent !important;
   background: var(--glass-dropdown-bg) !important;
   background-color: transparent !important;
-  backdrop-filter: blur(38px) saturate(210%) !important;
-  -webkit-backdrop-filter: blur(38px) saturate(210%) !important;
+  backdrop-filter: blur(42px) saturate(215%) !important;
+  -webkit-backdrop-filter: blur(42px) saturate(215%) !important;
   border: 1px solid var(--glass-border-highlight) !important;
   border-radius: 14px !important;
   padding: 6px !important;
   box-shadow:
     0 1px 0 0 var(--glass-inner-glow) inset,
-    0 20px 48px rgba(0, 0, 0, 0.48) !important;
+    0 20px 48px rgba(0, 0, 0, 0.34) !important;
   color: var(--body-text-color) !important;
 }
 
-body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .dropdown-menu .dropdown-item,
-body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .dropdown-menu button.dropdown-item,
-body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .dropdown-menu a.dropdown-item,
-body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .dropdown-menu .btn {
+html body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .dropdown-menu .dropdown-item,
+html body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .dropdown-menu button.dropdown-item,
+html body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .dropdown-menu a.dropdown-item,
+html body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .dropdown-menu .btn {
   border-radius: 9px !important;
   padding: 8px 14px !important;
   font-size: 0.88rem !important;
@@ -662,29 +779,29 @@ body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .dropdown-menu .btn {
   transition: background-color 0.15s ease, color 0.15s ease !important;
 }
 
-body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .dropdown-menu .dropdown-item:hover,
-body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .dropdown-menu button.dropdown-item:hover,
-body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .dropdown-menu a.dropdown-item:hover {
+html body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .dropdown-menu .dropdown-item:hover,
+html body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .dropdown-menu button.dropdown-item:hover,
+html body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .dropdown-menu a.dropdown-item:hover {
   background: var(--accent-primary) !important;
   background-color: var(--accent-primary) !important;
   color: #ffffff !important;
 }
 
-body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .dropdown-menu .dropdown-item:hover i {
+html body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .dropdown-menu .dropdown-item:hover i {
   color: #ffffff !important;
 }
 
-body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .nav-events .popover,
-body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) ngb-popover-window {
+html body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .nav-events .popover,
+html body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) ngb-popover-window {
   min-width: unset !important;
   max-width: 320px !important;
   width: max-content !important;
 }
 
-body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .nav-events .popover-body,
-body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .popover-body,
-body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .dark-menu,
-body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .dark-menu-item {
+html body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .nav-events .popover-body,
+html body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .popover-body,
+html body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .dark-menu,
+html body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .dark-menu-item {
   min-width: unset !important;
   max-width: 100% !important;
   width: auto !important;
@@ -697,15 +814,17 @@ body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .dark-menu-item {
   margin: 0 !important;
 }
 
-body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-metadata-filter .accordion-body,
-body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-metadata-filter > div,
-body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .offcanvas {
+html body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-metadata-filter .accordion-body,
+html body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-metadata-filter > div,
+html body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .offcanvas {
+  --bs-offcanvas-bg: transparent !important;
   background: var(--glass-modal-bg) !important;
-  backdrop-filter: blur(36px) saturate(200%) !important;
-  -webkit-backdrop-filter: blur(36px) saturate(200%) !important;
-  border: 1px solid var(--glass-border) !important;
+  background-color: transparent !important;
+  backdrop-filter: blur(42px) saturate(215%) !important;
+  -webkit-backdrop-filter: blur(42px) saturate(215%) !important;
+  border: 1px solid var(--glass-border-highlight) !important;
   border-radius: 16px !important;
-  box-shadow: 0 16px 44px rgba(0, 0, 0, 0.32) !important;
+  box-shadow: 0 16px 44px rgba(0, 0, 0, 0.28) !important;
 }
 
 body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .btn-secondary,
@@ -765,11 +884,6 @@ body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-person-detail h2.title 
 }
 
 /* Hide comma separators injected between badge-expander tags */
-body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-person-detail span {
-  display: inline !important;
-  color: var(--body-text-color) !important;
-}
-
 body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) app-badge-expander .content > a + span {
   display: none !important;
 }
@@ -788,8 +902,8 @@ body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .badge:not(.overlay .badge)
   font-weight: 500 !important;
   line-height: 1.25 !important;
   color: var(--body-text-color) !important;
-  background: rgba(0, 0, 0, 0.055) !important;
-  border: 1px solid rgba(0, 0, 0, 0.12) !important;
+  background: rgba(255, 255, 255, 0.55) !important;
+  border: 1px solid rgba(0, 0, 0, 0.10) !important;
   border-radius: 8px !important;
   text-decoration: none !important;
   width: auto !important;
@@ -1314,6 +1428,7 @@ body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .fw-bold {
 
 body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .text-muted,
 body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .text-muted-color,
+body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .text-light,
 body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) small,
 body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .tag-meta,
 body:is(.bg-frosted-pearl, .bg-kavita-frosted-pearl) .tag-meta div {
