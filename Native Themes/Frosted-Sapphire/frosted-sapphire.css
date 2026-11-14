@@ -254,7 +254,7 @@ body:is(.bg-frosted-sapphire, .bg-kavita-frosted-sapphire) app-grouped-typeahead
   flex-shrink: 0 !important;
 }
 
-/* 仅当下拉框内存在真正的结果项（带 role="option"）时，才模糊背后主内容区与侧边栏 */
+/* Blur the main content and sidebars only when valid option items are present in the search dropdown */
 html body:is(.bg-frosted-sapphire, .bg-kavita-frosted-sapphire):has(ul#dropdown.list-group li.list-group-item[role="option"]) .main-container,
 html body:is(.bg-frosted-sapphire, .bg-kavita-frosted-sapphire):has(ul#dropdown.list-group li.list-group-item[role="option"]) app-side-nav,
 html body:is(.bg-frosted-sapphire, .bg-kavita-frosted-sapphire):has(ul#dropdown.list-group li.list-group-item[role="option"]) .side-nav,
@@ -264,7 +264,7 @@ html body:is(.bg-frosted-sapphire, .bg-kavita-frosted-sapphire):has(ul#dropdown.
   pointer-events: none !important;
 }
 
-/* 没有真正结果项（包括空框、拼音上屏瞬间、或 "No results found" 状态）时，彻底隐藏整个下拉框 */
+/* Completely hide the dropdown when empty, during IME composition, or in "No results found" state */
 html body:is(.bg-frosted-sapphire, .bg-kavita-frosted-sapphire) app-grouped-typeahead ul#dropdown.list-group:not(:has(li.list-group-item[role="option"])),
 html body:is(.bg-frosted-sapphire, .bg-kavita-frosted-sapphire) ul#dropdown.list-group:not(:has(li.list-group-item[role="option"])) {
   display: none !important;
@@ -272,7 +272,7 @@ html body:is(.bg-frosted-sapphire, .bg-kavita-frosted-sapphire) ul#dropdown.list
   opacity: 0 !important;
 }
 
-/* 搜索下拉框外层容器 ul#dropdown（高对比度亚克力面板，防止底层文字重影） */
+/* Outer container of search dropdown ul#dropdown (high-contrast acrylic panel to prevent background text ghosting) */
 html body:is(.bg-frosted-sapphire, .bg-kavita-frosted-sapphire) app-grouped-typeahead ul#dropdown.list-group,
 html body:is(.bg-frosted-sapphire, .bg-kavita-frosted-sapphire) ul#dropdown.list-group {
   --bs-list-group-bg: transparent !important;
@@ -291,7 +291,7 @@ html body:is(.bg-frosted-sapphire, .bg-kavita-frosted-sapphire) ul#dropdown.list
   overflow-x: hidden !important;
 }
 
-/* 强制清空内部所有子列表与列表项的原生实色背景 */
+/* Force-clear solid native backgrounds on inner lists and list items */
 html body:is(.bg-frosted-sapphire, .bg-kavita-frosted-sapphire) ul#dropdown.list-group .list-group.results,
 html body:is(.bg-frosted-sapphire, .bg-kavita-frosted-sapphire) ul#dropdown.list-group li.list-group-item,
 html body:is(.bg-frosted-sapphire, .bg-kavita-frosted-sapphire) ul#dropdown.list-group .list-group-item {
@@ -303,7 +303,7 @@ html body:is(.bg-frosted-sapphire, .bg-kavita-frosted-sapphire) ul#dropdown.list
   color: var(--body-text-color) !important;
 }
 
-/* 分组标题（Series / 收藏 / 标签） */
+/* Section headers (Series / Collections / Tags) */
 html body:is(.bg-frosted-sapphire, .bg-kavita-frosted-sapphire) ul#dropdown.list-group .list-group-item.section-header {
   border-bottom: 1px solid var(--glass-border) !important;
   border-radius: 0 !important;
@@ -320,7 +320,7 @@ html body:is(.bg-frosted-sapphire, .bg-kavita-frosted-sapphire) ul#dropdown.list
   margin: 0 !important;
 }
 
-/* 搜索结果条目：添加与侧边栏一致的悬停放大与右移流畅动效 */
+/* Search result items: smooth hover scale and slide animation matching the side navigation */
 html body:is(.bg-frosted-sapphire, .bg-kavita-frosted-sapphire) ul#dropdown.list-group .list-group.results .list-group-item {
   border-radius: 10px !important;
   margin: 2px 2px !important;
@@ -337,7 +337,7 @@ html body:is(.bg-frosted-sapphire, .bg-kavita-frosted-sapphire) ul#dropdown.list
   transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
 }
 
-/* 悬停与键盘选中高亮 + 放大效果 */
+/* Hover and keyboard active highlight with subtle scale effect */
 html body:is(.bg-frosted-sapphire, .bg-kavita-frosted-sapphire) ul#dropdown.list-group .list-group.results .list-group-item:hover,
 html body:is(.bg-frosted-sapphire, .bg-kavita-frosted-sapphire) ul#dropdown.list-group .list-group.results .list-group-item:focus,
 html body:is(.bg-frosted-sapphire, .bg-kavita-frosted-sapphire) ul#dropdown.list-group .list-group.results .list-group-item.active {
@@ -353,14 +353,14 @@ html body:is(.bg-frosted-sapphire, .bg-kavita-frosted-sapphire) ul#dropdown.list
   transform: scale(1.12) !important;
 }
 
-/* 覆盖副标题（"in 漫画" 与 "Created by: xxx"）文字颜色 */
+/* Override subtitle colors (such as library name and "Created by: xxx") */
 html body:is(.bg-frosted-sapphire, .bg-kavita-frosted-sapphire) ul#dropdown.list-group .text-light,
 html body:is(.bg-frosted-sapphire, .bg-kavita-frosted-sapphire) ul#dropdown.list-group .text-accent,
 html body:is(.bg-frosted-sapphire, .bg-kavita-frosted-sapphire) ul#dropdown.list-group app-collection-owner div {
   color: var(--text-muted-color) !important;
 }
 
-/* 底部 "包括章节和文件" 分割线与标签 */
+/* Bottom "Include Chapters & Files" divider and switch label */
 html body:is(.bg-frosted-sapphire, .bg-kavita-frosted-sapphire) ul#dropdown.list-group > li.list-group-item:last-child:not(.section-header) {
   border-top: 1px solid var(--glass-border) !important;
   border-radius: 0 0 10px 10px !important;
@@ -636,6 +636,57 @@ body:is(.bg-frosted-sapphire, .bg-kavita-frosted-sapphire) .select2-container--d
   padding: 2px 8px !important;
 }
 
+/* Form autocomplete overlay dropdown (.dropdown.dropdown-overlay mounted at body root) */
+html body:is(.bg-frosted-sapphire, .bg-kavita-frosted-sapphire) .dropdown.dropdown-overlay,
+html body:is(.bg-frosted-sapphire, .bg-kavita-frosted-sapphire) .dropdown-overlay ul.list-group.results {
+  --bs-list-group-bg: transparent !important;
+  --bs-list-group-border-color: transparent !important;
+  --bs-list-group-active-bg: var(--accent-subtle) !important;
+  --bs-list-group-active-border-color: transparent !important;
+  --bs-list-group-active-color: var(--body-text-color) !important;
+  z-index: 1090 !important;
+  background: var(--glass-dropdown-bg) !important;
+  background-color: var(--glass-solid-fallback) !important;
+  backdrop-filter: blur(36px) saturate(210%) !important;
+  -webkit-backdrop-filter: blur(36px) saturate(210%) !important;
+  border: 1px solid var(--glass-border-highlight) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.25) !important;
+  padding: 4px !important;
+}
+
+html body:is(.bg-frosted-sapphire, .bg-kavita-frosted-sapphire) .dropdown-overlay ul.list-group.results {
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+html body:is(.bg-frosted-sapphire, .bg-kavita-frosted-sapphire) .dropdown-overlay ul.list-group.results li.list-group-item {
+  --bs-list-group-bg: transparent !important;
+  --bs-list-group-active-bg: var(--accent-subtle) !important;
+  --bs-list-group-active-color: var(--body-text-color) !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  border-radius: 8px !important;
+  color: var(--body-text-color) !important;
+  padding: 6px 12px !important;
+  transition: background-color 0.15s ease, color 0.15s ease !important;
+}
+
+/* Active, selected, and hovered items (including .active and .add-item.active) */
+html body:is(.bg-frosted-sapphire, .bg-kavita-frosted-sapphire) .dropdown-overlay ul.list-group.results li.list-group-item:hover,
+html body:is(.bg-frosted-sapphire, .bg-kavita-frosted-sapphire) .dropdown-overlay ul.list-group.results li.list-group-item:focus,
+html body:is(.bg-frosted-sapphire, .bg-kavita-frosted-sapphire) .dropdown-overlay ul.list-group.results li.list-group-item.active,
+html body:is(.bg-frosted-sapphire, .bg-kavita-frosted-sapphire) .dropdown-overlay ul.list-group.results li.list-group-item.add-item.active {
+  background: var(--accent-subtle) !important;
+  background-color: var(--accent-subtle) !important;
+  color: var(--body-text-color) !important;
+  box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.35) inset !important;
+}
+
 /* --------------------------------------------------------------------------
  * 7. Publisher Logo Visibility
  * -------------------------------------------------------------------------- */
@@ -649,7 +700,7 @@ body:is(.bg-frosted-sapphire, .bg-kavita-frosted-sapphire) img[src*="api/image/p
 }
 
 /* --------------------------------------------------------------------------
- * 8. Modals, Popovers & Dropdown Menus (高透毛玻璃弹窗)
+ * 8. Modals, Popovers & Dropdown Menus (High-Translucency Frosted Glass)
  * -------------------------------------------------------------------------- */
 html body:is(.bg-frosted-sapphire, .bg-kavita-frosted-sapphire) .modal-backdrop.show,
 html body:is(.bg-frosted-sapphire, .bg-kavita-frosted-sapphire) .offcanvas-backdrop.show {
