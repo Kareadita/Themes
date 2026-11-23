@@ -1,3 +1,9 @@
+/* DarkNight - Kavita theme, ported to v0.9.1.4.
+   Original theme: Kavita compatibility 0.7.14. Original author: Elry (github.com/ElryWeeb).
+   Port changes: colorscape variables, elevation polarity, navbar/nav-header
+   defaults, light-polarity surface slots, and scoping of rules that were
+   global (Kavita keeps a theme's stylesheet loaded after switching away).
+ */
 :root .bg-darknight {
 
     /* Main Colors */
@@ -199,7 +205,6 @@
     /* Slider */
     --slider-text-color: #F8F8F2;
 
-
     /* Manga Reader */    
     --manga-reader-overlay-filter: blur(10px);
     --manga-reader-overlay-bg-color: rgba(0,0,0,.5);
@@ -239,15 +244,31 @@
 
     /* Card list */    
     --card-list-item-bg-color: linear-gradient(180deg, rgba(0,0,0,.15) 0%, rgba(0,0,0,.15) 1%, rgba(0,0,0,0) 100%);
+
+    /* ===== Kavita 0.9.1.4 compatibility (added during port) ===== */
+    --theme-color: #121216;
+    --tile-color: #121216;
+
+    /* Colorscape: introduced after 0.8.2. Defaults are dark grey and would
+       otherwise paint an unthemed canvas behind this palette. */
+    --colorscape-enabled: true;
+    --colorscape-primary-default-color: rgb(24, 24, 28);
+    --colorscape-lighter-default-color: rgb(19, 19, 23);
+    --colorscape-darker-default-color: rgb(14, 14, 18);
+    --colorscape-complementary-default-color: rgb(57, 50, 79);
+    --colorscape-primary-color: rgba(24, 24, 28, 0);
+    --colorscape-lighter-color: rgba(19, 19, 23, 0);
+    --colorscape-darker-color: rgba(14, 14, 18, 0);
+    --colorscape-complementary-color: rgba(57, 50, 79, 0);
 }
 
 /* Otherwise Progressbar stays green, bug is reported. */
-.progress-bar {
+.bg-darknight .progress-bar {
     background-color: var(--primary-color) !important;
 }
 
 /* Make the Kavita fit the Theme */
-.navbar-brand {
+.bg-darknight .navbar-brand {
     color: var(--primary-color) !important;
     .logo.img-placeholder {
         filter: hue-rotate(108deg);

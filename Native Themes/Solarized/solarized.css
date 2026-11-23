@@ -1,3 +1,9 @@
+/* Solarized - Kavita theme, ported to v0.9.1.4.
+   Original theme: Kavita compatibility 0.7.14. Original author: Matguitarist (github.com/matguitarist).
+   Port changes: colorscape variables, elevation polarity, navbar/nav-header
+   defaults, light-polarity surface slots, and scoping of rules that were
+   global (Kavita keeps a theme's stylesheet loaded after switching away).
+ */
 :root .bg-solarized {
 	
 	/* Base Colors*/
@@ -18,7 +24,6 @@
 	--cyan:      #2aa198;
 	--green:     #859900;
 
-
 	/* Main Colors Variables*/
 	--color-scheme: dark;
 	--primary-color: #268bd2;
@@ -29,7 +34,6 @@
 	--bs-body-bg: #002b36;
 	--body-text-color: #fdf6e3;
 	--btn-icon-filter: invert(1) grayscale(100%) brightness(200%);
-
 
 	/* Scrollbar */
 	--primary-color-scrollbar: rgba(113, 72, 193, .75);
@@ -167,7 +171,6 @@
 	--progress-bg-color: var(--nav-header-bg-color);
 	--progress-bar-color: var(--primary-color-dark-shade);
 
-
 	/* Dropdown */
 	--dropdown-item-hover-text-color: #fdf6e3;
 	--dropdown-item-hover-bg-color: var(--primary-color-dark-shade);
@@ -258,9 +261,24 @@
 	--bulk-selection-text-color: var(--navbar-text-color);
 	--bulk-selection-highlight-text-color: var(--primary-color);
 
-
 	/* Card list */
 	--card-list-item-bg-color: linear-gradient(180deg, rgba(26, 26, 26, 0.15) 0%, rgba(26, 26, 26, .15) 1%, rgba(26, 26, 26, 0) 100%);
+
+    /* ===== Kavita 0.9.1.4 compatibility (added during port) ===== */
+    --theme-color: #002b36;
+    --tile-color: #002b36;
+
+    /* Colorscape: introduced after 0.8.2. Defaults are dark grey and would
+       otherwise paint an unthemed canvas behind this palette. */
+    --colorscape-enabled: true;
+    --colorscape-primary-default-color: rgb(6, 49, 60);
+    --colorscape-lighter-default-color: rgb(1, 44, 55);
+    --colorscape-darker-default-color: rgb(0, 39, 50);
+    --colorscape-complementary-default-color: rgb(22, 75, 97);
+    --colorscape-primary-color: rgba(6, 49, 60, 0);
+    --colorscape-lighter-color: rgba(1, 44, 55, 0);
+    --colorscape-darker-color: rgba(0, 39, 50, 0);
+    --colorscape-complementary-color: rgba(22, 75, 97, 0);
 }
 
 /* Make the Kavita fit the Theme */
@@ -269,6 +287,6 @@
 }*/
 
 /* Otherwise Progressbar stays green, bug is reported. */
-.progress-bar {
+.bg-solarized .progress-bar {
     background-color: #5d68b0 !important;
 }

@@ -1,5 +1,10 @@
+/* DarkPink - Kavita theme, ported to v0.9.1.4.
+   Original theme: Kavita compatibility 0.7.14. Original author: Matguitarist (github.com/matguitarist).
+   Port changes: colorscape variables, elevation polarity, navbar/nav-header
+   defaults, light-polarity surface slots, and scoping of rules that were
+   global (Kavita keeps a theme's stylesheet loaded after switching away).
+ */
 :root .bg-darkpink {
-
 
 	/* Main Colors Variables*/
 	--color-scheme: dark;
@@ -243,10 +248,25 @@
 	/* Card list */
 	--card-list-item-bg-color: linear-gradient(180deg, rgba(26, 26, 26, 0.15) 0%, rgba(26, 26, 26, .15) 1%, rgba(26, 26, 26, 0) 100%);
 
+    /* ===== Kavita 0.9.1.4 compatibility (added during port) ===== */
+    --theme-color: #0f121a;
+    --tile-color: #0f121a;
+
+    /* Colorscape: introduced after 0.8.2. Defaults are dark grey and would
+       otherwise paint an unthemed canvas behind this palette. */
+    --colorscape-enabled: true;
+    --colorscape-primary-default-color: rgb(21, 24, 32);
+    --colorscape-lighter-default-color: rgb(16, 19, 27);
+    --colorscape-darker-default-color: rgb(11, 14, 22);
+    --colorscape-complementary-default-color: rgb(65, 41, 57);
+    --colorscape-primary-color: rgba(21, 24, 32, 0);
+    --colorscape-lighter-color: rgba(16, 19, 27, 0);
+    --colorscape-darker-color: rgba(11, 14, 22, 0);
+    --colorscape-complementary-color: rgba(65, 41, 57, 0);
 }
 
 /* Make the Kavita fit the Theme */
-.navbar-brand {
+.bg-darkpink .navbar-brand {
     color: var(--primary-color) !important;
     .logo.img-placeholder {
         filter: hue-rotate(190deg) brightness(100%) saturate(200%);
@@ -254,6 +274,6 @@
 }
 
 /* Otherwise Progressbar stays green, bug is reported. */
-.progress-bar {
+.bg-darkpink .progress-bar {
 	background-color: var(--primary-color) !important;
 }

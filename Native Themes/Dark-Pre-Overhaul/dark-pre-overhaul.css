@@ -1,3 +1,9 @@
+/* Dark-Pre-Overhaul - Kavita theme, ported to v0.9.1.4.
+   Original theme: Kavita compatibility 0.8.2. Original author: majora2007 (github.com/majora2007).
+   Port changes: colorscape variables, elevation polarity, navbar/nav-header
+   defaults, light-polarity surface slots, and scoping of rules that were
+   global (Kavita keeps a theme's stylesheet loaded after switching away).
+ */
 /* Default styles for Kavita */
 :root .bg-dark-pre-overhaul {
     --color-scheme: dark;
@@ -21,7 +27,6 @@
     --color-scheme: dark;
     --tile-color: var(--primary-color);
     --colorscape-enabled: false;
-
 
     /* Navbar */
     --navbar-bg-color: black;
@@ -123,7 +128,6 @@
     --side-nav-item-active-text-color: white;
     --side-nav-active-bg-color: rgba(0,0,0,0.5);
     --side-nav-overlay-color: rgba(0,0,0,0.5);
-
 
     /* List items */
     --list-group-item-text-color: var(--body-text-color);
@@ -247,7 +251,6 @@
     --event-widget-update-bg-color: var(--primary-color);
     --event-widget-activity-bg-color: var(--primary-color);
 
-
     /* Search */
     --search-result-text-lite-color: initial;
 
@@ -265,4 +268,18 @@
 
     /** Badge **/
     --badge-text-color: var(--bs-badge-color);
+
+    /* ===== Kavita 0.9.1.4 compatibility (added during port) ===== */
+
+    /* Colorscape: introduced after 0.8.2. Defaults are dark grey and would
+       otherwise paint an unthemed canvas behind this palette. */
+    --colorscape-enabled: true;
+    --colorscape-primary-default-color: rgb(58, 64, 70);
+    --colorscape-lighter-default-color: rgb(53, 59, 65);
+    --colorscape-darker-default-color: rgb(48, 54, 60);
+    --colorscape-complementary-default-color: rgb(71, 98, 94);
+    --colorscape-primary-color: rgba(58, 64, 70, 0);
+    --colorscape-lighter-color: rgba(53, 59, 65, 0);
+    --colorscape-darker-color: rgba(48, 54, 60, 0);
+    --colorscape-complementary-color: rgba(71, 98, 94, 0);
 }

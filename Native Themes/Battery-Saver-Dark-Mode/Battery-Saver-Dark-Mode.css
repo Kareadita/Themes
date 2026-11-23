@@ -1,5 +1,13 @@
+/* Battery-Saver-Dark-Mode - Kavita theme, ported to v0.9.1.4.
+   Original theme: Kavita compatibility 0.8.2. Original author: RPLgrime (github.com/RPLgrime).
+   Port changes: colorscape variables, elevation polarity, navbar/nav-header
+   defaults, light-polarity surface slots, and scoping of rules that were
+   global (Kavita keeps a theme's stylesheet loaded after switching away).
+   Selector changed from .bg-Battery-Saver-Dark-Mode to .bg-battery-saver-dark-mode: Kavita lowercases
+   the file stem, so the original selector never matched.
+ */
 /* Default styles for Kavita */
-:root .bg-Battery-Saver-Dark-Mode {
+:root .bg-battery-saver-dark-mode {
     --color-scheme: dark;
     /* Base colors */
     --primary-color: #4ac69496;
@@ -21,7 +29,6 @@
     --theme-color: black;
     --color-scheme: dark;
     --tile-color: var(--primary-color);
-
 
     /* Navbar */
     --navbar-bg-color: black;
@@ -123,7 +130,6 @@
     --side-nav-item-active-text-color: var(--primary-color);
     --side-nav-active-bg-color: rgba(0,0,0,0.5);
     --side-nav-overlay-color: rgba(0,0,0,0.5);
-
 
     /* List items */
     --list-group-item-text-color: var(--body-text-color);
@@ -247,7 +253,6 @@
     --event-widget-update-bg-color: var(--primary-color);
     --event-widget-activity-bg-color: var(--primary-color);
 
-
     /* Search */
     --search-result-text-lite-color: initial;
 
@@ -265,4 +270,18 @@
 
     /** Badge **/
     --badge-text-color: var(--bs-badge-color);
+
+    /* ===== Kavita 0.9.1.4 compatibility (added during port) ===== */
+
+    /* Colorscape: introduced after 0.8.2. Defaults are dark grey and would
+       otherwise paint an unthemed canvas behind this palette. */
+    --colorscape-enabled: true;
+    --colorscape-primary-default-color: rgb(32, 32, 37);
+    --colorscape-lighter-default-color: rgb(27, 27, 32);
+    --colorscape-darker-default-color: rgb(22, 22, 27);
+    --colorscape-complementary-default-color: rgb(49, 72, 67);
+    --colorscape-primary-color: rgba(32, 32, 37, 0);
+    --colorscape-lighter-color: rgba(27, 27, 32, 0);
+    --colorscape-darker-color: rgba(22, 22, 27, 0);
+    --colorscape-complementary-color: rgba(49, 72, 67, 0);
 }

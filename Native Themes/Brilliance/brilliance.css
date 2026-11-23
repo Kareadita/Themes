@@ -1,3 +1,9 @@
+/* Brilliance - Kavita theme, ported to v0.9.1.4.
+   Original theme: Kavita compatibility 0.7.14. Original author: Elry (github.com/ElryWeeb).
+   Port changes: colorscape variables, elevation polarity, navbar/nav-header
+   defaults, light-polarity surface slots, and scoping of rules that were
+   global (Kavita keeps a theme's stylesheet loaded after switching away).
+ */
 /* Brilliance is a modern greyscale theme primarly for e-readers. Made by ElryWeeb */
 :root .bg-brilliance {
 --color-scheme: light;
@@ -135,36 +141,89 @@ rgba(136, 136, 136, 0.75));
 --event-widget-info-bg-color: var(--secondary-color);
 --review-card-star-color: var(--primary-color);
 
+    /* ===== Kavita 0.9.1.4 compatibility (added during port) ===== */
+
+    /* Colorscape: introduced after 0.8.2. Defaults are dark grey and would
+       otherwise paint an unthemed canvas behind this palette. */
+    --colorscape-enabled: true;
+    --colorscape-primary-default-color: rgb(249, 249, 249);
+    --colorscape-lighter-default-color: rgb(254, 254, 254);
+    --colorscape-darker-default-color: rgb(255, 255, 255);
+    --colorscape-complementary-default-color: rgb(203, 203, 203);
+    --colorscape-primary-color: rgba(249, 249, 249, 0);
+    --colorscape-lighter-color: rgba(254, 254, 254, 0);
+    --colorscape-darker-color: rgba(255, 255, 255, 0);
+    --colorscape-complementary-color: rgba(203, 203, 203, 0);
+
+    /* Elevation: light polarity uses black overlays; the defaults are white
+       overlays which are invisible on a light background. */
+    --elevation-layer0: rgba(0, 0, 0, 0);
+    --elevation-layer1: rgba(0, 0, 0, 0.03);
+    --elevation-layer2: rgba(0, 0, 0, 0.05);
+    --elevation-layer3: rgba(0, 0, 0, 0.06);
+    --elevation-layer4: rgba(0, 0, 0, 0.07);
+    --elevation-layer5: rgba(0, 0, 0, 0.09);
+    --elevation-layer6: rgba(0, 0, 0, 0.10);
+    --elevation-layer7: rgba(0, 0, 0, 0.12);
+    --elevation-layer8: rgba(0, 0, 0, 0.13);
+    --elevation-layer9: rgba(0, 0, 0, 0.14);
+    --elevation-layer10: rgba(0, 0, 0, 0.35);
+
+    /* Navbar/header: defaults to black since the palette refactor. */
+    --navbar-bg-color: rgb(249, 249, 249);
+    --navbar-text-color: black;
+    --navbar-fa-icon-color: black;
+    --nav-header-bg-color: rgb(249, 249, 249);
+    --nav-header-text-color: black;
+
+    /* Light-polarity surfaces that default to white-on-dark */
+    --table-body-bg-color: rgba(0, 0, 0, 0.02);
+    --setting-break-color: rgba(0, 0, 0, 0.2);
+    --navbar-btn-hover-outline-color: rgba(0, 0, 0, 0.6);
+    --input-focus-boxshadow-color: rgba(0, 0, 0, 0.4);
+    --btn-focus-boxshadow-color: rgba(0, 0, 0, 0.4);
+    --checkbox-focus-boxshadow-color: rgba(0, 0, 0, 0.4);
+    --radio-focus-boxshadow-color: rgba(0, 0, 0, 0.4);
+    --btn-actions-hover-bg: rgba(0, 0, 0, 0.12);
+    --label-card-bg: rgba(0, 0, 0, 0.03);
+    --label-card-border: rgba(0, 0, 0, 0.08);
+    --label-card-label-color: rgba(0, 0, 0, 0.45);
+    --label-card-value-muted-color: rgba(0, 0, 0, 0.25);
+    --file-path-color: rgba(0, 0, 0, 0.55);
+    --tooltip-outline-color: rgba(0, 0, 0, 0.8);
+    --card-overlay-hover-bg-color: rgba(0, 0, 0, 0.2);
+    --card-hover-bg-color: rgb(247, 247, 247);
+    --manga-reader-overlay-text-color: rgb(255, 255, 255);
 }
 
 /** Greyscale Stuff **/
-.reading-area {
+.bg-brilliance .reading-area {
 	filter: grayscale(1);
 }
 
-.logo {
+.bg-brilliance .logo {
 	filter: grayscale(1);
 }
 
-.image-container {
+.bg-brilliance .image-container {
 	filter: grayscale(1);
 }
 
-.card-item-container {
+.bg-brilliance .card-item-container {
 	filter: grayscale(1);
 }
 
-.badge {
+.bg-brilliance .badge {
 	filter: grayscale(1);
 }
 
 /** UI Improvement **/
-.mb-2 {
+.bg-brilliance .mb-2 {
 	min-width: 75px;
 }
 
 /** Buttons **/
-.btn-outline-primary {
+.bg-brilliance .btn-outline-primary {
 	--bs-btn-color: var(--secondary-color) !important;
 	--bs-btn-border-color: var(--secondary-color) !important;
 	--bs-btn-hover-bg: var(--secondary-color) !important;
@@ -175,7 +234,7 @@ rgba(136, 136, 136, 0.75));
 	--bs-btn-disabled-border-color: var(--secondary-color) !important;
 }
 
-.btn-danger {
+.bg-brilliance .btn-danger {
 	--bs-btn-bg: var(--primary-color) !important;
 	--bs-btn-border-color: var(--primary-color) !important;
 	--bs-btn-hover-bg: var(--secondary-color) !important;
