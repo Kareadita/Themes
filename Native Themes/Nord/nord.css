@@ -1,3 +1,9 @@
+/* Nord - Kavita theme, ported to v0.9.1.4.
+   Original theme: Kavita compatibility 0.7.14. Original author: ice45core0 (github.com/ice45core0).
+   Port changes: colorscape variables, elevation polarity, navbar/nav-header
+   defaults, light-polarity surface slots, and scoping of rules that were
+   global (Kavita keeps a theme's stylesheet loaded after switching away).
+ */
 :root .bg-nord {
   --theme-color: #81a1c1;
   --color-scheme: dark;
@@ -250,17 +256,32 @@
     rgba(76, 86, 106, 0.15) 1%,
     rgba(76, 86, 106, 0) 100%
   );
+
+    /* ===== Kavita 0.9.1.4 compatibility (added during port) ===== */
+    --tile-color: #2e3440;
+
+    /* Colorscape: introduced after 0.8.2. Defaults are dark grey and would
+       otherwise paint an unthemed canvas behind this palette. */
+    --colorscape-enabled: true;
+    --colorscape-primary-default-color: rgb(52, 58, 70);
+    --colorscape-lighter-default-color: rgb(47, 53, 65);
+    --colorscape-darker-default-color: rgb(42, 48, 60);
+    --colorscape-complementary-default-color: rgb(76, 86, 102);
+    --colorscape-primary-color: rgba(52, 58, 70, 0);
+    --colorscape-lighter-color: rgba(47, 53, 65, 0);
+    --colorscape-darker-color: rgba(42, 48, 60, 0);
+    --colorscape-complementary-color: rgba(76, 86, 102, 0);
 }
 
-.logo {
+.bg-nord .logo {
   filter: hue-rotate(76deg) brightness(119%) saturate(60%);
 }
 
-.badge {
+.bg-nord .badge {
   filter: hue-rotate(76deg) brightness(119%) saturate(60%);
 }
 
-.btn-outline-primary {
+.bg-nord .btn-outline-primary {
   --bs-btn-color: var(--primary-color) !important;
   --bs-btn-border-color: var(--primary-color) !important;
   --bs-btn-hover-bg: var(--primary-color-darker-shade) !important;

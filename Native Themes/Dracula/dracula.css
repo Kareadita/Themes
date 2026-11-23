@@ -1,3 +1,9 @@
+/* Dracula - Kavita theme, ported to v0.9.1.4.
+   Original theme: Kavita compatibility 0.7.14. Original author: Matguitarist (github.com/matguitarist).
+   Port changes: colorscape variables, elevation polarity, navbar/nav-header
+   defaults, light-polarity surface slots, and scoping of rules that were
+   global (Kavita keeps a theme's stylesheet loaded after switching away).
+ */
 :root .bg-dracula {
 
     /* Main Colors */
@@ -192,14 +198,13 @@
     --card-text-color: var(--body-text-color);
 	--card-border-width: 2px 2px 2px 2px;
 	--card-border-style: solid;
-    --card-border-color: rgba(142, 145, 149, 0.1);/
+    --card-border-color: rgba(142, 145, 149, 0.1);
     --card-progress-bar-color: var(--primary-color);
     --card-overlay-bg-color: rgba(0, 0, 0, 0);
     --card-overlay-hover-bg-color: rgba(0, 0, 0, .2);
 
     /* Slider */
     --slider-text-color: #F8F8F2;
-
 
     /* Manga Reader */    
     --manga-reader-overlay-filter: blur(10px);
@@ -240,9 +245,25 @@
 
     /* Card list */    
     --card-list-item-bg-color: linear-gradient(180deg, rgba(0,0,0,.15) 0%, rgba(0,0,0,.15) 1%, rgba(0,0,0,0) 100%);
+
+    /* ===== Kavita 0.9.1.4 compatibility (added during port) ===== */
+    --theme-color: #282A36;
+    --tile-color: #282A36;
+
+    /* Colorscape: introduced after 0.8.2. Defaults are dark grey and would
+       otherwise paint an unthemed canvas behind this palette. */
+    --colorscape-enabled: true;
+    --colorscape-primary-default-color: rgb(46, 48, 60);
+    --colorscape-lighter-default-color: rgb(41, 43, 55);
+    --colorscape-darker-default-color: rgb(36, 38, 50);
+    --colorscape-complementary-default-color: rgb(62, 94, 81);
+    --colorscape-primary-color: rgba(46, 48, 60, 0);
+    --colorscape-lighter-color: rgba(41, 43, 55, 0);
+    --colorscape-darker-color: rgba(36, 38, 50, 0);
+    --colorscape-complementary-color: rgba(62, 94, 81, 0);
 }
 
 /* Otherwise Progressbar stays green, bug is reported. */
-.progress-bar {
+.bg-dracula .progress-bar {
     background-color: #50FA7B !important;
 }

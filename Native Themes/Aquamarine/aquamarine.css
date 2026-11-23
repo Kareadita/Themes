@@ -1,3 +1,9 @@
+/* Aquamarine - Kavita theme, ported to v0.9.1.4.
+   Original theme: Kavita compatibility 0.7.14. Original author: Matguitarist (github.com/matguitarist).
+   Port changes: colorscape variables, elevation polarity, navbar/nav-header
+   defaults, light-polarity surface slots, and scoping of rules that were
+   global (Kavita keeps a theme's stylesheet loaded after switching away).
+ */
 :root .bg-aquamarine {
 
     /* Main Colors variables*/
@@ -11,7 +17,6 @@
     --bs-body-bg: #275d74;
     --body-text-color: #F8F8F2;
     --btn-icon-filter: invert(1) grayscale(100%) brightness(200%);
-
 
     /* Scrollbar */
     --primary-color-scrollbar: rgba(182, 182, 187, 0.5);;
@@ -194,14 +199,13 @@
     --card-text-color: var(--body-text-color);
 	--card-border-width: 2px 2px 2px 2px;
 	--card-border-style: solid;
-    --card-border-color: rgba(142, 145, 149, 0.1);/
+    --card-border-color: rgba(142, 145, 149, 0.1);
     --card-progress-bar-color: var(--primary-color);
     --card-overlay-bg-color: rgba(0, 0, 0, 0);
     --card-overlay-hover-bg-color: rgba(0, 0, 0, .2);
 
     /* Slider */
     --slider-text-color: #F8F8F2;
-
 
     /* Manga Reader */    
     --manga-reader-overlay-filter: blur(10px);
@@ -242,9 +246,25 @@
 
     /* Card list */    
     --card-list-item-bg-color: linear-gradient(180deg, rgba(0,0,0,.15) 0%, rgba(0,0,0,.15) 1%, rgba(0,0,0,0) 100%);
+
+    /* ===== Kavita 0.9.1.4 compatibility (added during port) ===== */
+    --theme-color: #275d74;
+    --tile-color: #275d74;
+
+    /* Colorscape: introduced after 0.8.2. Defaults are dark grey and would
+       otherwise paint an unthemed canvas behind this palette. */
+    --colorscape-enabled: true;
+    --colorscape-primary-default-color: rgb(45, 99, 122);
+    --colorscape-lighter-default-color: rgb(40, 94, 117);
+    --colorscape-darker-default-color: rgb(35, 89, 112);
+    --colorscape-complementary-default-color: rgb(88, 114, 112);
+    --colorscape-primary-color: rgba(45, 99, 122, 0);
+    --colorscape-lighter-color: rgba(40, 94, 117, 0);
+    --colorscape-darker-color: rgba(35, 89, 112, 0);
+    --colorscape-complementary-color: rgba(88, 114, 112, 0);
 }
 
 /* Otherwise Progressbar stays green, bug is reported. */
-.progress-bar {
+.bg-aquamarine .progress-bar {
     background-color: #e47d0d !important;
 }

@@ -1,3 +1,9 @@
+/* CutePink - Kavita theme, ported to v0.9.1.4.
+   Original theme: Kavita compatibility 0.7.14. Original author: Elry (github.com/ElryWeeb).
+   Port changes: colorscape variables, elevation polarity, navbar/nav-header
+   defaults, light-polarity surface slots, and scoping of rules that were
+   global (Kavita keeps a theme's stylesheet loaded after switching away).
+ */
 :root .bg-cutepink {
 
     /* Main Colors */
@@ -9,7 +15,6 @@
     --error-color: #dd8181;
     --bs-body-bg: #ffc4cf;
     --body-text-color: #f996ae;
-
 
     /* Scrollbar */
     --primary-color-scrollbar: #f996ae;
@@ -200,7 +205,6 @@
     /* Slider */
     --slider-text-color: #F8F8F2;
 
-
     /* Manga Reader */    
     --manga-reader-overlay-filter: blur(10px);
     --manga-reader-overlay-bg-color: rgba(0,0,0,.5);
@@ -240,10 +244,59 @@
 
     /* Card list */    
     --card-list-item-bg-color: linear-gradient(180deg, rgba(0,0,0,.15) 0%, rgba(0,0,0,.15) 1%, rgba(0,0,0,0) 100%);
+
+    /* ===== Kavita 0.9.1.4 compatibility (added during port) ===== */
+    --theme-color: #ffc4cf;
+    --tile-color: #ffc4cf;
+
+    /* Colorscape: introduced after 0.8.2. Defaults are dark grey and would
+       otherwise paint an unthemed canvas behind this palette. */
+    --colorscape-enabled: true;
+    --colorscape-primary-default-color: rgb(249, 190, 201);
+    --colorscape-lighter-default-color: rgb(254, 195, 206);
+    --colorscape-darker-default-color: rgb(255, 200, 211);
+    --colorscape-complementary-default-color: rgb(240, 175, 192);
+    --colorscape-primary-color: rgba(249, 190, 201, 0);
+    --colorscape-lighter-color: rgba(254, 195, 206, 0);
+    --colorscape-darker-color: rgba(255, 200, 211, 0);
+    --colorscape-complementary-color: rgba(240, 175, 192, 0);
+
+    /* Elevation: light polarity uses black overlays; the defaults are white
+       overlays which are invisible on a light background. */
+    --elevation-layer0: rgba(0, 0, 0, 0);
+    --elevation-layer1: rgba(0, 0, 0, 0.03);
+    --elevation-layer2: rgba(0, 0, 0, 0.05);
+    --elevation-layer3: rgba(0, 0, 0, 0.06);
+    --elevation-layer4: rgba(0, 0, 0, 0.07);
+    --elevation-layer5: rgba(0, 0, 0, 0.09);
+    --elevation-layer6: rgba(0, 0, 0, 0.10);
+    --elevation-layer7: rgba(0, 0, 0, 0.12);
+    --elevation-layer8: rgba(0, 0, 0, 0.13);
+    --elevation-layer9: rgba(0, 0, 0, 0.14);
+    --elevation-layer10: rgba(0, 0, 0, 0.35);
+
+    /* Light-polarity surfaces that default to white-on-dark */
+    --table-body-bg-color: rgba(0, 0, 0, 0.02);
+    --setting-break-color: rgba(0, 0, 0, 0.2);
+    --navbar-btn-hover-outline-color: rgba(0, 0, 0, 0.6);
+    --input-focus-boxshadow-color: rgba(0, 0, 0, 0.4);
+    --btn-focus-boxshadow-color: rgba(0, 0, 0, 0.4);
+    --checkbox-focus-boxshadow-color: rgba(0, 0, 0, 0.4);
+    --radio-focus-boxshadow-color: rgba(0, 0, 0, 0.4);
+    --btn-actions-hover-bg: rgba(0, 0, 0, 0.12);
+    --label-card-bg: rgba(0, 0, 0, 0.03);
+    --label-card-border: rgba(0, 0, 0, 0.08);
+    --label-card-label-color: rgba(0, 0, 0, 0.45);
+    --label-card-value-muted-color: rgba(0, 0, 0, 0.25);
+    --file-path-color: rgba(0, 0, 0, 0.55);
+    --tooltip-outline-color: rgba(0, 0, 0, 0.8);
+    --card-overlay-hover-bg-color: rgba(0, 0, 0, 0.2);
+    --card-hover-bg-color: rgb(247, 188, 199);
+    --manga-reader-overlay-text-color: rgb(255, 255, 255);
 }
 
 /* Make the Kavita fit the Theme */
-.navbar-brand {
+.bg-cutepink .navbar-brand {
     color: var(--primary-color) !important;
     .logo.img-placeholder {
         filter: hue-rotate(148deg);
@@ -251,6 +304,6 @@
 }
 
 /* Otherwise Progressbar stays green, bug is reported. */
-.progress-bar {
+.bg-cutepink .progress-bar {
     background-color: var(--primary-color) !important;
 }

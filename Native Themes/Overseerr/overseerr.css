@@ -1,3 +1,9 @@
+/* Overseerr - Kavita theme, ported to v0.9.1.4.
+   Original theme: Kavita compatibility 0.7.14. Original author: Matguitarist (github.com/matguitarist).
+   Port changes: colorscape variables, elevation polarity, navbar/nav-header
+   defaults, light-polarity surface slots, and scoping of rules that were
+   global (Kavita keeps a theme's stylesheet loaded after switching away).
+ */
 :root .bg-overseerr {
 
 	/* Main Colors Variables*/
@@ -147,7 +153,6 @@
     --progress-bg-color: var(--nav-header-bg-color);
     --progress-bar-color: var(--primary-color-dark-shade);
 
-
 	/* Dropdown */
 	--dropdown-item-hover-text-color: #ffffff;
 	--dropdown-item-hover-bg-color: var(--primary-color-dark-shade);
@@ -241,6 +246,21 @@
 	/* Card list */
     --card-list-item-bg-color: linear-gradient(180deg, rgba(26, 26, 26, 0.15) 0%, rgba(26, 26, 26, .15) 1%, rgba(26, 26, 26, 0) 100%);
 
+    /* ===== Kavita 0.9.1.4 compatibility (added during port) ===== */
+    --theme-color: #111827;
+    --tile-color: #111827;
+
+    /* Colorscape: introduced after 0.8.2. Defaults are dark grey and would
+       otherwise paint an unthemed canvas behind this palette. */
+    --colorscape-enabled: true;
+    --colorscape-primary-default-color: rgb(23, 30, 45);
+    --colorscape-lighter-default-color: rgb(18, 25, 40);
+    --colorscape-darker-default-color: rgb(13, 20, 35);
+    --colorscape-complementary-default-color: rgb(55, 51, 91);
+    --colorscape-primary-color: rgba(23, 30, 45, 0);
+    --colorscape-lighter-color: rgba(18, 25, 40, 0);
+    --colorscape-darker-color: rgba(13, 20, 35, 0);
+    --colorscape-complementary-color: rgba(55, 51, 91, 0);
 }
 
 /* Make the Kavita fit the Theme */
@@ -249,6 +269,6 @@
 }*/
 
 /* Otherwise Progressbar stays green, bug is reported. */
-.progress-bar {
+.bg-overseerr .progress-bar {
     background-color: #8153d8 !important;
 }
